@@ -1,0 +1,204 @@
+<section data-id="7e1da5a519aea3e8430dfc6c75d17c70"><div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 240px; height: auto;" data-block-id="dfe026779f3dd3f52391445fdf433d93"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1><strong><span style="font-size:1.2em">React Hooks Migration</span></strong></h1>
+</div></div></section><section data-id="89a792b23ec16cf453c79bf97d5e6c40"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="bb1d403b0b6bbd134895c75de96eca20"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Contents</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="468fbd36423bdc08d5aa5de12fc08d64"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Component Comparisons throughout versions</li>
+	<li>Advantages</li>
+	<li>React Hooks in General</li>
+	<li>Hook Migration</li>
+	<li>Redux Hooks</li>
+	<li>React Router Hooks</li>
+</ul>
+</div></div></section><section class="stack" data-id="37d02f365ded414e92d5a84670619e19"><section data-id="593bdd0f6852907c7615d7fb370e98f4"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="f0e8ded30a9f2f0a3b208a47548ebda2"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>React Component before ES6</h2>
+</div></div>
+
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 790px; left: 85px; top: 591px;" data-block-id="9953fa570f157befc93176122430f2cd"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p><span style="font-size:0.9em"><strong>PS:</strong>  <em>create-react-class</em> is a separate package after v16</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 408px; height: 353px; left: 276px; top: 182px;" data-block-id="b67b0f6433b3a73638acb6fe82070f62"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="358" data-natural-height="310" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/9debdc34afdc95f678d28f536fe7c0cb.png"></div></div></section><section data-id="aa54529c6c696ec2b2244745d884624b"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="4a969beff107ae3e2e2f39ea501d35fb"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2><span style="font-size:1.0em">React Component with ES6</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 529px; height: 404px; left: 216px; top: 191px;" data-block-id="d088be67d10d74f42c7fa633927237bd"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="490" data-natural-height="374" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/c4c94929549d48c4ed7dde9aca8b564e.png"></div></div></section><section data-id="edcff1ba5b17c1536ef6cb13e66fa1c9"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 82px; height: auto;" data-block-id="7de410366fae5df55a12bcf1fa1059aa"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>React Component with Hooks</h2>
+</div></div>
+
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 181px; top: 611px;" data-block-id="0ad403a04fea3a90d00be5c6308ea472"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p>Stable Release: v16.8 - Feb 2019</p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 561px; height: 292px; left: 200px; top: 235px;" data-block-id="f89ced34df47772e1e357bab4a949ca3"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="561" data-natural-height="292" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/acab3fc290cdb2478fd1d31893dc4266.png"></div></div></section></section><section class="stack" data-id="f2662889d15595e3265a176e31b628da"><section data-id="389025f2a18f60536e6718124639f774"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="998acbceb1da275cd0bc62a5d0daa21a"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Advantages of using React Hooks</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="a5a56382fe1ad5d656af6aa86fc8fcf1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>solves binding/context problems</li>
+	<li>no <em><strong>this</strong></em>!</li>
+	<li>reusable logic of lifecycle methods</li>
+	<li>less boilerplate code</li>
+	<li>straight forward code reading</li>
+	<li>less complex DOM tree (no HOCs)</li>
+</ul>
+</div></div></section><section data-id="da02268ca3b5752747a8536b5c1bccb9"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 181px; height: auto;" data-block-id="4264023423496ba8225175f3381a885d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<p>Context/Binding Problems</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 403px; left: 279px; top: 240px; height: auto;" data-block-id="97ac31de16e889d9a98eaea8a66f9dde"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>bind at constructor</li>
+	<li>bind at where it called</li>
+	<li>arrow function</li>
+</ul>
+</div></div></section><section data-id="f1abf69a5bc363cd8d239b910622005a"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 115px; height: auto;" data-block-id="905bde126939bca482f994c5a42ea7f0"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h3>bind at constructor</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 457px; height: 369px; left: 252px; top: 210px;" data-block-id="127f703e25b7d88faa34f58115be2e68"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="457" data-natural-height="369" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/886f2c11566a3df46110c5d4e14d7ec6.png"></div></div></section><section data-id="73fe68c3ee134cac1c8077cd9647f369"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 115px; height: auto;" data-block-id="4cf2db6a8dd108eb5ce3dd8b45491d52"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h3>bind at where it called</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 406px; height: 353px; left: 277px; top: 210px;" data-block-id="09413445d9fe13cf4b117a4aacedffc9"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="406" data-natural-height="353" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/7f2dab7bed5a11d24024d16972898de2.png"></div></div></section><section data-id="59e0a7bc9afe3d178822716999a5372b"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 115px; height: auto;" data-block-id="0d1fa22ccc8cd20fe9b13f0379979095"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h3>bind with arrow function</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 379px; height: 301px; left: 291px; top: 235px;" data-block-id="34e5635f0e1c2de01c0236530e7f9936"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="379" data-natural-height="301" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/d7202d94fe3c30c66075fe101109fccb.png"></div></div></section><section data-id="ce197208094184b1197ee4c669f39eb6"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 115px; height: auto;" data-block-id="787dd6c19e47e84f8a880a09f2c2007e"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h3>with hook</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 593px; height: 129px; left: 184px; top: 266px;" data-block-id="c913b743edaf8a3f9be62e4df037c142"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="593" data-natural-height="129" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/13af5a3caacb06c5e82139a4a0c1901e.png"></div></div></section></section><section class="stack" data-id="6f0edb0459c7162f176416703fa6e869"><section data-id="b04f1a2ac255909b2d1ca7c543a094e6"><div class="sl-block" data-block-type="text" style="width: 806px; left: 78px; top: 42px; height: auto;" data-block-id="e1dd91c2960e38df7dde7561e9f034ca"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>sharing repeated lifecycle logic</h2>
+</div></div>
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 181px; top: 140px;" data-block-id="d569d89195ae3b60afa59ee462692a46"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<p>not applicable with class components</p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 522px; height: 393px; left: 220px; top: 223.5px;" data-block-id="a7535247f174d6b31203d894366e7707"><div class="sl-block-content" style="z-index: 15;"><img style="" data-natural-width="494" data-natural-height="372" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/c77af73972012231d1b9a44e8d476a67.png"></div></div></section><section data-id="f32a417c6969a7e3021f9cc6589240e8"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 44px; height: auto;" data-block-id="616a8b8cc603e5b649afc705b39898de"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>sharing repeated lifecycle logic</h2>
+</div></div>
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 181px; top: 140px;" data-block-id="99b25e8ff88b4aeb07d54d66e10d8e03"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<p>applicable with hooks</p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 475px; height: 414px; left: 244px; top: 230px;" data-block-id="245d5f90999f00b3f057a8c0831d72fd"><div class="sl-block-content" style="z-index: 15;"><img style="" data-natural-width="475" data-natural-height="414" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/5b588d86668f6cf8670c8ceb75719c5a.png"></div></div></section></section><section class="stack" data-id="0dc01deaaace92ab0429148caab5374e"><section data-id="92ddf620d028d5ee725366084a341e2e"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 103px; height: auto;" data-block-id="5293182545b0e1f1a0a6afffd8f31be5"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>React Hooks</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 199px; height: auto;" data-block-id="5d404c62742370a02ba8210ae78d9303"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>useState*</li>
+	<li>useEffect*</li>
+	<li>useRef*</li>
+	<li>useReducer</li>
+	<li>useCallback</li>
+	<li>useMemo</li>
+	<li>useContext</li>
+	<li>useImperativeHandle</li>
+	<li>useLayoutEffect</li>
+	<li>useDebugValue</li>
+</ul>
+</div></div></section><section data-id="e033cec671c254d1d58d7864bc79e0a1"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 34px; height: auto;" data-block-id="96b0083bba6225968b9036eee846b1e3"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>React Hooks</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 693px; height: 519px; left: 134px; top: 141px;" data-block-id="3467b0a68e781b7654db9b4acfddd78a"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="693" data-natural-height="519" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/abe14a8bab7fd9c6344978b2ddf39e94.png"></div></div></section><section data-id="f46c23ed166ec2a144d23fab26127095"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 33px; height: auto;" data-block-id="bfce8646773c805eb036aeca4bf6ecac"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>React Hooks</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 765px; height: 541px; left: 98px; top: 116px;" data-block-id="1a655ca91abc89771da5e8a73d068f2a"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="765" data-natural-height="541" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/753a77cbf96c691fc5969fec460fd868.png"></div></div></section></section><section class="stack" data-id="053f685e14deb1cbdb6f096db97a957f"><section data-id="10cf0d72ff8f70cae18a9c8eb01d8648"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="94bc54963be1886253ef44499bb14815"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Migration</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="2962c7da04b539edc0d09d52cfc55eba"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>State Migration</li>
+	<li>Lifecycle migration</li>
+	<li>Ref migration</li>
+	<li>Reuse as custom hook if repeated throughout the app</li>
+</ul>
+</div></div></section><section data-id="64cb9e6466ea34bd07029ae4a1fd51f9"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 159px; height: auto;" data-block-id="c3f9e9b5394d728dba106487baece3ae"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>State Migration</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 710px; left: 125px; top: 280px;" data-block-id="98c42e39de10408f97f7fb4402faa2f7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p>Do you update multiple items with single action?</p>
+
+<p> </p>
+
+<p>No -&gt; useState</p>
+
+<p>Yes -&gt; (maybe) useReducer</p>
+</div></div></section><section data-id="87df7976a2ad4dbdba1712c7d2d50f75"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="0503cdd1b0dff0fdec560c333bdf328f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Lifecycle Migration</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 298px; height: auto;" data-block-id="2317ce23f2f2d83cbbc4ac0137286b1b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<p>useEffect for all:</p>
+
+<ul>
+	<li>componentDidMount</li>
+	<li>componentDidUpdate</li>
+	<li>componentWillUnmount</li>
+</ul>
+</div></div></section><section data-id="697633ef20c3abf84c041e58036857f5"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 103px; height: auto;" data-block-id="e9ecdb30a650f607e8c5eb37e791674e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Lifecycle Migration</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 444px; left: 36px; top: 242px; height: auto;" data-block-id="37c52d13ed081155221e7c66fd25d2db"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li><span style="font-size:0.9em">useEffect called after every render, if no dependency</span></li>
+	<li><span style="font-size:0.9em">called only after  mounted and cleaned before unmounting when  dependencies is empty array</span></li>
+	<li><span style="font-size:0.9em">Conditionally called w.r.t dependencies (like didUpdate)</span></li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 420px; height: 120px; left: 510px; top: 290px;" data-block-id="0c406a99c068c29f811412bf0e99c992"><div class="sl-block-content" style="z-index: 14;"><img style="" data-natural-width="357" data-natural-height="102" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/8dc092f11e196e22b78c303364e28332.png"></div></div></section></section><section class="stack" data-id="444735212a07d19c469e9769ccafede5"><section data-id="6a9757a118f6dc367f72ebfa6d7c6e15"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="f12730e3686d6caa87d9ed428b7305a0"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Third Party Libraries</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 263px; height: auto;" data-block-id="31017de1666c361d133d600fdbf85852"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>React Router (Sep 2019)</li>
+	<li>React-Redux (Jun 2019)</li>
+	<li>Fancy Form Library (!?)</li>
+	<li>or others...</li>
+</ul>
+</div></div></section><section data-id="006a809f73b17811665b78a98f2ad32d"><div class="sl-block" data-block-type="text" style="width: 384px; left: 39px; top: 209px; height: auto;" data-block-id="2c7558771973612f790c0458ff321672"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11;">
+<h2><span style="font-size:0.9em">Before Hooks</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 560px; top: 209px; height: auto;" data-block-id="9f3192c2ce03aad7991f98669b3e32c8"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 12;">
+<h2><span style="font-size:0.9em">Now</span></h2>
+</div></div>
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 70px;" data-block-id="c73bd612b48ffde9d929005972d5f261"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<h2>React Router</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 384px; height: 113px; left: 39px; top: 316px;" data-block-id="6b7a3bed681feeefa989133c7d9264de"><div class="sl-block-content" style="z-index: 15;"><img style="" data-natural-width="324" data-natural-height="95" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/efa34f50b518d9aae365aca3c24185b0.png"></div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 266px; height: 136px; left: 560px; top: 316px;" data-block-id="b8c43c0cfa54ae5e324146df36d7f22e"><div class="sl-block-content" style="z-index: 16;"><img style="" data-natural-width="241" data-natural-height="123" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/8b0f10b98870df9c8692d7fad5451b24.png"></div></div></section><section data-id="f0b67f6b5238b925d363033b5359d6ba"><div class="sl-block" data-block-type="text" style="width: 384px; left: 39px; top: 209px; height: auto;" data-block-id="3cfae20a24c4950971fe6f3c68267fd8"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11;">
+<h2><span style="font-size:0.9em">Before Hooks</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 552px; top: 210px; height: auto;" data-block-id="ee585b54d56846ff07b29658693f3936"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 12;">
+<h2><span style="font-size:0.9em">Now</span></h2>
+</div></div>
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 70px;" data-block-id="0c8f60fe26221193f5874bec62ef5949"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<h2>React Redux</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 376px; height: 302px; left: 39px; top: 302px;" data-block-id="79bc47eb6b33319d8d37b4a4e23da19d"><div class="sl-block-content" style="z-index: 15;"><img style="" data-natural-width="304" data-natural-height="244" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/3f77af2dab948aff4250fd52a9464c3e.png"></div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 317px; height: 258px; left: 560px; top: 302px;" data-block-id="643de43bc29a3424ab79f965b9dd4e61"><div class="sl-block-content" style="z-index: 16;"><img style="" data-natural-width="243" data-natural-height="198" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/93be0c7da7fd1e72fc3a43addf1c5015.png"></div></div></section></section><section data-id="1d84ec70f307efef01a239bf857b387e">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 181px; top: 70px;" data-block-id="b1ff9ba628889295f63eb9a459ceea82"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<h2>CODING TIME!</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 596px; height: 304px; left: 182px; top: 198px;" data-block-id="c1066a52f3b9e5cfe3f3af85fc82c215"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="500" data-natural-height="255" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/31d81ea0c81082618f03298954965fdf.gif"></div></div></section><section data-id="915eb35372813f97f1aa96c429c47cfb"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 112px; height: auto;" data-block-id="32f39806cf23fe4d2bd847ac9f9e8353"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Comparison</h1>
+
+<p><span style="font-size:0.7em">(in small demo application)</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 346px; height: 107px; left: 45px; top: 313px;" data-block-id="94c382205a883685bee98cf45309b995"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="408" data-natural-height="126" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/a7cb3649048f88ed7a4078c52eb9787e.png"></div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 412px; height: 107px; left: 495px; top: 313px;" data-block-id="d7e10c5abbf11091325dfc780be4e27b"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="456" data-natural-height="118" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/59849be0b1286149c0d2d8c44414498b.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 344px; left: 47px; top: 459px;" data-block-id="9e117da969aa6de3d0ee44da8bfeb771"><div class="sl-block-style" style="z-index: 14; transform: rotate(360deg);"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<p>Line of code: 347</p>
+</div></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 344px; left: 536px; top: 459px;" data-block-id="5054cbc4b0b71fe259277780064e519e"><div class="sl-block-style" style="z-index: 15; transform: rotate(360deg);"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;">
+<p>Line of code: 334</p>
+</div></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 641px; left: 160px; top: 591px;" data-block-id="c9b82190daf99ee28e0ae332b705f68e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16;">
+<p><span style="font-size:0.5em">*No types: Typescript, Flow or prop-types</span></p>
+</div></div></section><section data-id="27beb2018e4b515f750727eb56922a66"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="1f9171b7c0c2ae973dfae4a1becefebd"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Thank you for listening</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 579px;" data-block-id="e821b7490532b40bc9313d950ee9c5ab"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<h3>Any questions?</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 500px; height: 375px; left: 240px; top: 185px;" data-block-id="9f992445f63fe2fba1e9c0b7353e054a"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="500" data-natural-height="375" data-lazy-loaded="" data-src="/presentations/content/react-hooks-migration/assets/4c0a80f8e85ac033267cb1491ad7c76a.gif"></div></div></section>

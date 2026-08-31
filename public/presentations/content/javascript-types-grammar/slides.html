@@ -1,0 +1,179 @@
+<section data-id="e484619145a709f7a75587364d82644a"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 238px; height: auto;" data-block-id="c202e624d9e3d6b0783ada5acb2ba8a6"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Javascript</h1>
+
+<p>Types and Grammar</p>
+</div></div></section><section data-id="5a5e32b00495f09e0edc6096f5934721"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="7af27afc81fa59cdaa17de60a438acca"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Contents</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="4c7b8be312fe97e0f9e796e2cb1df9b8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Types</li>
+	<li>Values</li>
+	<li>Natives</li>
+	<li>Coercion</li>
+	<li>Grammar</li>
+</ul>
+</div></div></section><section data-id="9fe17687b550913963381502ddde4d3e"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 120px; height: auto;" data-block-id="5327101985d30939d922e914d1247899"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Types (again!?)</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 225px; height: auto;" data-block-id="917eaf7cab20ffdce810df8becde26c9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>null</li>
+	<li>undefined</li>
+	<li>boolean</li>
+	<li>number</li>
+	<li>string</li>
+	<li>object</li>
+	<li>symbol (ES6)</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 538px;" data-block-id="41c69de43f862ad6549d758ae5b2d663"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<p><span style="color:#FFFF00">typeof foo(){...} == "function"</span></p>
+
+<p><strong><span style="color:#FF0000">BUT</span></strong></p>
+
+<p><span style="color:#FFFF00">functions are <strong><em>callable</em></strong> objects</span></p>
+</div></div></section><section data-id="c8366fe3594e89535808aafe46423708"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="fda8ec38ffd66a9e174c88b662ec8b08"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Values as Types</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="18491fb173ea3bc7a345f6d2e9487bbe"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>vales has types</li>
+	<li>variables don't have types</li>
+	<li>no static typing</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 250px; height: 145px; left: 355px; top: 437px;" data-block-id="8d1f32b3ff8064d4f6246118455e882d"><div class="sl-block-content" style="z-index: 13;"><pre><code>var a = 5;
+typeof a; // "number"
+
+a = "different value";
+typeof a // "string"</code></pre></div></div></section><section data-id="28bb24ae95515c5653b6be5101280e62"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 77px; height: auto;" data-block-id="a684aa0ecc714db0f321a672bb7f667b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>undefined vs undeclared</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 410px; height: 112px; left: 275px; top: 168px;" data-block-id="8eabae89b1747524e2705447d33f0de0"><div class="sl-block-content" style="z-index: 12;"><pre class="javascript"><code>var x;
+
+x; // undefined
+y; // ReferenceError: y is not defined</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 317px;" data-block-id="1ebb5bce85befede01e987773f0f937b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<p><span style="color:#FFFF00">WTF: type of undeclared variable is <em>undefined</em></span></p>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 285px; height: 115px; left: 338px; top: 420px;" data-block-id="e886bf128313025166b02dd845fb7eb7"><div class="sl-block-content" style="z-index: 14;"><pre class="javascript"><code>var x;
+
+typeof x; // "undefined"
+typeof y; // "undefined"</code></pre></div></div></section><section data-id="68c0551c6f9a0d2d8aeea61876d340af"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 45px; height: auto;" data-block-id="245393746fe52662b3f197176f97f84e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Values</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 140px; height: auto;" data-block-id="28ad778b27dc3d815e7b9a5b0910f91d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Arrays
+	<ul>
+		<li>store any types</li>
+		<li>object with additional prototype methods</li>
+	</ul>
+	</li>
+	<li>Array-likes
+	<ul>
+		<li>List of DOM elements</li>
+		<li>Cannot use Array.prototype methods</li>
+	</ul>
+	</li>
+	<li>string
+	<ul>
+		<li>like Array of character but not every Array methods work</li>
+		<li>immutable</li>
+	</ul>
+	</li>
+	<li>number
+	<ul>
+		<li>no distinction between integer and float</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section data-id="9b3c75b4fb51647b53beaf1788a0b4fb"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="68e699843f46c921ada9ecffd2696b26"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Numbers</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="8da848e41c4183b8c720cf6ebfaff5de"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>NaN</li>
+	<li>Infinity / -Infinity</li>
+	<li>-0 / 0</li>
+</ul>
+</div></div></section><section data-id="47c3fb52e835d82c4ebb24bb74bad658"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="f8e8148029dbc5b56785a3f48126ab00"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>value vs reference</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="510f22abd9b9fb76fe15d08e69bab51e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>number, string, boolean are copied by value (immutable)</li>
+	<li>Arrays, objects are copied by reference (mutable)</li>
+</ul>
+</div></div></section><section data-id="22f0a309a53f8c3cc55860bd3dbcf4da"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="de811fa03c951af39500bb1f10fe82a0"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Natives</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 170px; height: auto;" data-block-id="21f32121f7d08bd170bbc8914132e27f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>String( )</li>
+	<li>Number()</li>
+	<li>Boolean()</li>
+	<li>Array()</li>
+	<li>Object()</li>
+	<li>Function()</li>
+	<li>RegExp()</li>
+	<li>Date()</li>
+	<li>Error()</li>
+	<li>Symbol()</li>
+</ul>
+</div></div></section><section data-id="5e8d72b56401fc61b772f0d7cf0566ce"><div class="sl-block" data-block-type="text" style="width: 384px; left: 48px; top: 105px; height: auto;" data-block-id="b4a949dbc1cde0dd6e357e834049db8c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11;">
+<h2>Boxing</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 48px; top: 210px; height: auto;" data-block-id="58c41fe26ef0662a73386c7c3f086d65"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 12;">
+<p>Primitives can use methods of natives</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 528px; top: 105px; height: auto;" data-block-id="1b48dfb8057875400b75779d73baaaab"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 13;">
+<h2>Unboxing</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 528px; top: 210px; height: auto;" data-block-id="65965cf6b2d1093b7cf3d94be22e8e14"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 14;">
+<p>Getting underlying primitive from natives</p>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="00bde7b169ca538e58d658f11b7d07bd" style="min-width: 30px; min-height: 30px; width: 292px; height: 117px; left: 48px; top: 333px;"><div class="sl-block-content" style="z-index: 15;"><pre class="javascript"><code>var a = 'abc'
+
+a.length; // 3
+a.toUpperCase(); // "ABC"</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="a7947dcba024d16f277ae906a0cfa41d" style="min-width: 30px; min-height: 30px; width: 250px; height: 102px; left: 544px; top: 348px;"><div class="sl-block-content" style="z-index: 16;"><pre class="javascript"><code>var a = new String('abc');
+
+a; // [String: 'abc']
+a.valueOf(); // "abc"</code></pre></div></div></section><section data-id="8da890f586f70d788f0956b0175426aa"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="5fb3cc35484c382c7b54c7876f040cee"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h3><span style="color:#FFFF00">Avoid natives if there's no reason to use</span></h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 250px; height: auto;" data-block-id="c2ef899ed069ed434a9af66b833ff81b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>{} instead of new Object()</li>
+	<li>function foo () {...} instead of new Function("foo", "...")</li>
+	<li>[] instead of new Array()</li>
+</ul>
+</div></div></section><section data-id="7e1dc94847d5a77cc2e9b8fbd1c9c25d"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="4cf2783778646913de937121b1e85a64"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Coercion</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 182px; height: auto;" data-block-id="8144804c74971e390181e858a61ecef2"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+<em>Implicit</em> type conversion </li>
+	<li>type casting: explicit type conversion</li>
+	<li>Coercion is ended with primitives </li>
+	<li>toString, toBoolean, toNumber</li>
+	<li>loose equality (==) uses coercion</li>
+</ul>
+</div></div></section><section data-id="8ec847915d86aba6c4be726c9e3663d9"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="49b38685b3baae765e6763a033d62c82"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Grammar</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="f92f0a137ae4aeff636eb12392dff474"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>{..} =&gt; object or block scope</li>
+	<li>if / else if / else</li>
+	<li>Operator precedence</li>
+	<li>Automatic semicolon insertion (ASI)</li>
+	<li>try, catch, finally</li>
+	<li>switch</li>
+</ul>
+</div></div></section><section data-id="f0bf47f3bbe8c7417b334a717917ef33"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="454ec9ebd2355a2c1ef78aed713216cb"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Keep coding Javascript...</h1>
+</div></div></section>

@@ -1,0 +1,109 @@
+<section data-id="412e6cdc2099371fe1d8ed525dd921eb" data-background-image="/presentations/content/vf-javascript-scope-closure/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 238px; height: auto;" data-block-id="e18c955b74e3d02db4203f97d37f4426"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="color: rgb(103, 78, 167);">
+<h1>Javascript</h1>
+
+<p>Scope &amp; Closure</p>
+</div></div></section><section data-id="6d0ac44e46e14cb89a12e27b8a9af9c6" data-background-image="/presentations/content/vf-javascript-scope-closure/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="6449ac7c297cf1bd1c58d4115256c7bc"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>Contents</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="c924d802c5332f9ce8aca07704b20325"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<ul>
+	<li>Scope</li>
+	<li>Lexical scope</li>
+	<li>Function vs Block scope</li>
+	<li>Hoisting</li>
+	<li>Closure</li>
+</ul>
+</div></div></section><section data-id="ebabcf9cd4a06cd1cace0abb260a7c26" data-background-image="/presentations/content/vf-javascript-scope-closure/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 384px; left: 48px; top: 105px; height: auto;" data-block-id="8ea0f6273429b17e6dd35bb1351d6b25"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11; color: rgb(103, 78, 167);">
+<h2>Scope</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 48px; top: 210px; height: auto;" data-block-id="548ac8a4ab63ac409d2fe211607174dd"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 12; color: rgb(103, 78, 167);">
+<p>rules for variable look-up</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 204px; left: 676px; top: 140px; height: auto;" data-block-id="bc7ccbdbf254e2a11d3a5c4827cdeb74"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 13; color: rgb(103, 78, 167);">
+<h3>Errors</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 528px; top: 210px; height: auto;" data-block-id="25425c41072288655a1be76644eb3c8d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 14; color: rgb(103, 78, 167);">
+<p>Failed variable look-up =&gt; ReferenceError</p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="7f48e01e754c311970eb36cb259e17f2" style="min-width: 1px; min-height: 1px; width: 637px; height: 331px; left: 31px; top: 325px;"><div class="sl-block-content" style="z-index: 15;"><img style="" data-natural-width="720" data-natural-height="374" data-lazy-loaded="" data-src="/presentations/content/vf-javascript-scope-closure/assets/fa8eb57a62660ac5e159fec739cea274.png"></div></div>
+<div class="sl-block" data-block-type="shape" data-block-id="38e102ab2d318134f05967433b6af043" style="min-width: 4px; min-height: 4px; width: 609px; height: 350px; left: 31px; top: 315px;"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 10;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 609 350"><rect width="609" height="350" class="shape-element" fill="rgb(255, 255, 255)" rx="0" ry="0"></rect></svg></div></div></section><section data-id="9b8c98005c87c095450383b26ae51cc4" data-background-image="/presentations/content/vf-javascript-scope-closure/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 45px; height: auto;" data-block-id="cc631575e5dd51eece37747abf1ca90b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<h2>Lexical scope</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 146px; height: auto;" data-block-id="f5504c12b6b9d25ae6a6a930c4743ec9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(103, 78, 167);">
+<ul>
+	<li>lexical: relating to the vocabulary</li>
+	<li>scope defined by author-time decision</li>
+	<li>not dynamic (except eval &amp; with)</li>
+	<li><em>Do not use <strong><span style="color:#FF0000">eval</span></strong> and <strong><span style="color:#FF0000">with</span></strong></em></li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="57080ae66afce7b06a1db7805199a527" style="min-width: 1px; min-height: 1px; width: 521px; height: 179px; left: 39px; top: 350px;"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="671" data-natural-height="230" data-lazy-loaded="" data-src="/presentations/content/vf-javascript-scope-closure/assets/39636b071b4ef8e19fc6f095ecfc4437.png"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="a8bae55a8b3577fc44e78617528c1948" style="min-width: 1px; min-height: 1px; width: 672px; height: 101px; left: 251px; top: 560px;"><div class="sl-block-content" style="z-index: 14;"><img style="" data-natural-width="672" data-natural-height="101" data-lazy-loaded="" data-src="/presentations/content/vf-javascript-scope-closure/assets/1ecd90c57a852381316df7f99459b6a4.png"></div></div></section><section data-id="dbbc68fc56e87890d1fb64cf979b34bd" data-background-image="/presentations/content/vf-javascript-scope-closure/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 384px; left: 48px; top: 117px; height: auto;" data-block-id="65bc9798dd3725eecc7664cce873b95d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11; color: rgb(103, 78, 167);">
+<h3>Function scope</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 528px; top: 117px; height: auto;" data-block-id="0d8c6cb04adbee0094b7e1197ffc3c4b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 12; color: rgb(103, 78, 167);">
+<h3>Block scope</h3>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="989fe3cb4414c774d838add8226bae9e" style="min-width: 30px; min-height: 30px; width: 313px; height: 106px; left: 56px; top: 244px;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre><code>function haveScope (x) {
+  console.log(x)
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="43d419976630f651b269673a050a6798" style="min-width: 30px; min-height: 30px; width: 378px; height: 300px; left: 502px; top: 224px;"><div class="sl-block-content notranslate" style="z-index: 14;"><pre class="javascript"><code>{
+   // belongs to upper/global scope
+   var a = 'variable'
+}
+
+for (var i = 0; i &lt; 5; i++) {
+  console.log(i)
+} </code></pre></div></div></section><section data-id="a4dbd370178698dc206546f86245700f" data-background-image="/presentations/content/vf-javascript-scope-closure/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 91px; top: 115px; height: auto;" data-block-id="e2ea11469da538f99896a6937e0a9472"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<h3>Block scope with let &amp; const</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 225px; height: auto;" data-block-id="057bc129248b11a277816cae167b04c8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(103, 78, 167);">
+<ul>
+	<li>let &amp; const came with ES6</li>
+	<li>Disables hoisting</li>
+	<li>Good for garbage collection</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="33a65bf98511ebc36da4038311c9b05f" style="min-width: 30px; min-height: 30px; width: 436px; height: 217px; left: 262px; top: 382px;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre class="javascript"><code>{
+  console.log(a); // ReferenceError
+  console.log(b); // ReferenceError
+  let a = 5;
+  const b = {prop: 'value'};
+}</code></pre></div></div></section><section data-id="1e305ff000989673535846ba1f70b142" data-background-image="/presentations/content/vf-javascript-scope-closure/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 121px; height: auto;" data-block-id="9f1571634e537278dfa7800939c719a6"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<h2>Hoisting</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 210px; height: auto;" data-block-id="2ce85fddab740df4b5f4473f8fc9e0f8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(103, 78, 167);">
+<ul>
+	<li>Moving variable and function declarations to the top of the scope</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="a5a92fdb06eb87d8d1d7266cc8ba1c0a" style="min-width: 30px; min-height: 30px; width: 381px; height: 300px; left: 290px; top: 309px;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre class="javascript"><code>// 1 and 2 have same effect
+
+/* 1 */
+var a;
+console.log(a);
+a= 2;
+
+/* 2 */
+console.log(b);
+var b = 3; 
+
+
+</code></pre></div></div></section><section data-id="90f41f578590e6c2e0a73fe99c9d41c7" data-background-image="/presentations/content/vf-javascript-scope-closure/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 140px; height: auto;" data-block-id="18c6ffe9a8342302e0c2a4fad06e0a1d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<h2>Closures</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 233px; height: auto;" data-block-id="589b5d69151acb071db9e7a5d26fe4d7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(103, 78, 167);">
+<ul>
+	<li>Open access to scope for later use</li>
+	<li>Closures are already exist, you should learn to see</li>
+	<li>Provides keeping variables private</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="51fae91d846e9f63b90d9d6248fe1bba" style="min-width: 30px; min-height: 30px; width: 500px; height: 200px; left: 230px; top: 383px;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre class="javascript"><code>function addNumber(num) {
+    return function(anotherNum) {
+        return num + anotherNum;
+    }
+}
+
+var addTwo = addNumber(2);
+addTwo(3) // remembers num as 2 and returns 3</code></pre></div></div></section>

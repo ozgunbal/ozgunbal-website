@@ -1,0 +1,306 @@
+<section data-id="fc8dc446f47ee5df2b22905789269f04"><div class="sl-block" data-block-type="text" style="width: 714px; left: 123px; top: 183px; height: auto;" data-block-id="6f46ee5ca16ad03c777f64e3083e1578"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Object Oriented Javascript</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-93bf6c" data-block-id="d2f5ab67a9e218dc050f7e8a603f96d3" style="height: auto; width: 600px; left: 180px; top: 470.5px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<p>Özgün Bal</p>
+</div></div></section><section data-id="5bcf71fc70e8dc2327637192ae8ec34d"><div class="sl-block" data-block-type="image" data-name="image-de17e4" data-block-id="c185804ac2f2a0aaa91bf36859a1e65d" style="width: 368.84375px; height: 518px; left: 56.578125px; top: 91px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="319" data-natural-height="448" data-lazy-loaded="" data-src="/presentations/content/object-oriented-javascript/assets/fa92ed9a57b8c94bb86ee80f76223bbb.png"></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-29fdf9" data-block-id="c7f081f610302a62445a70e6250f6024" style="height: auto; width: 400px; left: 481px; top: 307px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<p><strong>github:</strong>  /ozgunbal</p>
+
+<p><strong>mail:</strong> ozgunbal@gmail.com</p>
+
+<p><strong>medium:</strong> @ozgunbal</p>
+</div></div></section><section data-id="8d1dae202a7d238f18f81e9dab8aed20"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="d77fd29c043846b3c2c2732bb88f3284"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Contents</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 78px; top: 263px; height: auto;" data-block-id="077bb56dd651b8eaf92d0d8c05aad951"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Object introduction</li>
+	<li>Constructor vs Instances</li>
+	<li>Prototypal Inheritance</li>
+	<li style="color:rgb(51, 51, 51)">"Class" in Javascript</li>
+	<li>Design patterns</li>
+	<li>References</li>
+</ul>
+</div></div></section><section class="stack" data-id="a8df14646d0397d2aa98931d68ac14cb"><section data-id="b358bb2998061695c4a399a4d76b9203"><div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 189px; height: auto;" data-block-id="13f9099cd23503166085cf119d7d2fa5"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Object</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="c5a9e2cde121abd02008c4683b6fdfe3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>can be created via Object literal or Object constructor
+	<ul>
+		<li> </li>
+	</ul>
+	</li>
+	<li>prefer object literal unless you have reasons</li>
+	<li>can take any data structure as a property 
+	<ul>
+		<li>number, string, boolean, array, function, object</li>
+	</ul>
+	</li>
+	<li>use "delete" for removing a property</li>
+	<li>mutable</li>
+	<li>copied by reference</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-c4952a" data-block-id="d2e99f7dcaf3e1d828136ddcfeb2ca2c" style="width: 506px; height: 50px; left: 203.5px; top: 306px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">const obj = {}; // Object literal
+const obj2 = new Object(); // Object constructor</code></pre></div></div></section><section data-id="70d8c038255af1d37d815c5b542d3a22"><div class="sl-block" data-block-type="image" data-name="image-3c409d" data-block-id="d52730414cb4a3d7d17636175e5217e3" style="width: 667.7333333333333px; height: 375.6px; left: 146.13333333333333px; top: 130px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="800" data-natural-height="450" style="" data-lazy-loaded="" data-src="/presentations/content/object-oriented-javascript/assets/8cdc1bf54df23714ef8a81103cfd9fff.gif"></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-aa202f" data-block-id="a951a0193a51ca5863dad3f30d0a7a02" style="height: auto; width: 600px; left: 180px; top: 540.5px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<p><span style="font-size:0.7em"><em>from Just Javascript - Dan Abramov and Maggie Appleton</em></span></p>
+</div></div></section><section data-id="e99c80101a48d1e1d1cc50fa0d4f4d2e"><div class="sl-block" data-block-type="text" data-name="text-aa202f" style="height: auto; width: 600px; left: 180px; top: 540.5px;" data-block-id="bfc3d42c5e1c74e721e0a9c3e886ecd1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+<p><span style="font-size:0.7em"><em>from Just Javascript - Dan Abramov and Maggie Appleton</em></span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-41e83c" data-block-id="5681c31e5881328a5c400451ae826b42" style="width: 783.2888888888889px; height: 440.6px; left: 88.3555555555555px; top: 59.69999999999999px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="800" data-natural-height="450" style="" data-lazy-loaded="" data-src="/presentations/content/object-oriented-javascript/assets/44d549b6a7a39f71b92f7fafc16946b9.gif"></div></div></section><section data-id="bb2c7dd706cfd11ca71efca0b6fc9f23"><div class="sl-block" data-block-type="text" data-name="text-aa202f" style="height: auto; width: 600px; left: 180px; top: 540.5px;" data-block-id="fc6bc8fdfb87832aa8719eb25c5be388"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+<p><span style="font-size:0.7em"><em>from Just Javascript - Dan Abramov and Maggie Appleton</em></span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-1c362a" data-block-id="9e24462e46cee543bc71b1cd08b926b1" style="width: 806.4px; height: 453.6px; left: 76.79999999999995px; top: 70px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="800" data-natural-height="450" data-lazy-loaded="" data-src="/presentations/content/object-oriented-javascript/assets/3db24b9c1ca050a70ffe8d00926d4205.gif"></div></div></section><section data-id="fc5c41ce0c349b692017b23bc466b116"><div class="sl-block" data-block-type="image" data-name="image-007fa7" data-block-id="329a957c345110a637945053a19920fe" style="width: 648.9777777777779px; height: 369.6708860759494px; left: 155.51111111111106px; top: 165.1645569620253px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="790" data-natural-height="450" style="" data-lazy-loaded="" data-src="/presentations/content/object-oriented-javascript/assets/f6a64b6d92dc4921487ffcb601650979.png"></div></div></section></section><section class="stack" data-id="3c081c2883a0bf4487c27e536456570f"><section data-id="c0c1a78701fc8aa6d287bdbbc452dd3f"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 109px; height: auto;" data-block-id="2d4b42550acab8d9e2b0c8610c4dcc2a"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Object (cont.)</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 200px; height: auto;" data-block-id="55c034ff1a31da035ec07ee35decb6c1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+<em><strong>this</strong></em> inside of object methods is that object                         (except call-site changes)</li>
+</ul>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<ul>
+	<li>common object methods
+	<ul>
+		<li>Object.keys()</li>
+		<li>Object.values()</li>
+		<li>Object.entries()</li>
+	</ul>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-c44349" data-block-id="ea0db1f41bd70e0da21cc74cdd2473c7" style="width: 455px; height: 133px; left: 255.5px; top: 287px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">const presenter = {
+  name: 'Özgün',
+  welcomeSpeech: function () {
+    console.log(`My name is ${this.name}`);
+  },
+};</code></pre></div></div></section><section data-id="73073420a8d159da6247f26b7b13655b"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="7868e831934c221dcfc5e9051fafde5f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Explicit call-sites</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="0212615da3f51cd694d797da44b7f7d9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>apply({}, [...]) -&gt; object, array of arguments</li>
+	<li>call({}, a, b, c) -&gt; object, comma-separated arguments </li>
+	<li>bind({}, args...)</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-a73f36" data-block-id="30d61adc14a349c302cd03d6ff8d2d80" style="width: 404.9555555555554px; height: 230.67088607594928px; left: 517.5222222222224px; top: 444.66455696202536px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="790" data-natural-height="450" style="" data-lazy-loaded="" data-src="/presentations/content/object-oriented-javascript/assets/f6a64b6d92dc4921487ffcb601650979.png"></div></div></section></section><section data-id="e5d13e656bfff303d1c32a779d7c5387"><div class="sl-block" data-block-type="text" style="width: 384px; left: 48px; top: 105px; height: auto;" data-block-id="b48bb2a3a822a230724f55299cee6802"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h2>Constructor</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 48px; top: 210px; height: auto;" data-block-id="c8b24f7831be625f457981808c32105f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11;">
+<ul>
+	<li>convention is <strong>PascalCase</strong> but not required</li>
+	<li>not different than regular function</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 528px; top: 105px; height: auto;" data-block-id="8f6eec039c1dbb6169398fd7996d3e61"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 12;">
+<h2>Instance</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 528px; top: 210px; height: auto;" data-block-id="9a6f7bf666a243e1ed33bdae6a9895b8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 13;">
+<ul>
+	<li>created with <em><strong>new</strong></em> keyword</li>
+	<li>can be checked via <em><strong>instanceof</strong></em>
+</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-c18ceb" data-block-id="04ce046814d0f80c50fcb6bb163463da" style="width: 458px; height: 135px; left: 11px; top: 387px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 14;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">function Presenter () {
+  this.name = name;
+  this.welcomeSpeech = function () {
+    console.log(`My name is ${this.name}`);
+  };
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-9d4486" data-block-id="adbb3a5c981182494e8c65454467705c" style="width: 442px; height: 70px; left: 497px; top: 393.5px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 15;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">const jsPresenter = new Presenter('Özgün');
+
+jsPresenter instanceof Presenter</code></pre></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-06488a" data-block-id="06df5280858595a29948ab38dc3e372e" style="width: 265.3888888888889px; height: 151.1708860759494px; left: 667.3055555555555px; top: 522px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 16;"><img style="" data-natural-width="790" data-natural-height="450" data-lazy-loaded="" data-src="/presentations/content/object-oriented-javascript/assets/f6a64b6d92dc4921487ffcb601650979.png"></div></div></section><section class="stack" data-id="be5528144a03cb0c6c5c254fcfdf3df6"><section data-id="9af1cdc67b65e5d4cea0c0c17a4eb33b"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="a5a9ba5b408dfa2e987870072a2c05f5"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Prototypal Inheritance</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="f85b6c0a9bf8afee44fd67da743bce08"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>behaviour delegation</li>
+	<li>inherits its prototype's properties</li>
+	<li>related methods &amp; properties:
+	<ul>
+		<li>Object.prototype.hasOwnProperty()</li>
+		<li>Object.prototype.isPrototypeOf()</li>
+		<li>Object.getPrototypeOf()</li>
+		<li>Object.prototype.constructor</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section data-id="51ec211779a38e350287b17d8d9b66ba"><div class="sl-block" data-block-type="code" data-name="code-4372a9" data-block-id="3f3ae72f3fb8a7911a8aa21f8681b61d" style="width: 896px; height: 310px; left: 32.00000000000006px; top: 125px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">function Stream (name) {
+  this.name = name;
+}
+
+Stream.prototype.hasPublicAccess = true;
+Stream.prototype.play = function () {
+  console.log(`${this.name} has${this.hasPublicAccess ? ' ' : ' not '}public access...`)
+};
+
+const youtube = new Stream('Youtube');
+youtube.play(); // Youtube has public access...
+youtube.hasPublicAccess; // true</code></pre></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-716440" data-block-id="ac4cfcecb0694b92b455c6dafed9ecdf" style="width: 349.0666666666668px; height: 198.83544303797476px; left: 545.4666666666666px; top: 490px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="790" data-natural-height="450" style="" data-lazy-loaded="" data-src="/presentations/content/object-oriented-javascript/assets/f6a64b6d92dc4921487ffcb601650979.png"></div></div></section></section><section data-id="d521de55eb1e20a47969f866f5a428a7"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 92px; height: auto;" data-block-id="04ee3ddafad579d35575346829dfdb46"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Sub-classes &amp; "class"</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 210px; height: auto;" data-block-id="f5a384e7214765bf6a4d1d413b655a1b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>make prototype connection with Object.create()</li>
+	<li><em><strong>__proto__</strong></em></li>
+	<li>
+<em><strong>class</strong></em> is only <a href="https://babeljs.io/repl#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&amp;build=&amp;builtIns=false&amp;spec=false&amp;loose=false&amp;code_lz=MYGwhgzhAECSAqBxArgT2gbwFDWsA9gHYQAuATssCfmQBSFgC2ApgJSY67QkAWAlhAB0DFtAC80EcwDcnXLwGCAJswAOYMiRaES46ACIE-2bgC-Wc1lCQYAEWYA3ZiHyrmZaMwAeJZoSUwCCjo2LgExOSU1HRS7BjQctAQyG4xTGwmXApCyIR8uhL6AMr4AGYkAO4azND2Ti6q2iTGnOamQA&amp;debug=false&amp;forceAllTransforms=false&amp;shippedProposals=false&amp;circleciRepo=&amp;evaluate=false&amp;fileSize=false&amp;timeTravel=false&amp;sourceType=module&amp;lineWrap=true&amp;presets=env%2Ces2015-loose%2Cenv&amp;prettier=false&amp;targets=&amp;version=7.11.6&amp;externalPlugins=" target="_blank">syntactic sugar</a>
+</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-3c8c18" data-block-id="25fb6dfbad5b30b66177d6bbd6163364" style="width: 547px; height: 305px; left: 0px; top: 350px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">function ITGuy(name) {
+  this.name = name;
+  this.department = "IT";
+}
+
+function Developer(name) {
+  ITGuy.call(this, name);
+  this.unit = "Software Development";
+}
+
+Developer.prototype = Object.create(ITGuy.prototype);
+Developer.prototype.constructor = Developer;</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-bc3807" data-block-id="94e13b2688e3c388e65f4c94c7d4f319" style="width: 413px; height: 305px; left: 547px; top: 350px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 13;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">class ITGuy {
+  constructor(name) {
+    this.name = name;
+    this.department = "IT";
+  }
+}
+
+class Developer extends ITGuy {
+  constructor(name) { 
+    super(name);
+    this.unit = "Software Development";
+  }
+}</code></pre></div></div></section><section class="stack" data-id="917645601aaa70ffa15d4c60f5565227"><section data-id="6cc670fc6731253219873907df8cb2b7"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="bf0816d85f05d0c65d7563709d6deacd"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Design Patterns</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="bbec807fedb02bfebbe2e27aea29262d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Constructor</li>
+	<li>Module / Revealing Module</li>
+	<li>Factory</li>
+	<li>Mixins</li>
+</ul>
+</div></div></section><section data-id="d8ef8445c924ae013bf6ebea48566c3b"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 103px; height: auto;" data-block-id="c251e9c3c5c2b4212d67ed5df4a0a63f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>constructor pattern</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-100db3" data-block-id="89debaf935341beb65510ad49bf9dd27" style="width: 441px; height: 176px; left: 19.5px; top: 210px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">function Furniture (type, color) {
+  this.type = type;
+  this.color = color;
+
+  this.paint = function (anotherColor) {
+    this.color = anotherColor;
+  }
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-ecaa80" data-block-id="e8be78c6c0aca03de34c8e6acef02f84" style="width: 555px; height: 173px; left: 362.5px; top: 437px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">function WhiteGoods (type, color) {
+  this.type = type;
+  this.color = color;
+}
+
+WhiteGoods.prototype.paint = function (anotherColor) {
+  this.color = anotherColor;
+};</code></pre></div></div></section><section data-id="50a11bdbce69da3fde256d25ade95a53"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 157px; height: auto;" data-block-id="39809d15741fd4232ce70ec0d55fa1e1"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>module/revealing module pattern</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-3b1364" data-block-id="7c2f631e77e97ea5ab2d58bdcf748fed" style="height: auto; width: 600px; left: 180px; top: 248.5px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>encapsulates private data</li>
+	<li>returns object</li>
+	<li>can be used as IIFE</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-e271a4" data-block-id="99db326ed439aace541d8f05b5734a50" style="width: 480px; height: 168px; left: 246px; top: 406px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">const multiplier = (mult = 2) =&gt; {
+  let count = 1;
+
+  return () =&gt; {
+    count *= mult;
+    return count;
+  }
+}</code></pre></div></div></section><section data-id="c0ff193a32a71755a953d51cadce31ec"><div class="sl-block" data-block-type="text" style="width: 806px; left: 37px; top: 70px; height: auto;" data-block-id="70059899a6e504b0cc9060a4885bd88b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Factory pattern</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 179px; height: auto;" data-block-id="06c81e834a8a0dd8aa99592c4492c753"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>creates different types of instances </li>
+	<li>easily extendable</li>
+	<li>might bring more complexity</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-55b7b4" data-block-id="edc873ebf115e91e0732d481e92d453b" style="width: 521px; height: 324px; left: 219.5px; top: 328px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">const StuffFactory = {
+  Stuff : function (stuffType) {
+    return Object.create(this.stuffs[stuffType]);
+  },
+  stuffs: {
+    whitegood: {
+      color: 'white',
+      electricity: true,
+    },
+    furniture: {
+      electricity: false,
+    },
+  },
+}</code></pre></div></div></section><section data-id="e2dc6c4d5e1619d18f89bad61f642c3a"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 53px; height: auto;" data-block-id="6ba3ec4e34436fe088f01c4a62967542"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Mixins</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 146px; height: auto;" data-block-id="32a80775d61240cf56402ee8847659df"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>reusable extender in simple</li>
+	<li>similar to React.js hooks</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-d99d87" data-block-id="16cbabe623ff8e17cad2e0c8251a8dc1" style="width: 448px; height: 434px; left: 256px; top: 238px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">function extend (obj, mixin) {
+  return Object.assign(obj, mixin);
+}
+
+myMixins = {
+  paint: function (newColor) {
+    this.color = newColor;
+  },
+}
+
+function Furniture(type, color) {
+  this.type = type;
+  this.color = color;
+}
+
+function WhiteGoods(type, color) {
+  this.type = type;
+  this.color = color;
+}
+
+extend(Furniture.prototype, myMixins)
+extend(WhiteGoods.prototype, myMixins);</code></pre></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03592b" data-block-id="76b83feda9f8a4dc14f976f41d2171fb" style="width: 211.8444444444443px; height: 120.67088607594928px; left: 729px; top: 569.6645569620254px;"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="790" data-natural-height="450" style="" data-lazy-loaded="" data-src="/presentations/content/object-oriented-javascript/assets/f6a64b6d92dc4921487ffcb601650979.png"></div></div></section></section><section data-id="33d1eb5bb15b8757d266965346853082"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="c46a1d0ce2d628039113cb60d6b76b7d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>References</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 78px; top: 263px; height: auto;" data-block-id="2f24c460bfb0f691547099ccf254f8a7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Kyle Simpson - You Don't Know Javascript</li>
+	<li>Udacity - Intermediate Javascript Nanodegree</li>
+	<li>MDN</li>
+	<li>Dan Abramov &amp; Maggie Appleton - Just Javascript</li>
+	<li>
+<span style="color:rgb(0, 0, 0); text-align:start">Marijn Haverbeke - </span>Eloquent Javascript</li>
+	<li>Addy Osmani - Learning JavaScript Design Patterns</li>
+</ul>
+</div></div></section><section data-id="4af631e8d3f10361676329be630862f1"><div class="sl-block" data-block-type="image" data-name="image-9f55f4" data-block-id="fe9e54eede87533eb7a906080063abe4" style="width: 723.2px; height: 376.6666666666667px; left: 118.39999999999998px; top: 161.66666666666666px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="960" data-natural-height="500" data-lazy-loaded="" data-src="/presentations/content/object-oriented-javascript/assets/da59a9c8ac8013c46c6f0379e98c15f2.png"></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-67cd9c" data-block-id="7f7504633153beafc55656d7022baa16" style="height: auto; width: 600px; left: 189px; top: 580px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<h3>Any questions?</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-5e5dda" data-block-id="86edaa980395aea310a64bb46342a6f6" style="height: auto; width: 600px; left: 180px; top: 66px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<h2>Thank you for listening</h2>
+</div></div></section>

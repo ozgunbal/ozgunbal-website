@@ -1,0 +1,23 @@
+{
+  "title": "React Hooks Migration",
+  "slug": "react-hooks-migration",
+  "description": "",
+  "date": "2019-12-02",
+  "tags": [],
+  "thumbnail": "/presentations/content/react-hooks-migration/assets/slides-thumbnail.png",
+  "theme": {
+    "font": "josefine",
+    "color": "grey-blue"
+  },
+  "revealConfig": {
+    "width": 960,
+    "height": 700,
+    "margin": 0.05,
+    "controls": true,
+    "progress": true,
+    "center": false,
+    "transition": "default",
+    "backgroundTransition": "convex",
+    "hash": true
+  }
+}

@@ -1,0 +1,210 @@
+<section data-id="d48407190bcc6c1e9a57244504ead1b1"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 280px; height: auto;" data-block-id="ebec82f21536e7f011d990c2b6889bbe"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Javascript Promises</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 408px;" data-block-id="dd58a6c815f9cb80b2c5c7214e1b3cd2"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<h3>Özgün Bal</h3>
+</div></div></section><section data-id="9d5d01304ca299e7fe6a42065f10a420"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="2cf652fa49793b242a59386c877b17e8"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Contents</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="1a3c37a66456f423399220baf749cfcf"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>What is Promise?</li>
+	<li>Callback vs Promise</li>
+	<li>Syntax</li>
+	<li>Chaining Promises</li>
+	<li>Promise methods</li>
+	<li>Async/Await <span style="color:#FF8C00">(ES7)</span>
+</li>
+</ul>
+</div></div></section><section data-id="14fd48b7fa7d085327bd34fa068a31aa"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 42px; height: auto;" data-block-id="cad82b7aa9e5abca8c0e4416735fa5e5"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1><span style="font-size:0.7em">Simple Analogy of Promises</span></h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 663px; height: 497px; left: 149px; top: 140px;" data-block-id="6b95927367a533b0f0b73082b081c2da"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1801" data-natural-height="1350" data-lazy-loaded="" data-src="/presentations/content/javascript-promises/assets/03829b542920e4e1e78db064af8d7cbe.png"></div></div></section><section data-id="9cd36b8b2b4f94e6da09b12ece97b79d"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 42px; height: auto;" data-block-id="095cf227ffe9baea372d4b5bb023936b"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1><span style="font-size:0.7em">Simple Analogy of Promises</span></h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 710px; height: 532px; left: 125px; top: 140px;" data-block-id="21f3811c3ced12c71fa6ef33b29a6878"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1801" data-natural-height="1350" data-lazy-loaded="" data-src="/presentations/content/javascript-promises/assets/888b00e6d2faef81da5a36d74167649f.png"></div></div></section><section data-id="36367f0c1359fa3a4c62cbd456527ced"><div class="sl-block" data-block-type="text" style="width: 384px; left: 48px; top: 105px; height: auto;" data-block-id="2418d39ecd89b97f7ff1644ed267cdaf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11;">
+<h2>Callbacks</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 48px; top: 210px; height: auto;" data-block-id="0629a20baa2f18c5211e79a19dcce2c5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 12;">
+<ul>
+	<li>A function for future call</li>
+	<li>Causes callback hell</li>
+	<li>Can be called too early</li>
+	<li>Can be not called</li>
+	<li>Can be called few or many times</li>
+	<li>Fail to pass along any necessary parameters</li>
+	<li>Swallow error/exceptions</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 528px; top: 105px; height: auto;" data-block-id="fbcb89c5d93c672f93c907a98b44d509"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 13;">
+<h2>Promises</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 408px; left: 504px; top: 210px; height: auto;" data-block-id="321db267782d31c8052c26116d80d9da"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 14;">
+<ul>
+	<li>Native type for future value</li>
+	<li>More structured way to handle asynchronous jobs</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 420px; top: 308px;" data-block-id="a726b8417812de74751ddd90e1f69271"><div class="sl-block-content" data-line-x1="40" data-line-y1="58" data-line-x2="141" data-line-y2="210" data-line-color="#f9cb9c" data-line-start-type="none" data-line-end-type="none" style="z-index: 15;" data-line-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="101" height="152" viewbox="40 58 101 152"><path class="line-element" fill="rgba(0,0,0,0)" stroke="#f9cb9c" stroke-width="5" d="M40 58 L141 210"></path><path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M40 58 L141 210"></path><path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15" d="M40 58 L141 210"></path></svg></div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 400px; top: 460px;" data-block-id="2262a241d1ccf9b3610c90e18e43180a"><div class="sl-block-content" data-line-x1="20" data-line-y1="170" data-line-x2="141" data-line-y2="30" data-line-color="#f9cb9c" data-line-start-type="none" data-line-end-type="none" style="z-index: 16;" data-line-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="121" height="140" viewbox="20 30 121 140"><path class="line-element" fill="rgba(0,0,0,0)" stroke="#f9cb9c" stroke-width="5" d="M20 170 L141 30"></path><path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M20 170 L141 30"></path><path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15" d="M20 170 L141 30"></path></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 354px; left: 480px; top: 441px;" data-block-id="a46376b5c113446268eeeb5007f43baa"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17;">
+<p>Solves these</p>
+</div></div></section><section data-id="c7180a8d9b584fabd131724b4465c6b0"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="542f37318444646ce2307e4d52b46c27"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Callback Hell</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 721px; height: 420px; left: 120px; top: 210px;" data-block-id="862e87ba14abeda4e73b1643aa7c219c"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="721" data-natural-height="420" data-lazy-loaded="" data-src="/presentations/content/javascript-promises/assets/47465cd9424a36e662d4a3dbc5c7a48d.jpg"></div></div></section><section data-id="4114be908c3e1de3ded1009295caa8b0"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="d52f8d3d74eb6c3f6666c674618729aa"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Downsides of callbacks</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 821px; height: 476px; left: 70px; top: 168px;" data-block-id="ea55b6dcad4705453c9eccf095ace9d9"><div class="sl-block-content notranslate" style="z-index: 12; border-width: 1px;"><pre class="javascript"><code>// Company A's API that you're using in your application
+function untrustedAPIMethod (paramX, paramY, callback) {
+  // 1 - If it is not actually asynchronous, may called too early
+  callback();
+  
+  // 2- Callback is not called at all due to buggy implementation
+  
+  // 3- Can be called more than needed
+  for(let i=0; i&lt; task.length; i++) {
+    callback();
+  }
+  
+  // 4- Fail to pass parameters
+  callback();
+  // or
+  callback(null); // instead of error first callback: callback(null, result)
+  
+  // 5- Swallow errors
+  const result = `I\'m not an arry type but .map() method 
+     is belong to Array.prototype`.map(letter =&gt; console.log(letter))
+  // Before callback, TypeError is throwed and and callback never called
+  callback(result);
+}</code></pre></div></div></section><section data-id="3fb2d961ec64c050cf9e2687c4f3b240"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 33px; height: auto;" data-block-id="76e23ea069da66ab03d6068137e6230b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Promise syntax</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 811px; left: 17px; top: 116px; height: auto;" data-block-id="547ea676a2f5203baf3b611450b8de82"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>Called with <span style="color:#FF8C00">new</span> to create one</li>
+	<li>Takes a function with two parameters</li>
+	<li>One for fulfillment, one for rejection of the desired task</li>
+	<li>Return a Promise object immediately</li>
+	<li>Not mutated, resolved once</li>
+	<li>Acquiring the value is done by <span style="color:#FF8C00">.then()</span>
+</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 865px; height: 278px; left: 48px; top: 375px;" data-block-id="2c2845598ae195766ae40a9c0393efd8"><div class="sl-block-content notranslate" style="z-index: 13;"><pre class="javascript"><code>const promise = new Promise(function(resolve, reject){
+  if (satisfiedCondition) {
+    resolve('Task is done');
+  } else {
+    reject('Error occured');
+  }
+})
+
+promise.then(function(data){
+  console.log(data) // prints 'Task is done' when promise is resolved
+}).catch(function(error){
+  console.log(error) // prints 'Error occured' when promise is rejected
+})</code></pre></div></div></section><section data-id="e931891f42b653bd199c47dd837e5f0b"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="082df8512096ef3512499d980d014f15"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Promise advantages</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="0c529e84295e6a7fb77a3f7311625566"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Can be called only <span style="color:#FF8C00">once</span>
+</li>
+	<li>
+<span style="color:#FF8C00">resolve()</span> and <span style="color:#FF8C00">reject()</span> takes only one parameter</li>
+	<li>Unhandled errors cause rejection</li>
+	<li>Always <span>asynchronous even with immediately resolved ones</span>
+</li>
+</ul>
+</div></div></section><section data-id="92f08b99cdac96f407bd520acc581044"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 42px; height: auto;" data-block-id="6eb6e89f1023ea29122eaf915a9f1cf0"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Can I use Promises?</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 916px; height: 427px; left: 22px; top: 182px; min-width: 1px; min-height: 1px;" data-block-id="0e0e18c098edb0f9d767764556e40db9"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1272" data-natural-height="593" data-lazy-loaded="" data-src="/presentations/content/javascript-promises/assets/37f010129855017c016eb8425f9710f6.png"></div></div></section><section data-id="782c65cfba9d27205111e632918215e3"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 42px; height: auto;" data-block-id="a6dcb4b61464badd5ac6b61d6854fe9b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Chaining Promises</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 500px; height: 300px; left: 230px; top: 184px;" data-block-id="c76adb9b9ce14e429e9ca054647e5d9a"><div class="sl-block-content notranslate" style="z-index: 12;"><pre class="javascript"><code>asyncFunc()
+  .then(result =&gt; {
+    return anotherAsyncFunc(result);
+  })
+  .then(chainResult =&gt; {
+    return chainResult.json();
+  })
+  .catch(error =&gt; {
+  console.log(error);
+  })</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 295px; left: 622px; top: 580px;" data-block-id="86628dcebb71704298cd076739338793"><div class="sl-block-style" style="z-index: 13; transform: rotate(352deg);"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<h2><span style="color:#00FF00">DEMO</span></h2>
+</div></div></div></section><section data-id="430dfc1895f5983a1adf4827e57fa479"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 66px; height: auto;" data-block-id="2f724f57e2ad7349ed430e55c6839afc"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Promise methods</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 170px; height: auto;" data-block-id="93a5ac71c3690092ca352e7b4ffe09ba"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Promise.resolve()</li>
+	<li>Promise.reject()</li>
+	<li>Promise.all()</li>
+	<li>Promise.race()</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 842px; height: 254px; left: 59px; top: 350px;" data-block-id="f8da8739707a8b70d2d23f55e4221630"><div class="sl-block-style" style="z-index: 12;"><div class="sl-block-content notranslate" style="z-index: 12;"><pre class="javascript"><code>// Immediately resolved promise object
+const resolved = Promise.resolve(5);
+
+// Immediately rejected promise object
+const rejected = Promise.reject('Oops');
+
+// Takes array of promises and resolves if all of them resolved otherwise rejects
+const allFulfilled = Promise.all([resolved, rejected]);
+
+// Returns first resolved/rejected promise in array of promises
+const raceOfPromises = Promise.race(promiseArray)</code></pre></div></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 295px; left: 644px; top: 593px;" data-block-id="32542db9a6547d87444309a279bd863b"><div class="sl-block-style" style="z-index: 14; transform: rotate(352deg);"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<h2><span style="color:#00FF00">DEMO</span></h2>
+</div></div></div></section><section data-id="2880ae4af1d05f07fc245d952f87a8f2"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="004ef40f9b71d0f460f3955426d5b483"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Async/Await</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 163px; height: auto;" data-block-id="d4a0b857bea6c30e6953b284d7d0622d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Better code</li>
+	<li>More readable</li>
+	<li>Uses new words: <span style="color:#FF8C00">async</span> and <span style="color:#FF8C00">await</span>
+</li>
+	<li>ES7 feature</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 405px; height: 140px; left: 518px; top: 372px;" data-block-id="b73226cd61e3354704328c8feab29021"><div class="sl-block-content notranslate" style="z-index: 12;"><pre class="javascript"><code>const makeRequest = async () =&gt; {
+  const value1 = await promise1()
+  const value2 = await promise2(value1)
+  return promise3(value1, value2)
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 368px; height: 300px; left: 56px; top: 350px;" data-block-id="0dd409d9e235c22199254ade53016563"><div class="sl-block-style" style="z-index: 13;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre class="javascript"><code>const value;
+promise1()
+  .then(value1 =&gt; {
+    value = value1
+    return promise2(value1);
+  })
+  .then(value2 =&gt;{
+    return promise3(value, value2);
+})</code></pre></div></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 295px; left: 644px; top: 593px;" data-block-id="c04a892c4a2c208cc9459b1de9c6de7c"><div class="sl-block-style" style="z-index: 15; transform: rotate(352deg);"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;">
+<h2><span style="color:#00FF00">DEMO</span></h2>
+</div></div></div></section><section data-id="4a44c783007e7aa277180cb2cd539861"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="83acf04d41c8d798ef769a52dd23b188"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Can I use Async/Await?</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 923px; height: 410px; left: 19px; top: 189px;" data-block-id="76a178b0576cf7a8949d782b87016a72"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1272" data-natural-height="565" data-lazy-loaded="" data-src="/presentations/content/javascript-promises/assets/9fe79e4db1116d493700863371f1477b.png"></div></div></section><section data-id="5852cab58aa7e3b8b36328f2a87fe6e3"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="b2f78f48b782f3dd7881d15d11ed8ae4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Useful Resources</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="ecb6b3bd050bae02b38ca99570dfab44"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>You Don't Know Javascript: Async &amp; Performance
+	<ul>
+		<li>https://github.com/getify/You-Dont-Know-JS</li>
+	</ul>
+	</li>
+	<li>Udacity - Javascript Promises
+	<ul>
+		<li>https://www.udacity.com/course/javascript-promises--ud898</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section data-id="fca0202335a8221b5774abfbcf309d65"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="7deba5ab566d276cf5c5ef00234fda73"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Thank you for listening</h1>
+</div></div></section>

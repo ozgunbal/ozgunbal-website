@@ -1,0 +1,23 @@
+{
+  "title": "Functional Programming in Javascript",
+  "slug": "functional-programming-in-javascript",
+  "description": "",
+  "date": "2020-09-29",
+  "tags": [],
+  "thumbnail": "/presentations/content/functional-programming-in-javascript/assets/slides-thumbnail.png",
+  "theme": {
+    "font": "josefine",
+    "color": "beige-brown"
+  },
+  "revealConfig": {
+    "width": 960,
+    "height": 700,
+    "margin": 0.05,
+    "controls": true,
+    "progress": true,
+    "center": false,
+    "transition": "slide",
+    "backgroundTransition": "slide",
+    "hash": true
+  }
+}

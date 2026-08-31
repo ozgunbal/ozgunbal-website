@@ -1,0 +1,23 @@
+{
+  "title": "Code Review Patterns",
+  "slug": "code-review-patterns",
+  "description": "",
+  "date": "2020-04-13",
+  "tags": [],
+  "thumbnail": "/presentations/content/code-review-patterns/assets/slides-thumbnail.png",
+  "theme": {
+    "font": "montserrat",
+    "color": "asphalt-orange"
+  },
+  "revealConfig": {
+    "width": 960,
+    "height": 700,
+    "margin": 0.05,
+    "controls": true,
+    "progress": true,
+    "center": false,
+    "transition": "slide",
+    "backgroundTransition": "slide",
+    "hash": true
+  }
+}

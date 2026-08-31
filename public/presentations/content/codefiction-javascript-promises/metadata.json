@@ -1,0 +1,23 @@
+{
+  "title": "Codefiction - Javascript Promises",
+  "slug": "codefiction-javascript-promises",
+  "description": "",
+  "date": "2018-01-05",
+  "tags": [],
+  "thumbnail": "/presentations/content/codefiction-javascript-promises/assets/slides-thumbnail.png",
+  "theme": {
+    "font": "sketch",
+    "color": "asphalt-orange"
+  },
+  "revealConfig": {
+    "width": 960,
+    "height": 700,
+    "margin": 0.05,
+    "controls": true,
+    "progress": true,
+    "center": false,
+    "transition": "slide",
+    "backgroundTransition": "slide",
+    "hash": true
+  }
+}

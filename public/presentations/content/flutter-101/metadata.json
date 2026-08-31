@@ -1,0 +1,23 @@
+{
+  "title": "Flutter 101",
+  "slug": "flutter-101",
+  "description": "",
+  "date": "2025-09-02",
+  "tags": [],
+  "theme": {
+    "font": "montserrat",
+    "color": "white-blue"
+  },
+  "revealConfig": {
+    "width": 960,
+    "height": 700,
+    "margin": 0.05,
+    "controls": true,
+    "progress": true,
+    "center": false,
+    "transition": "slide",
+    "backgroundTransition": "slide",
+    "hash": true
+  },
+  "thumbnail": "/presentations/content/flutter-101/assets/slides-thumbnail.png"
+}

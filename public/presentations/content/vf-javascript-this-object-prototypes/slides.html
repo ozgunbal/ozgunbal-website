@@ -1,0 +1,219 @@
+<section data-id="48986f4024cad4402c61efa74a9bbb65" data-background-image="/presentations/content/vf-javascript-this-object-prototypes/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 238px; height: auto;" data-block-id="f769a0b702ae87d169623c5fd9f76fde"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="color: rgb(103, 78, 167);">
+<h1>Javascript</h1>
+
+<p>this &amp; Object prototypes</p>
+</div></div></section><section data-id="58cf900c4dc717767c08d2953edd1158" data-background-image="/presentations/content/vf-javascript-this-object-prototypes/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="2275b4a02f1237544b030ef69a77d2ad"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>Contents</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="6af0c210ac5fd234ca54fabc4de30601"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<ul>
+	<li>What is <em>this</em> and what is not</li>
+	<li>Object</li>
+	<li>prototype</li>
+	<li>Inheritance in JS</li>
+</ul>
+</div></div></section><section data-id="2609ce128352b76c9b74c4229e53f35a" data-background-image="/presentations/content/vf-javascript-this-object-prototypes/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="71100e506bec07d5350469c6f2a6684e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<h2>Why we need <em>this?</em>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="b943ae108733d822b67024e7d44bc562"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(103, 78, 167);">
+<ul>
+	<li>Avoid passing context to functions</li>
+	<li>Use same function with different contexts (DRY)</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="29a402ac53618cbf59faa49617775229" style="min-width: 30px; min-height: 30px; width: 255px; height: 81px; left: 353px; top: 388px;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre><code>function increment() {
+    this.count++;
+}</code></pre></div></div></section><section data-id="1d11a5590560103aa9c2faa59b11985e" data-background-image="/presentations/content/vf-javascript-this-object-prototypes/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 384px; left: 48px; top: 105px; height: auto;" data-block-id="02cad45b668030bde6c3cfa2c52b8338"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; color: rgb(103, 78, 167);">
+<h3>What <em>this</em> is not</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 48px; top: 210px; height: auto;" data-block-id="671f243854dacec0af8563e9dd29fde4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11; color: rgb(103, 78, 167);">
+<ul>
+	<li>function itself</li>
+	<li>lexical scope</li>
+	<li>author-time binding</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 528px; top: 105px; height: auto;" data-block-id="55c261afb5306452417b7d5807bc1ae4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 12; color: rgb(103, 78, 167);">
+<h3>What <em>this </em>is</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 528px; top: 210px; height: auto;" data-block-id="5b547ec6dc395d0938cf2c206f5f3ccc"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 13; color: rgb(103, 78, 167);">
+<ul>
+	<li>run-time binding</li>
+	<li>binding of how function is called</li>
+</ul>
+</div></div></section><section data-id="7fae2dc6cb7ed6a59c12b5f0dc697666" data-background-image="/presentations/content/vf-javascript-this-object-prototypes/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 600px; left: 20px; top: 66px; height: auto;" data-block-id="6cf128e92be16fbd95db0faf691ffdb4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<h2>call-site</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 589px; left: 31px; top: 140px; height: auto;" data-block-id="2bde30b11dd4347eb73d09bd3d6d8ea1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(103, 78, 167);">
+<ul>
+	<li>Not where function is declared</li>
+	<li>Location of function is invoked</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="57a6893b1bf65ef3410968d1d9fb9936" style="height: auto; min-width: 30px; min-height: 30px; width: 310px; left: 160px; top: 315px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(103, 78, 167);">
+<p>bindings</p>
+
+<ul>
+	<li>default binding</li>
+	<li>implicit binding</li>
+	<li>explicit binding</li>
+	<li>
+<em>new</em> binding</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="f6e28c235dbdf7e3ab2aa764456abfec" style="min-width: 30px; min-height: 30px; width: 373px; height: 495px; left: 578px; top: 156px;"><div class="sl-block-content notranslate" style="z-index: 14;"><pre class="javascript"><code>function iHaveAThis () {
+    console.log(this.a);
+}
+
+var obj = {
+    a: 3,
+    foo: iHaveAThis
+}
+
+// default binding
+iHaveAThis();
+
+// implicit binding
+obj.foo();
+
+// explicit binding
+iHaveAThis.call(obj);
+
+// new binding
+function classish (a) {
+    this.a = a;
+}
+var classLike = new classish(3);
+console.log(classLike.a) // prints 3
+</code></pre></div></div></section><section class="stack" data-id="20ed9115bb79e676b2c4d227370f768e"><section data-id="cec85900cb9fd66ad0bb5468d7945900" data-background-image="/presentations/content/vf-javascript-this-object-prototypes/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="dca4d61a24173542b8afc8defedad5eb"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>What is <em>this</em>?</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 164px; height: auto;" data-block-id="d9d81abc2b0321aa5034c9252c6f2215"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<p>Precedence</p>
+
+<ul>
+	<li>Called with new binding?
+	<ul>
+		<li>newly constructed object</li>
+	</ul>
+	</li>
+	<li>Called with <em>call</em>, <em>apply</em>, <em>bind </em>(explicit binding)?
+	<ul>
+		<li>Explicitly specified object</li>
+	</ul>
+	</li>
+	<li>Called with context of an object (implicit binding)?
+	<ul>
+		<li>that context object</li>
+	</ul>
+	</li>
+	<li>Default binding?
+	<ul>
+		<li>global or window object</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section data-id="263fd6b25cce3c038eb85646149a85e3" data-background-image="/presentations/content/vf-javascript-this-object-prototypes/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="27e69bd3d35e6ecfe5b5b082b0deacbe"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<h2>ps: Lexical this</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="d735c9ffc5c1002b901005ebf4c249c7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(103, 78, 167);">
+<ul>
+	<li>ES6 =&gt; arrow function</li>
+	<li>Adopts <em>this</em> lexically (author-time)</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="bc1bfe2837aa0ffd705ac23bc86f2ef7" style="min-width: 30px; min-height: 30px; width: 321px; height: 234px; left: 320px; top: 356px;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre class="javascript"><code>var obj = {a : 3};
+
+function delay (ms) {
+    setTimeout(() =&gt; {
+        console.log(this.a);
+    }, ms);
+}
+
+delay.apply(obj, 2000);</code></pre></div></div></section><section data-id="f1319c94dfdbe714dfa8da447a1f9018" data-background-image="/presentations/content/vf-javascript-this-object-prototypes/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="e3526b9e059d55c240f8ed778f793aad"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2><span style="color:#0000CD">Always look the object where function is called, before dot!!</span></h2>
+</div></div></section></section><section data-id="dab0ff580ccbc23652f37172c3584f0e" data-background-image="/presentations/content/vf-javascript-this-object-prototypes/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 210px; height: auto;" data-block-id="2dcbbfdfa4f5a10ae0577cceb8414e22"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>Before the moving objects</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 76px; top: 356px; height: auto;" data-block-id="49c16ea1b6e75ff6d69597c767c75fa3"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<h2><span style="color:#0000CD"><em>it's demo time</em></span></h2>
+</div></div></section><section data-id="4c5f6b4fdb569350485d476d289a5a55" data-background-image="/presentations/content/vf-javascript-this-object-prototypes/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 384px; left: 48px; top: 105px; height: auto;" data-block-id="1e6dcc5ae1f6e8da3d3e4b0e6491d772"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; color: rgb(103, 78, 167);">
+<h3>primitives</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 48px; top: 210px; height: auto;" data-block-id="f9effed08f7897ef0e2f430f814f2873"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11; color: rgb(103, 78, 167);">
+<ul>
+	<li>string</li>
+	<li>number</li>
+	<li>boolean</li>
+	<li>undefined</li>
+	<li>null</li>
+	<li>object</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 528px; top: 105px; height: auto;" data-block-id="3985ca0e1aa566bd188ea5214dd42e11"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 12; color: rgb(103, 78, 167);">
+<h3>built-in objects</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 528px; top: 210px; height: auto;" data-block-id="5a0423a48c9a8314ada87ae48fdbc13b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 13; color: rgb(103, 78, 167);">
+<ul>
+	<li>String</li>
+	<li>Number</li>
+	<li>Boolean</li>
+	<li>Object</li>
+	<li>Function</li>
+	<li>Array</li>
+	<li>Date</li>
+	<li>RegExp</li>
+	<li>Error</li>
+</ul>
+</div></div></section><section data-id="ac4181e3e6c6bef4c6ad4ad70581155e" data-background-image="/presentations/content/vf-javascript-this-object-prototypes/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="89215595dfe8e50fc55d4553321fd7d2"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>Objects</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="69fa6d81faf315617ecf494681836119"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<ul>
+	<li>have properties</li>
+	<li>property descriptors
+	<ul>
+		<li>value,writable, configurable, enumerable</li>
+	</ul>
+	</li>
+	<li>have getter and setter</li>
+	<li>details: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object@MDN</a>
+</li>
+</ul>
+</div></div></section><section data-id="b0265e912855ae00b1d57a5f7030d18f" data-background-image="/presentations/content/vf-javascript-this-object-prototypes/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="acb2269b1ab80f7ab628e4c7cfb491f5"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>Classes in JS</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="a85822a2d689e54cfaad0c1f7b5cda19"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<ul>
+	<li>Actually there's <span style="color:#0000CD">NO</span> class</li>
+	<li>Even though <em>class </em>keyword in ES6, its syntatic sugar</li>
+	<li>Class means copying behaviour to instance</li>
+	<li>In JS, behaviours not copied between objects</li>
+</ul>
+</div></div></section><section data-id="01b1a7518b19dc71070a905aee59e951" data-background-image="/presentations/content/vf-javascript-this-object-prototypes/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="39d8efb4ed6606a9fd4dcccb654c0f38"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>prototype</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="44a1ebeac635b65eec8ffdf808cda72f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);" dir="ui">
+<ul>
+	<li>internal property of objects</li>
+	<li>reference to another object</li>
+	<li>Prototype chain
+	<ul>
+		<li>property look-up</li>
+	</ul>
+	</li>
+	<li>objects linked to common object's prototype instead of instances</li>
+	<li><span style="color:#0000CD"><em>prototypical inheritance</em></span></li>
+</ul>
+</div></div></section><section data-id="33cb08e985429d35592011baa13f91e2" data-background-image="/presentations/content/vf-javascript-this-object-prototypes/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="964b04dabda07442852f7f6f0f7aac45"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>Behaviour Delegation</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="a781495b9b83651f95801b7611b091cf"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<ul>
+	<li>If child don't have a value or method, delegates to parent's (linked object) prototype</li>
+	<li>Prevents copying same functions for all instances</li>
+</ul>
+</div></div></section><section data-id="41b2cbb762d606d6e70a4f5c76ce487f" data-background-image="/presentations/content/vf-javascript-this-object-prototypes/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="7d9ba829e6f34619b7d6777f2b997b59"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>If it's confusing, we'll continue to dig up Javascript</h2>
+</div></div></section>

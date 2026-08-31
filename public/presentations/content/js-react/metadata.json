@@ -1,0 +1,23 @@
+{
+  "title": "JS + React",
+  "slug": "js-react",
+  "description": "",
+  "date": "2020-03-10",
+  "tags": [],
+  "thumbnail": "/presentations/content/js-react/assets/slides-thumbnail.png",
+  "theme": {
+    "font": "news",
+    "color": "white-blue"
+  },
+  "revealConfig": {
+    "width": 960,
+    "height": 700,
+    "margin": 0.05,
+    "controls": true,
+    "progress": true,
+    "center": false,
+    "transition": "slide",
+    "backgroundTransition": "slide",
+    "hash": true
+  }
+}

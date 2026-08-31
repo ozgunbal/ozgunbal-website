@@ -1,0 +1,23 @@
+{
+  "title": "Git & Gitlab",
+  "slug": "git-and-gitlab",
+  "description": "",
+  "date": "2018-09-28",
+  "tags": [],
+  "thumbnail": "/presentations/content/git-and-gitlab/assets/slides-thumbnail.png",
+  "theme": {
+    "font": "montserrat",
+    "color": "beige-brown"
+  },
+  "revealConfig": {
+    "width": 960,
+    "height": 700,
+    "margin": 0.05,
+    "controls": true,
+    "progress": true,
+    "center": false,
+    "transition": "slide",
+    "backgroundTransition": "slide",
+    "hash": true
+  }
+}

@@ -1,0 +1,237 @@
+<section data-id="20c2ac308e3413fa55864e80d02d43a0"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 238px; height: auto;" data-block-id="228d5df475596ff057a649d5f70ca7fc"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Javascript</h1>
+
+<p>ES6</p>
+</div></div></section><section data-id="e433d1e3abf8d4fa2f78a77ee589f156"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="3a63a2b6ca52d68d6590774250ae9c2d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Contents</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 166px; height: auto;" data-block-id="cf3529857adba475b3800c7cbd112ed7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Block-scoped declarations  </li>
+	<li>Spread/rest</li>
+	<li>Default parameters</li>
+	<li>Destructuring</li>
+	<li>Object literals</li>
+	<li>Template literals</li>
+	<li>arrow functions</li>
+	<li>for...of</li>
+	<li>Symbol</li>
+	<li>Modules</li>
+	<li>Class</li>
+	<li>Collections</li>
+</ul>
+</div></div></section><section data-id="a481753a3232ee99a7cca7b863749cde"><div class="sl-block" data-block-type="text" style="width: 932px; left: 14px; top: 173px; height: auto;" data-block-id="78c79e3ceefd3e0ef705dcc438a428b5"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Block-Scoped Declaratıons</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 300px; height: auto;" data-block-id="85c329950dcc6659b60dcd5501922132"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>Not function but block scope</li>
+	<li>
+<strong>let </strong>&amp; <strong>const </strong>keywords</li>
+	<li>no hoisting</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="e41ccb78c7290dbb203fe0622313e1ab" style="min-width: 30px; min-height: 30px; width: 290px; height: 158px; left: 349px; top: 432px;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre><code>if(condition) {
+  let a = 5;
+  // ...
+}
+
+const numbers = [1,2,3,4];</code></pre></div></div></section><section data-id="e51dde232fb744449b805d5dd4542cb0"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="4b0f362029a347c95caa1591a65b4e59"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Spread/Rest</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="0c8da47c66e9e3fd286b3ac20aa4f3d7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>takes out array values out of array (spread)</li>
+	<li>combines values as an array (rest)</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="c9235eb38b214fe0e939d5caacef82e5" style="min-width: 30px; min-height: 30px; width: 379px; height: 190px; left: 301px; top: 370px;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre class="lsl"><code>console.log([1,2,3]) // [1,2,3]
+console.log(...[1,2,3]) // 1 2 3
+
+function resting (first, ...rest) {
+  console.log(first, rest);
+}
+
+resting(1,2,3,4);  // 1, [2,3,4]</code></pre></div></div></section><section data-id="18f173c54cbfe2aa25db5ccec4d28a4c"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="15eaf9034ee2b8a03bdf046b9b91f8f0"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Default parameters</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="2cd6e3bc6a13c9bf0e55959ce9755939"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>don't check values validity and assign default at the top of functions</li>
+	<li>specify defaults with parameters</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="54f04cdeb3397d99dc6541ddc25cfefe" style="min-width: 30px; min-height: 30px; width: 366px; height: 211px; left: 297px; top: 409px;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre class="lsl"><code>function oldStyle (a, b) {
+  a = a == undefined ? 3 : a;
+  b = b == undefined ? 4 : b;
+  console.log(a, b);
+}
+
+function newStyle (a = 3, b = 4) {
+  console.log(a, b);
+}</code></pre></div></div></section><section data-id="fffcf0ed3df00ed25314eb7011da6aef"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="9152961496fcfed65e7ead21e9462c8c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Destructurıng</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="e55178bc719f7603a1cdb9c3ca16f8ad"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>Takes out desired values from array or object</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="e714144ffa2117db1445721e562f1cef" style="min-width: 30px; min-height: 30px; width: 344px; height: 203px; left: 308px; top: 327px;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre class="lsl"><code>const [first, second] = [1, 2];
+
+const obj = {
+  x: 4,
+  y: 5
+};
+
+const {x, y} = obj;</code></pre></div></div></section><section data-id="dba4fc9b5930052494c8b35977ea2906"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 125px; height: auto;" data-block-id="b4a3ae1daa1d7993455c5195c8050b14"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Object lıterals</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 222px; height: auto;" data-block-id="07c05b3feb4e66524eaa432589ac7980"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>You can avoid naming keys of objects</li>
+	<li>Property is name of variable</li>
+	<li>Value of property is that variable's value</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="c6bf0e35259684029d76fd33793ea5ee" style="min-width: 30px; min-height: 30px; width: 160px; height: 284px; left: 400px; top: 356px;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre class="lsl"><code>const x= 5;
+const y=6;
+
+const obj = {
+  x,
+  y
+};
+
+// old way
+const obj2 = {
+  x: x,
+  y: y
+};</code></pre></div></div></section><section data-id="cc8742824855f255a9e138faf6bdb839"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="8920dc31236074b75a0cef784bc7820f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>template lıterals</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="1338d2d0a2aec779087c11d37a2431d9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>No need to concat strings with +</li>
+	<li>Multiline string support</li>
+	<li>Variables inside string more readable</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="3f637920ad46001a7dc8f7015cb6ed05" style="min-width: 30px; min-height: 30px; width: 315px; height: 122px; left: 323px; top: 405px;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre class="lsl"><code>const myNumber = 1;
+
+const lyric = `You're the one
+my number ${myNumber}`;</code></pre></div></div></section><section data-id="945892bcb663ef9487e892c368aba978"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="403b68ae2af723f55f9932129181ffde"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Arrow functıons</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="3ac95b4b10df135f56a846b54a8d1100"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>Simplify writing anonymous functions</li>
+	<li>For simple methods, write less</li>
+	<li>
+<strong>!!</strong> inherits upper scope's <em><strong>this</strong></em> <strong>!!</strong>
+</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="3954ec68172e6ea65ddc3adb7b4d8ec2" style="min-width: 30px; min-height: 30px; width: 316px; height: 129px; left: 322px; top: 401px;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre class="lsl"><code>const doublify = x =&gt; x * 2;
+
+setTimeout(() =&gt; {
+  console.log('Time is over');
+}, 100)</code></pre></div></div></section><section data-id="1e6dc12b65dd83189def8465981ed4eb"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="2adad117253957b0380417919124f066"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>for...of</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="02a092db0ed142331775931ca811c119"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>Gives values rather than index</li>
+	<li>Makes iteration easy</li>
+	<li>Not only for array, every Iterable object supports</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="47202d70e7c9d3228ea4ced30ee751f1" style="min-width: 30px; min-height: 30px; width: 337px; height: 174px; left: 312px; top: 403px;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre class="lsl"><code>let iterable = [10, 20, 30];
+
+for (const value of iterable) {
+  console.log(value);
+}
+// 10
+// 20
+// 30</code></pre></div></div></section><section data-id="3a360debbd7cc310a202cf003ba8ef39"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="a08b28c8681343334d6c33a67d81f6ea"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Symbol</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="351c7090c13a026fdee08f715fdbbd8d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>new primitive</li>
+	<li><em>"<span style="color:rgb(36, 41, 46); text-align:start">special, almost hidden, meta-like property</span>"</em></li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="d71d1c4ea37508c11ef12eaf7f736313" style="min-width: 30px; min-height: 30px; width: 500px; height: 178px; left: 230px; top: 369px;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre class="lsl"><code>var sym = Symbol( "some optional description" );
+
+sym instanceof Symbol;		// false
+
+var symObj = Object( sym );
+symObj instanceof Symbol;	// true
+
+symObj.valueOf() === sym;	// true</code></pre></div></div></section><section data-id="acf1b2b448406ce7682d3ef31ce79305"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="914c40a5dd0de8ea0b2d05139edcd971"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>MODULES</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="86c59be39a242d41510580d11f1e66c7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>CommonJS modules</li>
+	<li>ES6 modules</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="2d340468350ae155fd40710cae920509" style="min-width: 30px; min-height: 30px; width: 427px; height: 181px; left: 8px; top: 369px;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre class="lsl"><code>// CommonJs
+var dependency = require('./dependency');
+
+// ...
+
+module.exports = {
+  something: 42
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="0b3e3cb2252f2b18e9fa7b4c490f0b05" style="min-width: 30px; min-height: 30px; width: 392px; height: 156px; left: 509px; top: 369px;"><div class="sl-block-content notranslate" style="z-index: 14;"><pre class="lsl"><code>// Es6 modules
+import Dependency from './dependency';
+
+// ...
+
+export default { something: 42 };</code></pre></div></div></section><section data-id="7bc43b75cda20d3e4eab811a58e855e4"><div class="sl-block" data-block-type="text" style="width: 806px; left: 57px; top: 121px; height: auto;" data-block-id="717c2e0ab13d67c2629b36dff7bceddf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Class</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 202px; height: auto;" data-block-id="25daff7ca337cb3fc5185320410d3bf4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>syntatic sugar for prototypical inheritance</li>
+	<li>new keywords: <em>constructor, super, static, extends</em>
+</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="4033f0d28ce82fedc8897129ae42d637" style="min-width: 30px; min-height: 30px; width: 331px; height: 346px; left: 315px; top: 303px;"><div class="sl-block-content notranslate" style="z-index: 13;"><pre class="lsl"><code>class Parent {
+  constructor(x, y){
+    this.x = x;
+    this.y = y;
+  }
+}
+
+class Child extends Parent {
+  constructor(x,y,z) {
+    super(x,y);
+    this.z = z;
+  }
+ 
+  static getNameOfClass () {
+    return 'Child';
+  }
+}</code></pre></div></div></section><section data-id="d26dfdfdf908310bd19e1c2f6d8df261"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="5a8648eda562369850e8288828402bf3"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Collectıons</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="5c9dc07b3b4a3d332ffb3d9beef90d1e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Set, WeakSet</li>
+	<li>Map, WeakMap</li>
+</ul>
+</div></div></section><section data-id="4ded00af9f58862b8c44d52370cf7f64"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="db6703240485348035fa19bc6585a0c7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>ASYNC FLOW CONTROL</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="61bf85a056ac37e6ce065ded66f5f913"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Promise</li>
+	<li>Generator</li>
+</ul>
+</div></div></section><section data-id="38df21b100327aaa4a56c6f624f9b4ee"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="dd95e2ea4742bbde2c3da7332a184daa"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Many more apı addıtıons...</h1>
+</div></div></section>

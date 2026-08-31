@@ -1,0 +1,23 @@
+{
+  "title": "Javascript Intro",
+  "slug": "javascript-intro",
+  "description": "",
+  "date": "2018-04-03",
+  "tags": [],
+  "thumbnail": "/presentations/content/javascript-intro/assets/slides-thumbnail.png",
+  "theme": {
+    "font": "montserrat",
+    "color": "sky-blue"
+  },
+  "revealConfig": {
+    "width": 960,
+    "height": 700,
+    "margin": 0.05,
+    "controls": true,
+    "progress": true,
+    "center": false,
+    "transition": "slide",
+    "backgroundTransition": "slide",
+    "hash": true
+  }
+}

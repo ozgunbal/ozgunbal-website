@@ -1,0 +1,209 @@
+<section data-id="0d0f62a4a18e08fa7bc13d3358689d93"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 220px; height: auto;" data-block-id="7e1b9727a997aade8bfe8c63606c1664"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Asynchronous Javascript</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-dc807f" data-block-id="448a4f304c606272e3cb178f2f0e653a" style="height: auto; width: 600px; left: 180px; top: 451px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<p>Özgün Bal</p>
+</div></div></section><section data-id="5d9c51ff755272c35858e50f94b5306a"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="51e7e3b4d275addc55eb9b037d4d3f8a"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Contents</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="d33fd39b223f939c3dd67fcb37633859"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Why async?</li>
+	<li>Asynchronous behavior in JS</li>
+	<li>Callback vs Promise</li>
+	<li>Promise</li>
+	<li>Generator</li>
+	<li>Async/await</li>
+	<li>Observables</li>
+	<li>References</li>
+</ul>
+</div></div></section><section data-id="f0ec8b5d25d9af03bd71f00f2d8e84b4"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="822ee3fe13e1aed6915c665c9de1761e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Why async?</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="9db11cd85d5268852baccd18b803e0a3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>non-blocking execution</li>
+	<li>more performant/efficient</li>
+	<li>many modern languages have async logic</li>
+	<li>handling for long processes</li>
+</ul>
+</div></div></section><section class="stack" data-id="613fd8ed15106262b8bb3094138d7448"><section data-id="dcac5412c6c50fe5934d0e8bb45fdb4a"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="063f0fd88a90b0b4d8864180ebfb5cd7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Asynchronous Behavior</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="e4783cce81b7492a379ebc0ea1a967df"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Event Loop /Queue</li>
+	<li>Provides non-blocking execution</li>
+</ul>
+</div></div></section><section data-id="0e9a9b0fa115e64bfacddbb39fc19f1d"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="8f9334f598c26e77fc7f2807022b606d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;"><h1>Title Text</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-0eb920" data-block-id="5e1b1f2166a0084283961f731978e8e8" style="width: 806.4px; height: 444.024px; left: 76.80000000000001px; top: 127.988px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1600" data-natural-height="881" style="" data-src="/presentations/content/asynchronous-javascript/assets/d34b87454aa6496083119e661b488f7a.gif"></div></div></section></section><section class="stack" data-id="c303753117062666550f98e1c9935d65"><section data-id="f253d7206f2c75f4068f58bb2e91f568"><div class="sl-block" data-block-type="text" style="width: 384px; left: 48px; top: 105px; height: auto;" data-block-id="036a9de148716d941be053c4080cbdcf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h2>Callbacks</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 48px; top: 210px; height: auto;" data-block-id="e7edab244525604d9e28854cee2dd48b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11;">
+<ul>
+	<li>A function for future call</li>
+	<li>Causes callback hell</li>
+	<li>Can be called to early</li>
+	<li>Can be not called</li>
+	<li>Can be called few or many times</li>
+	<li>Fail to pass along any necessary parameters</li>
+	<li>Swallow error/exceptions</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 528px; top: 105px; height: auto;" data-block-id="b50bb68353ed491556a56cf90855540e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 12;">
+<h2>Promises</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 528px; top: 210px; height: auto;" data-block-id="e8e7f02214b6b46fb2291c0d03614a2d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 13;">
+<ul>
+	<li>Native type for future value</li>
+	<li>More structured way yo handle asynchronous job</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 427px; top: 318px;" data-block-id="c008331007961f86fe994247bbd4e7ec" data-name="line-84f3e9"><div class="sl-block-content" data-line-x1="40" data-line-y1="58" data-line-x2="141" data-line-y2="210" data-line-color="#f9cb9c" data-line-start-type="none" data-line-end-type="none" style="z-index: 14;" data-line-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="101" height="152" viewbox="40 58 101 152"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="40.5" y1="58.5" x2="141.5" y2="210.5"></line><line class="line-element" stroke="#f9cb9c" stroke-width="5" x1="40.5" y1="58.5" x2="141.5" y2="210.5"></line></svg></div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 407px; top: 470px;" data-block-id="a15486bfe3a3525dd4e61a46aa490571" data-name="line-0b02ee"><div class="sl-block-content" data-line-x1="20" data-line-y1="170" data-line-x2="141" data-line-y2="30" data-line-color="#f9cb9c" data-line-start-type="none" data-line-end-type="none" style="z-index: 15;" data-line-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="121" height="140" viewbox="20 30 121 140"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="20.5" y1="170.5" x2="141.5" y2="30.5"></line><line class="line-element" stroke="#f9cb9c" stroke-width="5" x1="20.5" y1="170.5" x2="141.5" y2="30.5"></line></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 354px; left: 477.5px; top: 451px;" data-block-id="e69e50565f936f2bb01b996d349a69a3" data-name="text-745afc"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16;">
+<p>Solves these</p>
+</div></div></section><section data-id="24ef2ee486b27b2d1bba2821299e0656"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="10bde96cad1ccb9325d3abdaf53bf6fa" data-name="text-1ed188"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Callback Hell</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 721px; height: 420px; left: 120px; top: 210px;" data-block-id="b857813c42466b19535c26799d3b9d22" data-name="image-a31bae"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="721" data-natural-height="420" data-lazy-loaded="" data-src="/presentations/content/asynchronous-javascript/assets/47465cd9424a36e662d4a3dbc5c7a48d.jpg"></div></div></section></section><section class="stack" data-id="b060daa240604e5a720ed8b126e7fdfa"><section data-id="1afba983be1d57a31cdd8add271f36ee"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 21.5px; height: auto;" data-block-id="e495c00afb3abb6fba94f5c2de0d66dc"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Promise</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 627.0148148148147px; height: 470px; left: 166.4925925925927px; top: 115px;" data-block-id="f70fe33bfbf7d91a8257c9a40304baa2" data-name="image-c31fb5"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1801" data-natural-height="1350" data-lazy-loaded="" data-src="/presentations/content/asynchronous-javascript/assets/03829b542920e4e1e78db064af8d7cbe.png"></div></div></section><section data-id="be2e2e3fde25786bbcff2871ca08bdd5"><div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 659.0325925925926px; height: 494px; left: 150.48370370370372px; top: 103px;" data-name="image-4a992b" data-block-id="478b9cc96e95585e1580255ac6284dbf"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1801" data-natural-height="1350" data-lazy-loaded="" data-src="/presentations/content/asynchronous-javascript/assets/888b00e6d2faef81da5a36d74167649f.png"></div></div></section><section data-id="a72c418b688c5dc775b0675c6a90dea2"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 33px; height: auto;" data-block-id="617a9fa77f146cb885a216074c078ba4" data-name="text-42492b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Promise syntax</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 811px; left: 17px; top: 116px; height: auto;" data-block-id="8b002d82696ac960de8fb8fdadf77b4c" data-name="text-64f0cb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Called with <span style="color:#FF8C00">new</span> to create one</li>
+	<li>Takes a function with two parameters</li>
+	<li>One for fulfillment, one for rejection of the desired task</li>
+	<li>Return a Promise object immediately</li>
+	<li>Not mutated, resolved once</li>
+	<li>Acquiring the value is done by <span style="color:#FF8C00">.then()</span>
+</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 865px; height: 278px; left: 48px; top: 375px;" data-block-id="45eeea4e682eed3054d43ea6a9705f0d" data-name="code-b63af8"><div class="sl-block-content notranslate" style="z-index: 12;"><pre class="javascript"><code>const promise = new Promise(function(resolve, reject){
+  if (satisfiedCondition) {
+    resolve('Task is done');
+  } else {
+    reject('Error occured');
+  }
+})
+
+promise.then(function(data){
+  console.log(data) // prints 'Task is done' when promise is resolved
+}).catch(function(error){
+  console.log(error) // prints 'Error occured' when promise is rejected
+})</code></pre></div></div></section><section data-id="b74ca61363dd7549494dde73a7b90bdc"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="9d6b28dda37ae8b9f28eec5795693d4b" data-name="text-13f258"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Promise advantages</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="fc46f5f3c1c83a098ca78f53becd479d" data-name="text-9377bf"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Can be called only <span style="color:#FF8C00">once</span>
+</li>
+	<li>
+<span style="color:#FF8C00">resolve()</span> and <span style="color:#FF8C00">reject()</span> takes only one parameter</li>
+	<li>Unhandled errors cause rejection</li>
+	<li>Always <span>asynchronous even with immediately resolved ones</span>
+</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-c35e81" data-block-id="8c31711d23a81822f033678057dd6c49" style="width: 243.2px; height: 138.53164556962025px; left: 678.4px; top: 491.4683544303798px;"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="790" data-natural-height="450" style="" data-src="/presentations/content/asynchronous-javascript/assets/f6a64b6d92dc4921487ffcb601650979.png"></div></div></section><section data-id="c84e85b11ca5eb102c66eff87b49a5f0"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 12px; height: auto;" data-block-id="4bdd7a0cd3c4bd47ca2912a908286ef7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Promise methods</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 86px; height: auto;" data-block-id="5330055922de6ffd00bd2454ede122c1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Promise.resolve<span style="color:rgb(51, 51, 51); text-align:left">()</span>
+</li>
+	<li>Promise.reject<span style="color:rgb(51, 51, 51); text-align:left">()</span>
+</li>
+	<li>Promise.all<span style="color:rgb(51, 51, 51); text-align:left">()</span>
+</li>
+	<li>Promise.race<span style="color:rgb(51, 51, 51); text-align:left">()</span>
+</li>
+	<li>Promise.allSettled<span style="color:rgb(51, 51, 51); text-align:left">()</span>
+</li>
+	<li>Promise.any()</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 919px; height: 366px; left: 20.5px; top: 334px;" data-block-id="79ea006add9dac55a7be0db32c759bf7" data-name="code-40f879"><div class="sl-block-style" style="z-index: 12;"><div class="sl-block-content notranslate" style="z-index: 12;"><pre class="javascript"><code>// Immediately resolved promise object
+const resolved = Promise.resolve(5);
+
+// Immediately rejected promise object
+const rejected = Promise.reject('Oops');
+
+// Takes array of promises and resolves if all of them resolved otherwise rejects
+const allFulfilled = Promise.all([resolved, rejected]);
+
+// Returns first resolved/rejected promise in array of promises
+const raceOfPromises = Promise.race(promiseArray);
+
+// // Takes array of promises and resolves when all of them either fulfilled or rejected
+const allSettled = Promise.allSettled(promiseArray);
+
+// Returns first fullfiled promise in array of promises
+const anyFulfilled = Promise.any(promiseArray);</code></pre></div></div></div></section></section><section data-id="22ca84a9d5e449609aa3bea73460aaf6"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="2b47344d0e29538d17420b1af9a214f9" data-name="text-789d31"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Generators</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="89bf23129bd2d296aa98103b251684b3" data-name="text-427210"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>
+<strong>yield</strong> keyword</li>
+	<li>python has also generators</li>
+	<li>Pausing execution of function</li>
+	<li>Increase iteration capabilities</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-a6b86a" data-block-id="633762df27e52437d43903024329364d" style="width: 280.3111111111112px; height: 159.6708860759494px; left: 659.8444444444444px; top: 512px;"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="790" data-natural-height="450" style="" data-src="/presentations/content/asynchronous-javascript/assets/f6a64b6d92dc4921487ffcb601650979.png"></div></div></section><section data-id="a3a2d040495f1f8f7c6c4e385cec55da"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 164px; height: auto;" data-block-id="5d55500a27721b11e61aabe215cb7567" data-name="text-b56144"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Async/Await</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 307px; height: auto;" data-block-id="321d16014039d515cd44838946022878" data-name="text-c5ee85"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li style="color:rgb(51, 51, 51)">Promise  + generator</li>
+	<li style="color:rgb(51, 51, 51)">Looks like sync but async</li>
+	<li>Better and readable code</li>
+	<li>Uses new words: <span style="color:#FF8C00">async</span> and <span style="color:#FF8C00">await</span>
+</li>
+	<li>ES7 feature</li>
+</ul>
+</div></div></section><section data-id="3488aa01c2832f0f235a65ca382b7e80"><div class="sl-block" data-block-type="text" style="width: 806px; left: 75.5px; top: 88px; height: auto;" data-block-id="43cd243bde5fbf5916e05fc691d35be1"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Observables</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 78.5px; top: 162px; height: auto;" data-block-id="464337b6089d6b9163aba0bd68822330"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Multiple value listening, sequence of data</li>
+	<li>Really just functions that throw values.</li>
+	<li>Declarative handling</li>
+	<li><a href="https://github.com/tc39/proposal-observable" target="_blank">ECMAScript Observable Proposal</a></li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-4f5765" data-block-id="1cd4e0dd7ffafe4bbaec80c882760391" style="width: 500px; height: 300px; left: 231.5px; top: 350px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre class="javascript" style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">import { Observable } from 'rxjs';
+ 
+const foo = new Observable(subscriber =&gt; {
+  console.log('Hello');
+  subscriber.next(42);
+});
+ 
+foo.subscribe(x =&gt; {
+  console.log(x);  // Hello \n 42
+});
+foo.subscribe(y =&gt; {
+  console.log(y);  // Hello \n 42
+});</code></pre></div></div></section><section data-id="ced79245ebd2122a047e76287e373fc3"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="7b41d3ecaf77902446b6ae9fb27b117c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>References</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 280px; height: auto;" data-block-id="19caf43f8851cd0caaf9eb0e1001ea04" data-name="text-64f769"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>Kyle Simpson - You Don't Know Javascript</li>
+	<li>Udacity - Intermediate Javascript Nanodegree</li>
+	<li>MDN</li>
+	<li>RxJS</li>
+</ul>
+</div></div></section><section data-id="1c35ef8ba4536b9b426b41eab2b6ef50"><div class="sl-block" data-block-type="text" data-name="text-67cd9c" style="height: auto; width: 600px; left: 189px; top: 580px;" data-block-id="297a070bc3e453bf433266ef367f1933"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+<h3>Any questions?</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-5e5dda" style="height: auto; width: 600px; left: 180px; top: 66px;" data-block-id="97d43dee7ef9988c736b5411b78a6149"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<h2>Thank you for listening</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-2c49d4" data-block-id="cb2928174e3c0d43af91f1ef09c313ee" style="width: 571.0500000000001px; height: 423px; left: 194.47499999999997px; top: 140px;"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1080" data-natural-height="800" data-src="/presentations/content/asynchronous-javascript/assets/6e588a4d9c2a2096566cf15365c75a0f.png"></div></div></section>

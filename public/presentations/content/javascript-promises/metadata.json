@@ -1,0 +1,23 @@
+{
+  "title": "Javascript Promises",
+  "slug": "javascript-promises",
+  "description": "",
+  "date": "2017-11-16",
+  "tags": [],
+  "thumbnail": "/presentations/content/javascript-promises/assets/slides-thumbnail.png",
+  "theme": {
+    "font": "sketch",
+    "color": "asphalt-orange"
+  },
+  "revealConfig": {
+    "width": 960,
+    "height": 700,
+    "margin": 0.05,
+    "controls": true,
+    "progress": true,
+    "center": false,
+    "transition": "slide",
+    "backgroundTransition": "slide",
+    "hash": true
+  }
+}

@@ -1,0 +1,186 @@
+<section data-id="7fae7bc10c8b22ab5d722e8f866e1387" data-background-image="/presentations/content/web-ci-cd-2023/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 238px; height: auto;" data-block-id="c8ce10194efccf825f22d18862ca1de2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<h1>CI/CD</h1>
+
+<h1>for Frontend Projects</h1>
+</div></div>
+</section><section data-id="0b39ff9e925c6b0879d4bc888d93ce56" data-background-image="/presentations/content/web-ci-cd-2023/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="fa03e9051b927c847d085fb3a09b2c27"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>Contents</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 167.956566px; height: auto;" data-block-id="5659cf792d90e6d9eff64b0b35d65405"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);"><ul>
+	<li>What is CI/CD?</li>
+	<li>Continuous Integration</li>
+	<li>Continuous Delivery</li>
+	<li>Advantages of CI/CD</li>
+	<li>Responsibility: Developers or DevOps?</li>
+	<li>CI Tools</li>
+	<li>Frontend deployment variations</li>
+	<li>Best practices</li>
+	<li>Integrations</li>
+	<li>Useful tools</li>
+	<li>Q &amp; A</li>
+</ul></div></div></section><section data-id="634802800a220004cb104b32c0e21c1d" data-background-image="/presentations/content/web-ci-cd-2023/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 19px; height: auto;" data-block-id="0ac8451d6f877b6a29033ccc1ba23183"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>What is CI/CD?</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 154.670925px; height: auto;" data-block-id="c24a7fefb61459de6b5a44fece1f9eb6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);"><ul>
+	<li>Abbreviation of Continuous Integration and Continuous Delivery (or Deployment)</li>
+	<li>A stage of application development</li>
+	<li>Enforces automation
+	<ul>
+		<li>building</li>
+		<li>testing</li>
+		<li>deployment</li>
+		<li>monitoring</li>
+	</ul>
+	</li>
+</ul></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-57ea63" data-block-id="9892188e7b274f3db6392d2854952b30" style="width: 483px; height: 308px; left: 400px; top: 301px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="483" data-natural-height="308" data-lazy-loaded="" data-src="/presentations/content/web-ci-cd-2023/assets/bfee1040dc5d1654dfafdf9ebbed2887.svg"></div></div></section><section data-id="d46e64f913de3ae9eb5fa5e027c8e4f7" data-background-image="/presentations/content/web-ci-cd-2023/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 71px; height: auto;" data-block-id="4fdc5c1bc3cd8a5fe5028a6c96f46a47"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>Continuous Integration</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 466.705161px; left: 77px; top: 264px; height: auto;" data-block-id="d7e2ee7df192cc90ce2d1fa5ead2719a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);"><ul>
+	<li>Source Control (Github, Gitlab, BitBucket, Azure Repos etc.)</li>
+	<li>Build</li>
+	<li>Test (unit, integration, e2e)</li>
+	<li>Report (Pass &amp; Fail)</li>
+	<li>Agent is responsible to execute the steps</li>
+	<li>It can be used without CD</li>
+</ul></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-f94ed5" style="width: 371.349018px; height: 318.431783px; left: 560px; top: 360.84415px; min-width: 1px; min-height: 1px;" data-block-id="040309ef9990ea84192a6678eb61ea1e"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="800" data-natural-height="686" data-lazy-loaded="" data-src="/presentations/content/web-ci-cd-2023/assets/56ac6ca1ee2b0f735ade7ff0613b2545.png"></div></div></section><section data-id="cd799e397287a7bcacb6d95c2c0ef4d9" data-background-image="/presentations/content/web-ci-cd-2023/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 155px; height: auto;" data-block-id="9c2413a461c0dd6b56cb7846d4172bf5"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11; color: rgb(103, 78, 167);"><h2>Continuous Delivery</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 78px; top: 263px; height: auto;" data-block-id="2c79816e1a855e8a70e11248cbbb32f6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(103, 78, 167);"><ul>
+	<li>Automation</li>
+	<li>Managing environments is easier</li>
+	<li>It can be applicable for any time</li>
+	<li>Eliminates human intervention</li>
+	<li>It can't be used CD without CI </li>
+</ul></div></div>
+</section><section data-id="7ccd3c9559c641408cbd610da79687b0" data-background-image="/presentations/content/web-ci-cd-2023/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 103px; height: auto;" data-block-id="d4474d7f684d3ab0e440a234726784ab"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>Advantages of CI/CD</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 244.582524px; height: auto;" data-block-id="43c7399d8b0cc97e93b53b972efef044"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);"><ul>
+	<li>Easy to collaborate with multiple developers</li>
+	<li>Better DX (Developer experience)</li>
+	<li>Reduce risks (fails early)</li>
+	<li>Better code quality</li>
+	<li>Shorter review time
+	<ul>
+		<li>Static code quality checks (eslint, stylelint etc.)</li>
+		<li>Semantic assessments might be supported by AI</li>
+	</ul>
+	</li>
+	<li>Measurable progress (built times, release frequency etc.)</li>
+</ul></div></div></section><section data-id="3866c1be5036ea71f81eb805a024d413"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 20px; height: auto;" data-block-id="73991d3b3e7972bfa09706b172f10793"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>Responsibility:</h2>
+
+<h2>Developers or Devops?</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 244.582524px; height: auto;" data-block-id="e9b2d88162782f57fe45e75fcd485e6f" data-name="text-0d7e5e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);"><ul>
+	<li>At minimum, developer team should decide their requirements</li>
+	<li>Application developers know their own build environment and necessities</li>
+	<li>At most tools, pipeline configs stay inside source control (Jenkinsfile, gitlab-ci.yml, azure-pipelines.yml, Dockerfile)</li>
+	<li>Installations, upgrades, domain and network configs are not managed by developer team</li>
+</ul></div></div></section><section data-id="5d20f11af521308f70f4458ce42fbee9" data-background-image="/presentations/content/web-ci-cd-2023/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 70px; height: auto;" data-block-id="33f279b4378f367c7d1cd361560b65eb"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>CI Tools</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 210px; height: auto;" data-block-id="9399ffe1552ab0bc53c7dbea62139550"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);"><ul>
+	<li>Gitlab CI/CD</li>
+	<li>Jenkins</li>
+	<li>Bamboo</li>
+	<li>Azure Pipelines</li>
+	<li>Bitbucket Pipelines</li>
+	<li>Github Actions</li>
+	<li>Jetbrains Teamcity</li>
+</ul></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-e0a813" data-block-id="f0674ba3fb84cf129d95db9a9e888d2d" style="height: auto; width: 600px; left: 180px; top: 572.70746px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;"><p><em>They might be cloud-based or on-premises</em></p></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-fe3ba9" data-block-id="966afcde933ad7ee0759651b3d8a9ee9" style="width: 124.232633px; height: 138.848237px; left: 55.767367px; top: 74.575882px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 13;"><img class="" data-natural-width="340" data-natural-height="380" data-lazy-loaded="" data-src="/presentations/content/web-ci-cd-2023/assets/db3e6bf8cc2f615fe4359c94a6e2e245.png"></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-11b521" data-block-id="25f443318869f6540fe19c5e80747a76" style="width: 116.035953px; height: 160.384773px; left: 763.964047px; top: 133.231733px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 14;"><img class="" data-natural-width="191" data-natural-height="264" data-lazy-loaded="" data-src="/presentations/content/web-ci-cd-2023/assets/5da4a0659c516187b2dec8bfb8068207.png"></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-f77e9f" data-block-id="1d40d97c5ed08174fe19fb999a5de690" style="width: 126px; height: 126px; left: 817px; top: 504px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 15;"><img class="" data-natural-width="400" data-natural-height="400" data-lazy-loaded="" data-src="/presentations/content/web-ci-cd-2023/assets/d60d644818da62235b48a71771d9e4fd.png"></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-3e8295" data-block-id="332c2dc7a3173a5aacb66ba8ad65c5fc" style="width: 105px; height: 105px; left: 27.5px; top: 483px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 16;"><img class="" data-natural-width="225" data-natural-height="225" data-lazy-loaded="" data-src="/presentations/content/web-ci-cd-2023/assets/b18cdb4c2beeb4296e5712f5d1ba247b.png"></div></div></section><section class="stack" data-id="e7241c8ecf321712045f87fb66d16f84"><section data-id="714c42bba838c3da063643592e06f793" data-background-image="/presentations/content/web-ci-cd-2023/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 66px; height: auto;" data-block-id="f918345ef12065d5deaf7d8d3256f870"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>Frontend Deployment variations</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 268.5px; height: auto;" data-block-id="e76bf4b95e9ee38d811911795ff1b2aa"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);"><ul>
+	<li>Single Page Application
+	<ul>
+		<li>old school ftp copy (manual)</li>
+		<li>http server(apache, nginx) + asset copy</li>
+		<li>dockerized (asset + nginx conf)</li>
+	</ul>
+	</li>
+	<li>SSR
+	<ul>
+		<li>node on server + copy build folder</li>
+		<li>dockerized version</li>
+	</ul>
+	</li>
+</ul></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-9f044a" data-block-id="397b7f12b816fcc3c0f049741167df90" style="height: auto; width: 669.494124px; left: 142.252938px; top: 603.346193px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;"><p><em>*builds might be on agent itself or docker image</em></p></div></div></section><section data-background-image="/presentations/content/web-ci-cd-2023/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="4a6428b92c0fede112b133bfb532b29f"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 66px; height: auto;" data-block-id="8a78041db70b1c6c2a9a6a276998a59e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>Case 1</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 210px; height: auto;" data-block-id="7788a398cb5132b94e04bfdb88a3761b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);"><ul>
+	<li>Source Control: Gitlab</li>
+	<li>CI Tool: Jenkins
+	<ul>
+		<li>Config is at the repository: Jenkinsfile</li>
+		<li>Checkouts at MR's -&gt; build status</li>
+		<li>Automatic deploy for dev merge</li>
+		<li>Manual trigger for test, uat, prod</li>
+	</ul>
+	</li>
+	<li>Docker images with versions stored at Nexus</li>
+	<li>Relevant environment pulls and runs container</li>
+	<li>Same container can be run with different environment variables for different environments</li>
+</ul></div></div></section><section data-background-image="/presentations/content/web-ci-cd-2023/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="eb7eef47d9151db221b33996c58d9496"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 66px; height: auto;" data-block-id="9332e2ca1b8b623fe65f23bed2c046e9"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>Case 2</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 268.5px; height: auto;" data-block-id="4c3ab5fef79b5d19595b7c80624734b5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);"><ul>
+	<li>Source Control: Gitlab</li>
+	<li>CI Tool: Bamboo
+	<ul>
+		<li>Config is at the Bamboo UI</li>
+		<li>Checkouts at MR's -&gt; build status stayed at Bamboo</li>
+	</ul>
+	</li>
+	<li>Build artifacts are stored (assets, scripts etc.)</li>
+	<li>Assets are sent to http server via sftp</li>
+</ul></div></div></section><section data-background-image="/presentations/content/web-ci-cd-2023/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="58456b0f0094e4151f20741ac0ef6bf7"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 66px; height: auto;" data-block-id="c73441b2fdaffe71ae895f649f40bc5f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>Case 3</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 268.5px; height: auto;" data-block-id="5745b7efa44b2929492b3f93cc57d546"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);"><ul>
+	<li>Source Control: Gitlab</li>
+	<li>CI Tool: Jenkins
+	<ul>
+		<li>Config is at the repository: Jenkinsfile</li>
+		<li>Checkouts at MR's -&gt; build status</li>
+	</ul>
+	</li>
+	<li>npm package is published to Gitlab package registry</li>
+</ul></div></div></section><section data-background-image="/presentations/content/web-ci-cd-2023/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="6bd15cc20d6fd5747bbd8aee4293f3c4"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 66px; height: auto;" data-block-id="99b645ee2520632d9b4826581896ba9c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>Case 4</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 268.5px; height: auto;" data-block-id="09ec06a5693618617c8608cf9df1a29f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);"><ul>
+	<li>Source Control: Gitlab</li>
+	<li>CI Tool: None</li>
+	<li>CD:
+	<ul>
+		<li>Code push to mirror repo on Azure Repos</li>
+		<li>Build &amp; Deploy config at the Azure Pipelines UI</li>
+	</ul>
+	</li>
+</ul></div></div></section></section><section class="stack" data-id="ef92dc4d78fb0acf042bc1fc8c168567"><section data-background-image="/presentations/content/web-ci-cd-2023/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="d0b574e8e8cd7b2f27d9a7befaaae4ab"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 66px; height: auto;" data-block-id="bc081058ef9c73107795916955398be8"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>Best Practices</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 210px; height: auto;" data-block-id="a026b327f1a75b210e0bee7f99321e7c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);"><ul>
+	<li>Localization update</li>
+	<li>Codegen integration</li>
+	<li>PR or MR pass/fail status</li>
+	<li>Typescript checks</li>
+	<li>npm package updates</li>
+	<li>npm audit</li>
+</ul></div></div></section><section data-background-image="/presentations/content/web-ci-cd-2023/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="7b1f41ac2f59cc8581b6858e62a2e0a4"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 66px; height: auto;" data-block-id="b6d1396ee605cc0fc4fdac46f24e6d68"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>Best Practices <em>(cont.)</em>
+</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 210px; height: auto;" data-block-id="ffc873d0bd64ef03f0690f3c6bdb6db5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);"><ul>
+	<li>Dockerized applications (more control over underlying technologies)</li>
+	<li>Versioning and easy rollback</li>
+	<li>Handling environment variables</li>
+	<li>Reduce built times with caching (on-premises)</li>
+	<li>Review Apps*</li>
+</ul></div></div></section><section data-background-image="/presentations/content/web-ci-cd-2023/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="b19ad4e70e294dd67a94ada17b4e7e96"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 66px; height: auto;" data-block-id="c63e3caefe9ca144329d8c34742681d7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>Review Apps</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-1528a6" data-block-id="82bb197219411a9a6b6f29523feec001" style="width: 465.138257px; height: 297.25396px; left: 247.430872px; top: 170.713848px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="467" data-natural-height="298" data-lazy-loaded="" data-src="/presentations/content/web-ci-cd-2023/assets/23307c1cdc0a79d53271c51a4d5ea3cb.svg"></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-986d0d" data-block-id="a4fb5ec1c5589238fc84b80579aa3bd1" style="width: 806.4px; height: 129.207273px; left: 76.6px; top: 490px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="880" data-natural-height="141" data-lazy-loaded="" data-src="/presentations/content/web-ci-cd-2023/assets/1a8a0bfe0d0bf981572c812e5b6d5c13.png"></div></div></section></section><section data-background-image="/presentations/content/web-ci-cd-2023/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="b987e2b6b72dcce0324aed2532e4c67d"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 66px; height: auto;" data-block-id="896e9b20087f23efebd1707e3840172e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>Integrations</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 210px; height: auto;" data-block-id="4804dcfc34b5910d040b8bbb61801107"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);"><ul>
+	<li>Deployment Notifications (Teams, e-mail etc.)</li>
+	<li>Pipeline fail notifications</li>
+	<li>Task status changes (JIRA, Azure Boards, Gitlab Issues) </li>
+</ul></div></div></section><section data-background-image="/presentations/content/web-ci-cd-2023/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="10ad684cdc1d2d0b0b135f09928e3d57"><div class="sl-block" data-block-type="text" style="width: 806px; left: 78px; top: 66px; height: auto;" data-block-id="86a74e1cf2a071b078c7ce57d51e40bf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>Useful tools</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 210px; height: auto;" data-block-id="8d54ad6e1b700be423432bd05f88296a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);"><ul>
+	<li>Nginx (http server)
+	<ul>
+		<li>Proxying</li>
+	</ul>
+	</li>
+	<li>Docker</li>
+	<li>Pm2 (node process manager)</li>
+	<li>Kubernetes (rancher, lens)</li>
+	<li>Nexus</li>
+	<li>Gitlab (Package &amp; container registries)</li>
+</ul></div></div></section><section data-id="4d3f7c792c6652183f62cdf1a4577b90"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 280px; height: auto;" data-block-id="e96146b96ba071d96c091e2d73c1306c"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h1>
+<span style="font-size:0.7em">?</span><span style="font-size:0.9em">?</span>? Q &amp; A ?<span style="font-size:0.9em">?</span><span style="font-size:0.7em">?</span>
+</h1></div></div></section><section data-id="3094cb983879bc50674287d64d28e418"><div class="sl-block" data-block-type="text" style="width: 806px; left: 76px; top: 266px; height: auto;" data-block-id="1f568dd52ec074a3fb277c73ca64b7e9"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h1>Thank you for listening</h1></div></div></section>

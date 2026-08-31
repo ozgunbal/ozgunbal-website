@@ -1,0 +1,23 @@
+{
+  "title": "Javascript - Types & Grammar",
+  "slug": "javascript-types-grammar",
+  "description": "",
+  "date": "2018-04-26",
+  "tags": [],
+  "thumbnail": "/presentations/content/javascript-types-grammar/assets/slides-thumbnail.png",
+  "theme": {
+    "font": "montserrat",
+    "color": "black-mint"
+  },
+  "revealConfig": {
+    "width": 960,
+    "height": 700,
+    "margin": 0.05,
+    "controls": true,
+    "progress": true,
+    "center": false,
+    "transition": "slide",
+    "backgroundTransition": "slide",
+    "hash": true
+  }
+}

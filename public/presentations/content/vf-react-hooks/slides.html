@@ -1,0 +1,181 @@
+<section data-id="f6c532aac7e4490160009cba5c4f3277" data-background-image="/presentations/content/vf-react-hooks/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 280px; height: auto;" data-block-id="32c5d5a48c7e44cd34cdc4f4a2bfb64d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="color: rgb(103, 78, 167);">
+<h1><strong><span style="font-size:1.2em">React Hooks</span></strong></h1>
+</div></div></section><section data-id="09e5cfffba526a281c5242130a9795f6" data-background-image="/presentations/content/vf-react-hooks/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="d43da748ae86f3acae131524c9ef2245" data-name="text-14754f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>Contents</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="201774188f9795b98f3846abd3acde0a" data-name="text-53283e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<ul>
+	<li>Stateful component comparisons throughout versions</li>
+	<li>React hooks in general</li>
+	<li>Lifecycle comparison btw class and hooks</li>
+	<li>Advantages</li>
+	<li>Hook Migration</li>
+	<li>Redux Hooks</li>
+	<li>React Router Hooks</li>
+</ul>
+</div></div></section><section class="stack" data-id="9ed12adde203b4a2955c1527090360c0"><section data-id="7c43226f2006dc452d9123cbc8c937f4" data-background-image="/presentations/content/vf-react-hooks/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="e2353e486d4750970af35c2766160885" data-name="text-96aa16"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h3>React Component before ES6</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 790px; left: 85px; top: 591px;" data-block-id="27bff094f3feea75d07e8232c06142ac" data-name="text-25ff65"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<p><span style="font-size:0.9em"><strong>PS:</strong>  <em>create-react-class</em> is a separate package after v16</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 408px; height: 353px; left: 276px; top: 182px;" data-block-id="4a48bc1bdcec98e75e66b0fc67970646" data-name="image-675245"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="358" data-natural-height="310" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/9debdc34afdc95f678d28f536fe7c0cb.png"></div></div></section><section data-id="12261651469fd783aa65f6d3274c9e55" data-background-image="/presentations/content/vf-react-hooks/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="2efdec4ef159fe4f7bd4a72a5ff0663d" data-name="text-803dd4"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2><span style="font-size:1.0em">React Component with ES6</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 529px; height: 404px; left: 216px; top: 191px;" data-block-id="30a89a3a60d63cc0a3ace056c48e93ec" data-name="image-431267"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="490" data-natural-height="374" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/c4c94929549d48c4ed7dde9aca8b564e.png"></div></div></section><section data-id="4cbbfd6a44fb9104b0e1911c000bc315" data-background-image="/presentations/content/vf-react-hooks/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 82px; height: auto;" data-block-id="77ace313fc0b9d858460f6649ba07e8e" data-name="text-9fe157"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>React Component with Hooks</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 181px; top: 611px;" data-block-id="46041a220ec4938cfb623a391ad0fdb4" data-name="text-e7aa59"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<p>Stable Release: v16.8 - Feb 2019</p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 561px; height: 292px; left: 200px; top: 235px;" data-block-id="4aeb95c484241aea56154d48d8476cbc" data-name="image-12019b"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="561" data-natural-height="292" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/acab3fc290cdb2478fd1d31893dc4266.png"></div></div></section></section><section class="stack" data-id="70ced65ea6872d911e4c564f169e213d"><section data-id="b4367f45cbb7214da51c52f568b816e2" data-background-image="/presentations/content/vf-react-hooks/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 103px; height: auto;" data-block-id="9cfe6ec54e25487b14e43fea54c79e06" data-name="text-a1dd80"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>React Hooks</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 199px; height: auto;" data-block-id="d57b9f8dbce427a4e5a116010a5a56ff" data-name="text-0f7a0d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<ul>
+	<li>useState*</li>
+	<li>useEffect*</li>
+	<li>useRef*</li>
+	<li>useReducer</li>
+	<li>useCallback</li>
+	<li>useMemo</li>
+	<li>useContext</li>
+	<li>useImperativeHandle</li>
+	<li>useLayoutEffect</li>
+	<li>useDebugValue</li>
+</ul>
+</div></div></section><section data-id="4b819ad1a86d4b7b03e023ca9bca835b"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 33px; height: auto;" data-block-id="b711d52ad2b78ad4eb66f1e30340e6ad" data-name="text-eca053"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>React Hooks</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 693px; height: 519px; left: 134px; top: 140px;" data-block-id="6a8429c043f5a34a05cac48bf8788ad1" data-name="image-b00aef"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="693" data-natural-height="519" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/abe14a8bab7fd9c6344978b2ddf39e94.png"></div></div></section><section data-id="32f08397ae70c2d84714bfd361951b32"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 33px; height: auto;" data-block-id="374f47891cd9c3c44662e95267f382a6" data-name="text-fb0d4c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>React Hooks</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 765px; height: 541px; left: 98px; top: 116px;" data-block-id="c4ba27383cd3a738ed7a781b54bec242" data-name="image-616570"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="765" data-natural-height="541" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/753a77cbf96c691fc5969fec460fd868.png"></div></div></section><section data-id="ec460bd8c28f7069f95afb8252219714"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 33px; height: auto;" data-name="text-fb0d4c" data-block-id="de6561026b05ccef5d550749f67cdd48"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>React Hooks</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-4ed2f8" data-block-id="6bb2666a04c145ddb1fd9b03ff9ac90b" style="width: 668.4631578947368px; height: 441px; left: 145.7684210526316px; top: 199.5px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1152" data-natural-height="760" style="" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/c0a0e866bfe5fcc817ef38bf19bc3448.png"></div></div></section><section data-id="600301ab15299b99b5a80f41a5331c5b"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 32px; height: auto;" data-name="text-fb0d4c" data-block-id="4ba66fc3261074be0af3f942a4eb5538"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>React Hooks</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-f19385" data-block-id="ae1a711bed2522986906f0535876b903" style="width: 806.4px; height: 510.841628959276px; left: 77px; top: 130.15837104072398px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1326" data-natural-height="840" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/aec59f929a161a4cfa61450f4fd2d0ad.png"></div></div></section></section><section class="stack" data-id="ce6d80bd463059b4769ef293791e8877"><section data-id="9fc7b0923639397ca7e00f4dc1ffa06a"><div class="sl-block" data-block-type="image" data-name="image-898226" data-block-id="66ee9d27feb9d5055e02221ec1fa0900" style="width: 806.4px; height: 446.5299425758819px; left: 76.79999999999995px; top: 163.7350287120591px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="2438" data-natural-height="1350" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/e246201394d33325aef478182aee8701.png"></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-ed3134" data-block-id="a776c77d6cd902fdaf852bf02525363f" style="height: auto; width: 600px; left: 180px; top: 70px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(103, 78, 167);">
+<h2>Class Lifecycle</h2>
+</div></div></section><section data-id="13d26317eeea34508356b917a24bbf1f" data-background-image="/presentations/content/vf-react-hooks/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 41px; height: auto;" data-block-id="429e8a04599b74b62671163d4f69844a"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>Hook lifecycle</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-12fc58" data-block-id="112e58cdb4ea81ebb8b113d44a8b3777" style="width: 443.4045407636739px; height: 564.5978975032851px; left: 258.2977296181631px; top: 115px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="761" data-natural-height="969" style="" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/912f8d9774ac4dfc0b2fce4116d5547e.png"></div></div></section></section><section class="stack" data-id="5810535c433840f0fa088e6c7338ed72"><section data-id="f21eccc3241b5844fa47eaf067ea7921" data-background-image="/presentations/content/vf-react-hooks/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 185px; height: auto;" data-block-id="8b87fd5becf1611eb552959257dfb53a" data-name="text-9be57e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h3>Advantages of using React Hooks</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="eb813cd587d38a4ec52980e495ec5bcb" data-name="text-a83c59"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<ul>
+	<li>solves binding/context problems</li>
+	<li>no <em><strong>this</strong></em>!</li>
+	<li>reusable logic of lifecycle methods</li>
+	<li>less boilerplate code</li>
+	<li>straight forward code reading</li>
+	<li>less complex DOM tree (no HOCs)</li>
+</ul>
+</div></div></section><section data-id="2e86b386fb0cc95bd36957fb79345396" data-background-image="/presentations/content/vf-react-hooks/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 181px; height: auto;" data-block-id="425575040b3f3716f7685402dc183bcf" data-name="text-927b91"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<p>Context/Binding Problems</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 403px; left: 279px; top: 240px; height: auto;" data-block-id="5efb2981e04a74ece20809e150e31ff7" data-name="text-85ab13"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<ul>
+	<li>bind at constructor</li>
+	<li>bind at where it called</li>
+	<li>arrow function</li>
+</ul>
+</div></div></section><section data-id="a914317b3300ae95d6095ec368336d11"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 115px; height: auto;" data-block-id="4a9ecf42b01f6131dde7ab726c36c1b3" data-name="text-64b776"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h3>bind at constructor</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 457px; height: 369px; left: 252px; top: 210px;" data-block-id="8abd06836af1111be53429493eb5aaa1" data-name="image-d3fd62"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="457" data-natural-height="369" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/886f2c11566a3df46110c5d4e14d7ec6.png"></div></div></section><section data-id="7701ea599ada134e1622de409c23af2b"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 115px; height: auto;" data-block-id="aa1d3d17863638e5c5e26dcf1977bfc6" data-name="text-c248d9"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h3>bind at where it called</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 406px; height: 353px; left: 277px; top: 210px;" data-block-id="a047d098ac1044a23f3b68accebfbc27" data-name="image-56108a"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="406" data-natural-height="353" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/7f2dab7bed5a11d24024d16972898de2.png"></div></div></section><section data-id="14934d529d438286f658f9f68eaa24d3"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 115px; height: auto;" data-block-id="05dc489fe9f347258fdf330f421e058e" data-name="text-8b7a98"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h3>bind with arrow function</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 379px; height: 301px; left: 291px; top: 235px;" data-block-id="f06a4fd1472f30f87c812d239baf44ab" data-name="image-df6697"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="379" data-natural-height="301" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/d7202d94fe3c30c66075fe101109fccb.png"></div></div></section><section data-id="10b1a93612076cb57fc389b0ca33d3ba"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 115px; height: auto;" data-block-id="94d8990eb04e9f33a3f7ae526b61c0aa" data-name="text-448bcf"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h3>with hook</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 593px; height: 129px; left: 184px; top: 266px;" data-block-id="b8f62ee7a882094fe6bfe98043c14337" data-name="image-0a7fed"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="593" data-natural-height="129" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/13af5a3caacb06c5e82139a4a0c1901e.png"></div></div></section></section><section class="stack" data-id="0bea3ce522b750de051aa0f569a46b2e"><section data-id="c62dc0c099627a3fb365d1e4e5172dfd"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 63.461420541645374px; height: auto;" data-block-id="bb06b43f2b3e040a9b041f12b69f2c33" data-name="text-b47060"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h3>sharing repeated lifecycle logic</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 181px; top: 140px;" data-block-id="cf47a60924a7c31c872ab3df8ccb08a0" data-name="text-b610f5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<p>not applicable with class components</p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 522px; height: 393px; left: 220px; top: 223.5px;" data-block-id="14b41f56c5e86efc9922f9d89f180bb5" data-name="image-6f355e"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="494" data-natural-height="372" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/c77af73972012231d1b9a44e8d476a67.png"></div></div></section><section data-id="084ba26b351cba71ac2f60fae7823a58"><div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 70px; height: auto;" data-block-id="d67e062d8663ac7fb64d166ea1dbfd33" data-name="text-f6a690"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h3>sharing repeated lifecycle logic</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 181px; top: 140px;" data-block-id="bc07deedf76edcb4608ab309b14cdb71" data-name="text-87af5e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<p>applicable with hooks</p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 475px; height: 414px; left: 244px; top: 230px;" data-block-id="0259f063aaf3d15dcb9bcb2a9c880033" data-name="image-934372"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="475" data-natural-height="414" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/5b588d86668f6cf8670c8ceb75719c5a.png"></div></div></section></section><section class="stack" data-id="9548210da1b140b0cc3b63b1c5156c64"><section data-id="9c12a500e30d131b2bcdae579fff910a"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="00f05ff8296be68a7a82381995f214cb" data-name="text-b2ee67"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>Migration</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 263px; height: auto;" data-block-id="9644e9f4329e3bb74972f9b44bd3c97a" data-name="text-167630"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<ul>
+	<li>State Migration</li>
+	<li>Lifecycle migration</li>
+	<li>Ref migration</li>
+	<li>Reuse as custom hook if repeated throughout the app</li>
+</ul>
+</div></div></section><section data-id="a05563d4fff23c607ca0c358c458c882"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 159px; height: auto;" data-block-id="7767dfad7e838f42a1338de3c40fde71" data-name="text-e69d98"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>State Migration</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 710px; left: 125px; top: 280px;" data-block-id="7e04669f5e579cd9501bac69c809a748" data-name="text-fece2e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<p>Do you update multiple items with single action?</p>
+
+<p> </p>
+
+<p>No -&gt; useState</p>
+
+<p>Yes -&gt; (maybe) useReducer</p>
+</div></div></section><section data-id="301e5bccefd1c8bc41be41d6d1e7fbab"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="993a0a883edd256e6b970bf33021c36b" data-name="text-596cd1"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>Lifecycle Migration</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 298px; height: auto;" data-block-id="f654765edeafcfe54843d282777bbb23" data-name="text-04d03d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<p>useEffect for all:</p>
+
+<ul>
+	<li>componentDidMount</li>
+	<li>componentDidUpdate</li>
+	<li>componentWillUnmount</li>
+</ul>
+</div></div></section><section data-id="25679f6b0e114be8132359ef4ea271cd"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 103px; height: auto;" data-block-id="28193e4ff54875ec89340a17b249be7e" data-name="text-9a3214"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>Lifecycle Migration</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 444px; left: 36px; top: 242px; height: auto;" data-block-id="34b3464f746f923f3be33fc87f4b0c9b" data-name="text-51449f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<ul>
+	<li><span style="font-size:0.9em">useEffect called after every render, if no dependency</span></li>
+	<li><span style="font-size:0.9em">called only after  mounted and cleaned before unmounting when  dependencies is empty array</span></li>
+	<li><span style="font-size:0.9em">Conditionally called w.r.t dependencies (like didUpdate)</span></li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 420px; height: 120px; left: 510px; top: 290px;" data-block-id="13372d8d84a3a33fa6347e38c9f1be8f" data-name="image-1f1bb7"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="357" data-natural-height="102" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/8dc092f11e196e22b78c303364e28332.png"></div></div></section></section><section class="stack" data-id="90d0b6bb83e50868561b1ecc4e091b82"><section data-id="3363213882a86c9f58167f7e016d0051"><div class="sl-block" data-block-type="text" style="width: 384px; left: 39px; top: 209px; height: auto;" data-block-id="1f26b4c7291ff618b28c0be0224485fb" data-name="text-83f363"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; color: rgb(103, 78, 167);">
+<h2><span style="font-size:0.9em">Before Hooks</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 560px; top: 209px; height: auto;" data-block-id="bdeefec6a5422bb4fc5cf58103bbf2ae" data-name="text-923684"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11; color: rgb(103, 78, 167);">
+<h2><span style="font-size:0.9em">Now</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 70px;" data-block-id="475a7862971fcd0c54efe512a1c96b42" data-name="text-f35973"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(103, 78, 167);">
+<h2>React Router</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 384px; height: 113px; left: 39px; top: 316px;" data-block-id="d22d6b4329acfafff5415569235eee3d" data-name="image-52bf2a"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="324" data-natural-height="95" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/efa34f50b518d9aae365aca3c24185b0.png"></div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 266px; height: 136px; left: 560px; top: 316px;" data-block-id="73e179abe2127608210578c3c54e8a67" data-name="image-b4d8c7"><div class="sl-block-content" style="z-index: 14;"><img style="" data-natural-width="241" data-natural-height="123" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/8b0f10b98870df9c8692d7fad5451b24.png"></div></div></section><section data-id="4f235c892977fc22ac4873419e6ded78"><div class="sl-block" data-block-type="text" style="width: 384px; left: 39px; top: 209px; height: auto;" data-block-id="f2fc96e2099e9634535f0f323875e25d" data-name="text-f69b91"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; color: rgb(103, 78, 167);">
+<h2><span style="font-size:0.9em">Before Hooks</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 384px; left: 552px; top: 210px; height: auto;" data-block-id="b47ca4caccc5aeb5e845c0334cceed68" data-name="text-33f156"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11; color: rgb(103, 78, 167);">
+<h2><span style="font-size:0.9em">Now</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 70px;" data-block-id="7442c4c0e9ecc62eb9b26b80bb856775" data-name="text-8eb91e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(103, 78, 167);">
+<h2>React Redux</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 376px; height: 302px; left: 39px; top: 302px;" data-block-id="86cb6a774c6f07bdee08ddfefb310dbc" data-name="image-179f54"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="304" data-natural-height="244" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/3f77af2dab948aff4250fd52a9464c3e.png"></div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 317px; height: 258px; left: 560px; top: 302px;" data-block-id="de5083c4ed1d05e78e3c52c98930889c" data-name="image-8cc31b"><div class="sl-block-content" style="z-index: 14;"><img style="" data-natural-width="243" data-natural-height="198" data-lazy-loaded="" data-src="/presentations/content/vf-react-hooks/assets/93be0c7da7fd1e72fc3a43addf1c5015.png"></div></div></section></section><section data-id="3923648f5e590598077fb00e0457722d"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 294.83392948390394px;" data-block-id="0bf420e7ea7a570c16a5fce04e174b8e" data-name="text-b4438a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h2>CODING TIME!</h2>
+</div></div>
+</section><section data-id="1b9d3d35e4b66540b9bc496fd95e88b5"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="0a7f245b048a179bcd4d20564745d84e" data-name="text-3eb687"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);">
+<h1>Thank you for listening</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 579px;" data-block-id="bf67b37a569e1d5d488f3e5d11562abb" data-name="text-57c5b2"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167);">
+<h3>Any questions?</h3>
+</div></div>
+</section>

@@ -1,0 +1,23 @@
+{
+  "title": "Technical Writing",
+  "slug": "technical-writing-2024",
+  "description": "",
+  "date": "2024-01-11",
+  "tags": [],
+  "thumbnail": "/presentations/content/technical-writing-2024/assets/slides-thumbnail.png",
+  "theme": {
+    "font": "montserrat",
+    "color": "white-blue"
+  },
+  "revealConfig": {
+    "width": 960,
+    "height": 700,
+    "margin": 0.05,
+    "controls": true,
+    "progress": true,
+    "center": false,
+    "transition": "slide",
+    "backgroundTransition": "slide",
+    "hash": true
+  }
+}

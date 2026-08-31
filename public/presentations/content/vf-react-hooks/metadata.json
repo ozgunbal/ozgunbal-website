@@ -1,0 +1,24 @@
+{
+  "title": "VF -React Hooks",
+  "slug": "vf-react-hooks",
+  "description": "",
+  "date": "2020-12-17",
+  "tags": [],
+  "thumbnail": "/presentations/content/vf-react-hooks/assets/slides-thumbnail.png",
+  "theme": {
+    "font": "montserrat",
+    "color": "white-blue"
+  },
+  "revealConfig": {
+    "width": 960,
+    "height": 700,
+    "margin": 0.05,
+    "controls": true,
+    "progress": true,
+    "center": false,
+    "transition": "default",
+    "backgroundTransition": "slide",
+    "hash": true
+  },
+  "hidden": true
+}

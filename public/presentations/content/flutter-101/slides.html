@@ -1,0 +1,228 @@
+<section data-id="7fae7bc10c8b22ab5d722e8f866e1387" data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 280px; height: auto;" data-block-id="c8ce10194efccf825f22d18862ca1de2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h1>Flutter 101</h1></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-8e9757" data-block-id="f0d381dfc8b937e8047987a94f1960d8" style="height: auto; width: 600px; left: 180px; top: 400.5px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;"><p><span style="color:#4B0082">For React Developers</span></p></div></div>
+<div class="sl-block" data-block-type="video" data-name="video-05fe94" data-block-id="69ae5210330c74bc4e0aebb44ff80466" style="min-width: 30px; min-height: 30px; width: 640px; height: 360px; left: -688px; top: 350px;"><div class="sl-block-content" style="z-index: 12;"><video playsinline="" controls="controls"></video></div></div></section><section data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="3e449160a3176e32b4cd10d7d3861692"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 210px; height: auto;" data-block-id="77b78020594134caf35d8504e4efb8b3"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2><strong>Language Differences – Dart vs JavaScript/TypeScript</strong></h2></div></div>
+</section><section data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="781f8085869cf371941e181c183e5f37"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 173px; height: auto;" data-block-id="931b1eb508fd9fcd38ae7af39b7a957d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2><strong>Type System</strong></h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 280px; height: auto;" data-block-id="437316697bb6d65627597aabebbfdc5c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167); outline-style: solid;"><ul>
+	<li>JavaScript: Dynamic typing</li>
+	<li>TypeScript: Optional static typing</li>
+	<li>Dart: Strong static typing, sound null safety</li>
+</ul></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-f943fb" data-block-id="297a2baa2c8e0f3ea11494e8a8d6d87e" style="width: 357px; height: 196px; left: 301.5px; top: 434px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 16px; line-height: 19px; tab-size: 4;"><code data-line-numbers="">// Dart
+String name = "John";
+int? age; // Nullable int
+
+// TypeScript
+let name: string = "John";
+let age: number | null = null;</code></pre></div></div></section><section data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="e6143eff51f79de9053f51d2d9b928ee"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 173px; height: auto;" data-block-id="6a22825a940733c7619f8ed90937a5c5"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2><strong>Variable Declarations</strong></h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 280px; height: auto;" data-block-id="efc2476e97ccb40bf4090ebabc94a6bb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167); outline-style: solid;"><ul>
+	<li>JavaScript: <code>var</code>, <code>let</code>, <code>const</code>
+</li>
+	<li>Dart: <code>var</code>, <code>final</code>, <code>const</code>
+</li>
+</ul></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-f943fb" style="width: 578.5px; height: 198px; left: 190.75px; top: 401px;" data-block-id="2545a3347791d58dc882204da1c95624"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 16px; line-height: 19px; tab-size: 4;"><code data-line-numbers="">// Dart
+var name = "John";        // Type inferred
+final userId = getUserId(); // Runtime constant
+const apiUrl = "https://..."; // Compile-time constant
+
+// JavaScript
+let name = "John";
+const userId = getUserId();
+const apiUrl = "https://...";</code></pre></div></div></section><section data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="cecc29d3510bc2ea732d7eae0f9d7222"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 140px; height: auto;" data-block-id="82dc02c0bd21aa382807f56842aed2a0"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>Functions</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 237.957px; height: auto;" data-block-id="820fe871032c9019d45353d7e5938df5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167); outline-style: solid;"><ul>
+	<li>JavaScript: Arrow functions, <code>this</code> binding</li>
+	<li>Dart: First-class functions, no <code>this</code> issues</li>
+</ul></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-c84991" data-block-id="858e6bad86649723dff5ab49618493ec" style="width: 560px; height: 191px; left: 200px; top: 369px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 16px; line-height: 19px; tab-size: 4;"><code data-line-numbers="">// Dart
+void greet(String name) =&gt; print('Hello $name');
+Function callback = () =&gt; print('Done');
+
+// JavaScript
+const greet = (name) =&gt; console.log(`Hello ${name}`);
+const callback = () =&gt; console.log('Done');</code></pre></div></div></section><section data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="2c869fc8ce4964a12659d6a798fb2b10"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 17.0215px; height: auto;" data-block-id="da367cb65d4e249b9f20915d63bdebe4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2><strong>Classes and OOP</strong></h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 100px; top: 114.0215px; height: auto;" data-block-id="7c916d96d90f1981c059ec6dda38ae6f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167); outline-style: solid;"><ul>
+	<li>JavaScript: Prototype-based, ES6 classes</li>
+	<li>Dart: True class-based OOP, mixins, interfaces</li>
+</ul></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-aa2884" data-block-id="092a6dad6f864e8b5ae29ecfd5ce8c03" style="width: 761px; height: 507.9785px; left: 122.5px; top: 192.0215px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 16px; line-height: 19px; tab-size: 4;"><code data-line-numbers="">// Dart
+abstract class Shape {
+  double area();
+}
+
+class Rectangle extends Shape with Printable {
+  final double width, height;
+  
+  Rectangle(this.width, this.height);
+  
+  @override
+  double area() =&gt; width * height;
+}
+
+// TypeScript
+abstract class Shape {
+  abstract area(): number;
+}
+
+class Rectangle extends Shape {
+  constructor(private width: number, private height: number) {}
+  
+  area(): number {
+    return this.width * this.height;
+  }
+}</code></pre></div></div></section><section data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="7418668f1128fa83391d50ad8bcd5529"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 79.0215px; height: auto;" data-block-id="4ffe19a607bca2ddc6135931a0294e54"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2><strong>Async Programming</strong></h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 176.978px; height: auto;" data-block-id="f645d3ebd8c1dd080865e5ef5930b6f1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167); outline-style: solid;"><ul>
+	<li>JavaScript: Promises, async/await</li>
+	<li>Dart: Futures, async/await, Isolates</li>
+</ul></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-b82091" data-block-id="32984a2f6f3152a279b1552acc27d117" style="width: 585px; height: 239.978px; left: 187.5px; top: 297px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 16px; line-height: 19px; tab-size: 4;"><code data-line-numbers="">// Dart
+Future&lt;String&gt; fetchData() async {
+  final response = await http.get(Uri.parse(url));
+  return response.body;
+}
+
+// JavaScript
+async function fetchData() {
+  const response = await fetch(url);
+  return response.text();
+}</code></pre></div></div></section><section data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="bc32be96566af8e1c4a759818fdd1cea"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 79.0215px; height: auto;" data-block-id="0197cc48d4e47866c8add952fd113085"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2><strong>Collections and Data Structures</strong></h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 241px; height: auto;" data-block-id="c055389a1a05eef33415b17797b3826b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167); outline-style: solid;"><ul>
+	<li>JavaScript: Arrays, Objects, Sets</li>
+	<li>Dart: Lists, Maps, Sets with generics</li>
+</ul></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-f2bb3e" data-block-id="41240e01204ba78925e40ab2e40625fe" style="width: 510px; height: 219px; left: 225px; top: 380.5px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 16px; line-height: 19px; tab-size: 4;"><code data-line-numbers="">// Dart
+List&lt;String&gt; names = ['Alice', 'Bob'];
+Map&lt;String, int&gt; ages = {'Alice': 30, 'Bob': 25};
+Set&lt;String&gt; uniqueNames = {'Alice', 'Bob'};
+
+// JavaScript
+const names = ['Alice', 'Bob'];
+const ages = {'Alice': 30, 'Bob': 25};
+const uniqueNames = new Set(['Alice', 'Bob']);</code></pre></div></div></section><section data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="dbd60387a14cf247dee1a76a4e0ac848"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 117.0215px; height: auto;" data-block-id="8b443f8124e486ea1c5468ea7251e35e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2><strong>String Interpolation</strong></h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 241px; height: auto;" data-block-id="ee2b778d81c36ec99696e53901384f98"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167); outline-style: solid;"><ul>
+	<li>JavaScript: Template literals</li>
+	<li>Dart: <code>$</code> and <code>${}</code> syntax</li>
+</ul></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-5a9a0d" data-block-id="0d365db27a3136a7ee930064c9dc2a11" style="width: 746px; height: 179px; left: 107px; top: 361px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 16px; line-height: 19px; tab-size: 4;"><code data-line-numbers="">// Dart
+String name = "John";
+String message = 'Hello $name, you have ${messages.length} messages';
+
+// JavaScript
+const name = "John";
+const message = `Hello ${name}, you have ${messages.length} messages`;</code></pre></div></div></section><section data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="48790171e99dfff171b3f5f1f87a1dc3"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 117.0215px; height: auto;" data-block-id="75a12239ec486fb15d52abe59566a290"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2><strong>Error Handling</strong></h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 241px; height: auto;" data-block-id="8a6d40439b448c033d1ed1a08d251658"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167); outline-style: solid;"><ul>
+	<li>JavaScript: <code>try/catch</code>
+</li>
+	<li>Dart: <code>try/catch/finally</code>, exception classes</li>
+</ul></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-030674" data-block-id="b83fb8ca747256aa2e30903d1d7d1a68" style="width: 500px; height: 225px; left: 230px; top: 365px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 16px; line-height: 19px; tab-size: 4;"><code data-line-numbers="">// Dart
+try {
+  final result = await riskyOperation();
+} on NetworkException catch (e) {
+  print('Network error: ${e.message}');
+} catch (e) {
+  print('Unknown error: $e');
+} finally {
+  cleanup();
+}</code></pre></div></div></section><section data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="305583442a12e5d1ea101c3597642989"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 117.0215px; height: auto;" data-block-id="2502b27be128a1c2e692325611ffe1f5"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2><strong>Key Advantages for React Developers</strong></h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 294px; height: auto;" data-block-id="1d59c0b02151211b5095a0bf04301d40"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167); outline-style: solid;"><ul>
+	<li>Dart benefits: null safety, tooling, hot reload</li>
+	<li>Migration tips: syntax familiarity, package management</li>
+</ul></div></div></section><section class="stack" data-id="e437f378d594fc93faafab55c38e478e"><section data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="c019841426db9fd47101dd2abe75414c"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 117.0215px; height: auto;" data-block-id="ed705b1eccf003fb1334f4ce5073937a"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2><strong>Framework Differences – Flutter vs React Native</strong></h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 294px; height: auto;" data-block-id="96fc8e70755d5650ab8ac536c8624a96"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167); outline-style: solid;"><ul>
+	<li>Programming Language &amp; Paradigm</li>
+	<li>Development Experience</li>
+	<li>UI Development Approach</li>
+	<li>State Management</li>
+	<li>Performance</li>
+	<li>Code Sharing</li>
+	<li>Learning Curve</li>
+</ul></div></div></section><section data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="0b14babc96be71d615fc9a9dc68335d7"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 47.0215px; height: auto;" data-block-id="30236d6e613146f80221a502f08b8c2e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>State Management &amp; UI Updates</h2></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-3f1c59" data-block-id="3c30e74fcf28a685588fdb5b980d56cd" style="width: 509px; height: 379px; left: 225.5px; top: 230.5px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 16px; line-height: 19px; tab-size: 4;"><code data-line-numbers="">class Counter extends StatefulWidget {
+  @override
+  _CounterState createState() =&gt; _CounterState();
+}
+
+class _CounterState extends State&lt;Counter&gt; {
+  int _count = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _count++;  // Triggers rebuild
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Text('Count: $_count');
+  }
+}</code></pre></div></div></section><section data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="321738943f5342c192425b1f2f839063"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 47.0215px; height: auto;" data-block-id="b0c0aaed6419b11dd22265ebac44f1d3"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>Stateless Components/Widgets</h2></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-3f1c59" style="width: 751px; height: 220px; left: 104.5px; top: 320.5px;" data-block-id="a54a5c39d11477c987b6fb62bcb5146b"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 16px; line-height: 19px; tab-size: 4;"><code data-line-numbers="">class WelcomeMessage extends StatelessWidget {
+  final String name;
+  
+  const WelcomeMessage({Key? key, required this.name}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text('Welcome, $name!');
+  }
+}</code></pre></div></div></section><section data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="856d3a914c3831aa03e0d4354516aee1"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 45.0215px; height: auto;" data-block-id="2811b189ca3f26eb849d0017e30c6102"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>Terminology &amp; Mental Models</h2></div></div>
+<div class="sl-block" data-block-type="table" data-name="table-f623e2" data-block-id="c0d1f67719db3f33676858b212acf014" style="height: auto; min-width: 120px; width: 800px; left: 80px; top: 242px;"><div class="sl-block-content" style="z-index: 11;" data-table-cols="3" data-table-rows="4"><table><tbody>
+<tr>
+<th>Concept</th>
+<th>Flutter</th>
+<th>React Native </th>
+</tr>
+<tr>
+<td>UI Building Block</td>
+<td>Widget</td>
+<td>Component</td>
+</tr>
+<tr>
+<td>UI Update Process</td>
+<td>rebuild</td>
+<td>render</td>
+</tr>
+<tr>
+<td>State Container</td>
+<td>StatefulWidget</td>
+<td>Functional Component with hooks</td>
+</tr>
+</tbody></table></div></div></section><section data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="03e16f0de3a073e79c7ae1d10abd0a4c"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 45.0215px; height: auto;" data-block-id="87c1bea62bbcc43c5b9cf804d755340f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2>Child Management</h2></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-3c7ad6" data-block-id="79e8dbb708490cf1876f349f75d75cab" style="width: 589px; height: 238px; left: 185.5px; top: 172px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 16px; line-height: 19px; tab-size: 4;"><code data-line-numbers="">Column(
+  children: [  // Explicit children array
+    Text('Item 1'),
+    Text('Item 2'),
+    Text('Item 3'),
+  ],
+)
+
+Container(
+  child: Text('Single child'),  // Explicit single child
+)</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-245d49" data-block-id="2449a2df10f9f20c7347813287af8be6" style="width: 343px; height: 133px; left: 308.5px; top: 490px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 16px; line-height: 19px; tab-size: 4;"><code data-line-numbers="">&lt;View&gt;
+  {/* Children are implicit */}
+  &lt;Text&gt;Item 1&lt;/Text&gt;
+  &lt;Text&gt;Item 2&lt;/Text&gt;
+  &lt;Text&gt;Item 3&lt;/Text&gt;
+&lt;/View&gt;</code></pre></div></div></section></section><section class="stack" data-id="6b433e13b6d19928f7448d99ceff0a83"><section data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="d66ee3556dd870a31b210c7bcb223423"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 117.0215px; height: auto;" data-block-id="97fce8ebb984b3c811217cb3288655f6"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2><strong>Training Resources</strong></h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 251px; height: auto;" data-block-id="e92f70fc9a7649581d535bd61e2d6aa3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167); outline-style: solid;"><ul>
+	<li>Official documentation: <a href="https://flutter.dev/learn" target="_blank">https://flutter.dev/learn</a>
+</li>
+	<li>Our course: https://www.udemy.com/share/1013o43@OS6cvYMnVs1k32WnBm0hly3mKy3CB99t6KaYLbQuAn36ia2aBiW7XxmZQ0-oR11a/</li>
+</ul></div></div></section><section data-background-image="/presentations/content/flutter-101/assets/3b94927cb93e2e086581c48452c8a752.png" data-background-opacity="0.28" data-id="6a6d3d7031cc1d1dd1752679f7b9d34a"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 33px; height: auto;" data-block-id="151b37e0be77ec822f9017eb962e1eaf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h2><strong>Final Project</strong></h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 115px; height: auto;" data-block-id="c93a2d707074049815d0e4a8e97de6ec"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(103, 78, 167); outline-style: solid;"><ul>
+	<li><span style="font-size:0.9em">State Management</span></li>
+	<li><span style="font-size:0.9em">Network Requests / API Integration</span></li>
+	<li><span style="font-size:0.9em">UI/UX and Responsive Design</span></li>
+	<li><span style="font-size:0.9em">Form Validations</span></li>
+	<li><span style="font-size:0.9em">File Structure and Code Organization</span></li>
+	<li><span style="font-size:0.9em">Usage and Integration of Popular Flutter Packages (related to other items)</span></li>
+	<li><span style="font-size:0.9em">Error Handling and Loading States</span></li>
+	<li><span style="font-size:0.9em">Asynchronous Programming and Use of Future/Stream</span></li>
+	<li><span style="font-size:0.9em">Widget Lifecycle and Performance Optimization</span></li>
+	<li><span style="font-size:0.9em">Using Flutter DevTools (Debugger, Widget Inspector, Performance Monitoring)</span></li>
+	<li><span style="font-size:0.9em">Debugging Techniques and Troubleshooting Practices</span></li>
+	<li><span style="font-size:0.9em">Usage and Management of Flutter Packages &amp; Plugins</span></li>
+</ul></div></div></section></section><section data-id="4d3f7c792c6652183f62cdf1a4577b90"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 280px; height: auto;" data-block-id="e96146b96ba071d96c091e2d73c1306c"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h1>
+<span style="font-size:0.7em">?</span><span style="font-size:0.9em">?</span>? Q &amp; A ?<span style="font-size:0.9em">?</span><span style="font-size:0.7em">?</span>
+</h1></div></div></section><section data-id="3094cb983879bc50674287d64d28e418"><div class="sl-block" data-block-type="text" style="width: 806px; left: 76px; top: 266px; height: auto;" data-block-id="1f568dd52ec074a3fb277c73ca64b7e9"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(103, 78, 167);"><h1>Thank you for listening</h1></div></div></section>

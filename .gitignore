@@ -5,3 +5,6 @@
 # React Router
 /.react-router/
 /build/
+
+/slides-backup
+/.playwright-mcp

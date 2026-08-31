@@ -1,0 +1,23 @@
+{
+  "title": "Monorepos in Action",
+  "slug": "monorepos-in-action",
+  "description": "",
+  "date": "2025-02-22",
+  "tags": [],
+  "theme": {
+    "font": "montserrat",
+    "color": "grey-blue"
+  },
+  "revealConfig": {
+    "width": 960,
+    "height": 700,
+    "margin": 0.05,
+    "controls": true,
+    "progress": true,
+    "center": false,
+    "transition": "slide",
+    "backgroundTransition": "slide",
+    "hash": true
+  },
+  "thumbnail": "/presentations/content/monorepos-in-action/assets/slides-thumbnail.png"
+}

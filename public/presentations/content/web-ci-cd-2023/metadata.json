@@ -1,0 +1,23 @@
+{
+  "title": "Web CI/CD",
+  "slug": "web-ci-cd-2023",
+  "description": "",
+  "date": "2023-11-21",
+  "tags": [],
+  "thumbnail": "/presentations/content/web-ci-cd-2023/assets/slides-thumbnail.png",
+  "theme": {
+    "font": "montserrat",
+    "color": "white-blue"
+  },
+  "revealConfig": {
+    "width": 960,
+    "height": 700,
+    "margin": 0.05,
+    "controls": true,
+    "progress": true,
+    "center": false,
+    "transition": "slide",
+    "backgroundTransition": "slide",
+    "hash": true
+  }
+}

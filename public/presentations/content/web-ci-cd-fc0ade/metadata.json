@@ -1,0 +1,23 @@
+{
+  "title": "Web CI/CD - DevFest",
+  "slug": "web-ci-cd-fc0ade",
+  "description": "",
+  "date": "2024-12-01",
+  "tags": [],
+  "theme": {
+    "font": "merriweather",
+    "color": "grey-blue"
+  },
+  "revealConfig": {
+    "width": 960,
+    "height": 700,
+    "margin": 0.05,
+    "controls": true,
+    "progress": true,
+    "center": false,
+    "transition": "slide",
+    "backgroundTransition": "slide",
+    "hash": true
+  },
+  "thumbnail": "/presentations/content/web-ci-cd-fc0ade/assets/slides-thumbnail.png"
+}
