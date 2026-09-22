@@ -39,9 +39,20 @@ public/presentations/
 - `scripts/convert-presentation.cjs` does the one-time conversion from a Slides.com export folder into this structure (extracts slide sections, theme info, and reveal config from the exported `index.html`; rewrites asset paths to absolute).
 - `scripts/generate-thumbnails.cjs` scans a presentation's `slides.html` for the first background/inline image and records it in `metadata.json` as the card thumbnail.
 - reveal.js CSS is loaded globally in `app/root.tsx`'s `links()`; the JS is expected under `/presentations/lib/`.
-- `app/components/PresentationViewer.tsx` fetches a given slug's `slides.html` at runtime, injects it into a `.reveal > .slides` container, and initializes `window.Reveal` with the presentation's `revealConfig`.
-- Routes: `app/routes/presentations.tsx` (gallery, loader fetches metadata for a **hardcoded list of slugs**) and `app/routes/presentations.$slug.tsx` (single presentation).
+- Server-side loaders read presentation data straight from disk via `path.join(process.cwd(), "public", "presentations", "content")`:
+  - `app/routes/presentations.tsx` (gallery) scans the `content/` directory for slug folders and reads each `metadata.json`; presentations with `"hidden": true` are filtered out.
+  - `app/routes/presentations.$slug.tsx` reads that slug's `metadata.json` and `slides.html` and passes the HTML to the viewer.
+  - `app/routes/home.tsx` counts the visible presentations the same way.
+- `app/components/PresentationViewer.tsx` receives the slide HTML as a prop, renders it into a `.reveal > .slides` container, and initializes `window.Reveal` with the presentation's `revealConfig`.
 
-When adding a new presentation, after conversion you must also add its slug to the hardcoded `slugs` array in `app/routes/presentations.tsx`'s loader — nothing auto-discovers `public/presentations/content/`.
+A new presentation shows up automatically once its folder exists under `public/presentations/content/`; no slug list needs updating. Because the loaders read `public/` at request time (not just the built `build/client` copy), the production runtime must have `public/presentations/content` next to `build/`. The Dockerfile copies it in for this reason.
 
-Note: `presentations.tsx`'s loader currently fetches metadata via `http://localhost:5173/...`, which only works when the dev server is running on that exact origin/port — be aware of this when touching that loader (e.g. for production or a different port).
+## Deployment
+
+The site runs on Google Cloud Run as a Docker image.
+
+- `Dockerfile` is a multi-stage build. The final stage contains production `node_modules`, `build/` and `public/presentations/content`, and runs `npm run start`. `react-router-serve` listens on `$PORT`, which Cloud Run sets (8080).
+- `.dockerignore` excludes `slides-backup/` (the raw Slides.com exports, ~170 MB), `.git`, tooling folders and Markdown docs. Keep large or local-only folders out of the build context.
+- `.github/workflows/deploy.yml` runs on every push to `main` (and on manual dispatch). It typechecks, builds a `linux/amd64` image, pushes it to Artifact Registry tagged with the commit SHA and `latest`, and deploys it to the `ozgunbal-website` Cloud Run service.
+- The workflow authenticates with Workload Identity Federation, so no JSON key is stored. It reads these GitHub repository **variables**: `GCP_PROJECT_ID`, `GCP_REGION`, `GCP_ARTIFACT_REPO`, `GCP_WORKLOAD_IDENTITY_PROVIDER`, `GCP_SERVICE_ACCOUNT`.
+- `.env.example` documents those variables. Copy it to `.env` (gitignored, and excluded from the Docker build), fill it in, and run `gh variable set -f .env` to push the values to GitHub. The app itself reads no env vars at runtime, so only add a variable here if the workflow uses it. Any variable Vite should expose to the client must be prefixed `VITE_`.

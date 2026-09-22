@@ -15,8 +15,11 @@ WORKDIR /app
 RUN npm run build
 
 FROM node:20-alpine
+ENV NODE_ENV=production
 COPY ./package.json package-lock.json /app/
 COPY --from=production-dependencies-env /app/node_modules /app/node_modules
 COPY --from=build-env /app/build /app/build
+# Route loaders read presentation metadata/slides from public/presentations/content at request time
+COPY --from=build-env /app/public/presentations/content /app/public/presentations/content
 WORKDIR /app
 CMD ["npm", "run", "start"]

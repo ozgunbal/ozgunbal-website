@@ -1,4 +1,14 @@
 .react-router
 build
 node_modules
-README.md
+slides-backup
+.git
+.github
+.claude
+.mcp.json
+.playwright-mcp
+.vite
+.DS_Store
+*.md
+.env
+.env.*
