@@ -72,7 +72,10 @@ jobs:
           service: ${{ env.SERVICE }}
           region: ${{ env.REGION }}
           image: ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.IMAGE }}:pr-${{ github.event.pull_request.number }}-${{ github.event.pull_request.head.sha }}
-          flags: --allow-unauthenticated --memory=512Mi --min-instances=0 --max-instances=1 --labels=preview=true,pr=${{ github.event.pull_request.number }}
+          flags: --allow-unauthenticated --memory=512Mi --min-instances=0 --max-instances=1
+          labels: |
+            preview=true
+            pr=${{ github.event.pull_request.number }}
 
       - name: Comment preview URL
         uses: actions/github-script@v7
