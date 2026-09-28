@@ -55,4 +55,19 @@ The site runs on Google Cloud Run as a Docker image.
 - `.dockerignore` excludes `slides-backup/` (the raw Slides.com exports, ~170 MB), `.git`, tooling folders and Markdown docs. Keep large or local-only folders out of the build context.
 - `.github/workflows/deploy.yml` runs on every push to `main` (and on manual dispatch). It typechecks, builds a `linux/amd64` image, pushes it to Artifact Registry tagged with the commit SHA and `latest`, and deploys it to the `ozgunbal-website` Cloud Run service.
 - The workflow authenticates with Workload Identity Federation, so no JSON key is stored. It reads these GitHub repository **variables**: `GCP_PROJECT_ID`, `GCP_REGION`, `GCP_ARTIFACT_REPO`, `GCP_WORKLOAD_IDENTITY_PROVIDER`, `GCP_SERVICE_ACCOUNT`.
+- `.github/workflows/preview.yml` deploys every same-repo PR to its own public Cloud Run service `ozgunbal-website-pr-<N>` (image `ozgunbal-website-preview`, scale-to-zero, max 1 instance) and keeps the URL in a single PR comment. `preview-cleanup.yml` deletes that service when the PR is merged or closed. Fork PRs are never deployed. Old preview images are removed by an Artifact Registry cleanup policy, not by the workflow.
 - `.env.example` documents those variables. Copy it to `.env` (gitignored, and excluded from the Docker build), fill it in, and run `gh variable set -f .env` to push the values to GitHub. The app itself reads no env vars at runtime, so only add a variable here if the workflow uses it. Any variable Vite should expose to the client must be prefixed `VITE_`.
+
+## Claude agent
+
+`.github/workflows/claude.yml` runs Claude Code (`anthropics/claude-code-action`, authenticated with the `CLAUDE_CODE_OAUTH_TOKEN` secret from `claude setup-token`). It starts when an issue gets the `claude` label, or when an `@claude` comment or review is posted by someone whose `author_association` is in the `CLAUDE_ALLOWED_ASSOCIATIONS` repo variable. The action also requires the actor to have write access, so contributors are enabled by inviting them as collaborators with Write. Commits and PRs are made with the Claude GitHub App token, which is what lets them trigger `preview.yml` (the default `GITHUB_TOKEN` can't trigger other workflows).
+
+### Agent rules
+
+When running as the CI agent:
+
+- Work on the branch the action created (`claude/issue-<N>`). From an issue, open one PR against `main` whose body ends with `Closes #<N>`. On an existing PR, push to its branch and don't open another PR.
+- Run `npm run typecheck` and make sure it passes before pushing. Run `npm run build` too when routes, loaders or config change.
+- Don't edit `.github/workflows/`, `Dockerfile`, `.dockerignore` or `react-router.config.ts`. If the issue needs that, say so in the PR instead.
+- Keep changes scoped to the issue and match the surrounding code's style. Don't add dependencies unless the issue needs them, and explain why in the PR.
+- Never merge PRs, force-push, or push to `main`.

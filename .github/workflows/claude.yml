@@ -1,0 +1,74 @@
+name: Claude agent
+
+# Starts Claude when an issue gets the "claude" label, or when someone mentions
+# @claude in an issue/PR comment or review. Claude works on a claude/issue-<N>
+# branch, runs the typecheck and opens a PR; later @claude comments on the PR
+# push new commits to the same branch, which redeploys the preview.
+
+on:
+  issues:
+    types: [labeled]
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+  pull_request_review:
+    types: [submitted]
+
+concurrency:
+  # One run per issue/PR at a time; queue follow-up requests instead of racing.
+  group: claude-${{ github.event.issue.number || github.event.pull_request.number }}
+  cancel-in-progress: false
+
+jobs:
+  claude:
+    # Who may start the agent:
+    # - Label path: applying a label already requires triage access to the repo.
+    # - Comment path: the commenter's author_association must be listed in the
+    #   CLAUDE_ALLOWED_ASSOCIATIONS repo variable (JSON array). Defaults to owner,
+    #   org members and collaborators.
+    # The action also refuses any actor without write access to the repo, so to
+    # let a contributor use the agent, invite them as a collaborator with Write.
+    if: >-
+      (github.event_name == 'issues' && github.event.label.name == 'claude') ||
+      (github.event_name == 'issue_comment' &&
+        contains(github.event.comment.body, '@claude') &&
+        contains(fromJSON(vars.CLAUDE_ALLOWED_ASSOCIATIONS || '["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)) ||
+      (github.event_name == 'pull_request_review_comment' &&
+        contains(github.event.comment.body, '@claude') &&
+        contains(fromJSON(vars.CLAUDE_ALLOWED_ASSOCIATIONS || '["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)) ||
+      (github.event_name == 'pull_request_review' &&
+        contains(github.event.review.body, '@claude') &&
+        contains(fromJSON(vars.CLAUDE_ALLOWED_ASSOCIATIONS || '["OWNER","MEMBER","COLLABORATOR"]'), github.event.review.author_association))
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      actions: read # lets Claude read CI results on the PR
+      id-token: write # required for the Claude GitHub App token exchange
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          label_trigger: claude
+          branch_name_template: "{{prefix}}{{entityType}}-{{entityNumber}}"
+          use_sticky_comment: true
+          claude_args: |
+            --allowedTools "Edit,Write,Read,Glob,Grep,Bash(npm ci),Bash(npm run typecheck),Bash(npm run build),Bash(npm run generate-thumbnails),Bash(git:*),Bash(gh pr create:*),Bash(gh pr view:*),Bash(gh pr list:*),Bash(gh issue view:*)"
+            --disallowedTools "Edit(.github/**),Write(.github/**),Edit(Dockerfile),Write(Dockerfile)"
+            --append-system-prompt "You are working in CI on a GitHub issue or PR. Follow the 'Agent rules' section of CLAUDE.md. When working from an issue and no PR exists yet for your branch, open one with gh pr create against main, with a body that summarises the change and ends with 'Closes #<issue number>'. When working on an existing PR, push to its branch and do not open a new PR."
