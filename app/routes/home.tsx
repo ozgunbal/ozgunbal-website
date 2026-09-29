@@ -125,11 +125,11 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             <img
               src={resolvedTheme === 'dark' ? '/images/dark_ozgun.png' : '/images/light_ozgun.png'}
               alt="Özgün Bal"
-              className="h-64 w-auto"
+              className="h-40 sm:h-48 md:h-64 w-auto max-w-full mx-auto object-contain"
             />
           )}
           {!mounted && (
-            <div className="h-64 w-auto" style={{ minWidth: '256px' }} />
+            <div className="h-40 sm:h-48 md:h-64 w-40 sm:w-48 md:w-64" />
           )}
         </div>
 
