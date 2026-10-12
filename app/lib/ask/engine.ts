@@ -68,10 +68,10 @@ export class Assistant {
   ) {}
 
   static async create(model: Blob): Promise<Assistant> {
-    const { Engine, Backend, SamplerType } = await import("@litert-lm/core");
+    const { Engine, SamplerType } = await import("@litert-lm/core");
+    // No `backend`: the -web.litertlm models are built for the SDK default (GPU_ARTISAN); forcing Backend.GPU fails with "Unsupported backend".
     const engine = await Engine.create({
       model,
-      backend: Backend.GPU,
       mainExecutorSettings: { maxNumTokens: MAX_NUM_TOKENS },
     });
     try {
