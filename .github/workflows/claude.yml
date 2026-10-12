@@ -69,6 +69,6 @@ jobs:
           branch_name_template: "{{prefix}}{{entityType}}-{{entityNumber}}"
           use_sticky_comment: true
           claude_args: |
-            --allowedTools "Edit,Write,Read,Glob,Grep,Bash(npm ci),Bash(npm run typecheck),Bash(npm run build),Bash(npm run generate-thumbnails),Bash(git:*),Bash(gh pr create:*),Bash(gh pr view:*),Bash(gh pr list:*),Bash(gh issue view:*)"
+            --allowedTools "Edit,Write,Read,Glob,Grep,WebFetch,WebSearch,Bash(npm ci),Bash(npm install:*),Bash(npm run typecheck),Bash(npm run build),Bash(npm run generate-thumbnails),Bash(git:*),Bash(gh pr create:*),Bash(gh pr view:*),Bash(gh pr list:*),Bash(gh issue view:*)"
             --disallowedTools "Edit(.github/**),Write(.github/**),Edit(Dockerfile),Write(Dockerfile)"
             --append-system-prompt "You are working in CI on a GitHub issue or PR. Follow the 'Agent rules' section of CLAUDE.md. When working from an issue and no PR exists yet for your branch, open one with gh pr create against main, with a body that summarises the change and ends with 'Closes #<issue number>'. When working on an existing PR, push to its branch and do not open a new PR."
