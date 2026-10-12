@@ -1,0 +1,21 @@
+{
+  "source": "app/routes/about.tsx",
+  "chunks": [
+    {
+      "id": "about-1",
+      "text": "I'm a Software Architect at Innovance Consultancy, a Turkish technology consultancy working with mostly fintech and banking clients. Over the past 11+ years I've built my career around React, React Native, leading small and mid-level teams and guide as a chapter lead of 30–40 engineers through everything from cross-functional architecture to client delivery inside heavily regulated environments."
+    },
+    {
+      "id": "about-2",
+      "text": "These days a growing part of my work is shaping how AI fits into software development. I am driving institutional AI adoption, and hold a Google Cloud Generative AI Leader certification. Alongside that, I've been deliberately widening my own scope beyond frontend and mobile — spending more time in native mobile, backend, and DevOps — because I think the architects who'll matter most in the next few years are the ones who can reason across the whole stack, not just their original specialty."
+    },
+    {
+      "id": "about-3",
+      "text": "I studied at Boğaziçi University, and I still think of myself as someone who's happiest a few steps ahead of \"settled\" — whether that's a new framework, a new part of the stack, or a new way of working with AI tools."
+    },
+    {
+      "id": "about-4",
+      "text": "Outside of work, I've been a certified scuba diver for over 10 years, I'm a regular at metal concerts, and I recently picked up drumming — trading one kind of rhythm section for another."
+    }
+  ]
+}
