@@ -8,9 +8,12 @@
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
     "convert-presentation": "node scripts/convert-presentation.cjs",
-    "generate-thumbnails": "node scripts/generate-thumbnails.cjs"
+    "generate-thumbnails": "node scripts/generate-thumbnails.cjs",
+    "generate-about-knowledge": "node scripts/generate-about-knowledge.cjs",
+    "eval-ask": "node scripts/eval-ask.mjs"
   },
   "dependencies": {
+    "@litert-lm/core": "^0.18.0",
     "@react-router/node": "7.10.1",
     "@react-router/serve": "7.10.1",
     "isbot": "^5.1.31",

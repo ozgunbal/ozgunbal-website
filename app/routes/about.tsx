@@ -1,4 +1,8 @@
+import { lazy, Suspense, useEffect, useState } from "react";
 import type { Route } from "./+types/about";
+
+// Client-only: the assistant touches WebGPU/OPFS, and the model runtime loads lazily after the FAB is clicked.
+const AskAssistant = lazy(() => import("~/components/AskAssistant"));
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -20,6 +24,12 @@ function ImagePlaceholder({ label }: { label: string }) {
       {label}
     </div>
   );
+}
+
+function ClientOnly({ children }: { children: React.ReactNode }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  return mounted ? <>{children}</> : null;
 }
 
 export default function About() {
@@ -78,6 +88,11 @@ export default function About() {
           </div>
         </div>
       </div>
+      <ClientOnly>
+        <Suspense fallback={null}>
+          <AskAssistant />
+        </Suspense>
+      </ClientOnly>
     </main>
   );
 }
