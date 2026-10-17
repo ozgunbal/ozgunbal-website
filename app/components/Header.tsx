@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router";
+import { Link, NavLink, useLocation } from "react-router";
 import { ThemeToggle } from "./ThemeToggle";
 import { useTheme } from "../hooks/useTheme";
 
@@ -10,6 +10,17 @@ const NAV_LINKS = [
   { to: "/presentations", label: "Presentations" },
   { to: "/blog", label: "Blog" },
 ];
+
+function navLinkStyle(isActive: boolean) {
+  return {
+    color: isActive ? 'var(--color-foreground)' : 'var(--color-muted-foreground)',
+    borderBottomColor: isActive ? 'var(--color-foreground)' : 'transparent',
+  };
+}
+
+function navLinkClass(isActive: boolean) {
+  return `border-b-2 transition-colors hover:opacity-80 ${isActive ? "font-bold" : ""}`;
+}
 
 export function Header() {
   const { resolvedTheme } = useTheme();
@@ -37,14 +48,14 @@ export function Header() {
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-6 text-xl">
             {NAV_LINKS.map(({ to, label }) => (
-              <Link
+              <NavLink
                 key={to}
                 to={to}
-                style={{ color: 'var(--color-muted-foreground)' }}
-                className="hover:opacity-80"
+                style={({ isActive }) => navLinkStyle(isActive)}
+                className={({ isActive }) => navLinkClass(isActive)}
               >
                 {label}
-              </Link>
+              </NavLink>
             ))}
             <ThemeToggle />
           </div>
@@ -87,14 +98,14 @@ export function Header() {
         {menuOpen && (
           <div id="mobile-menu" className="md:hidden flex flex-col gap-4 py-4 text-xl">
             {NAV_LINKS.map(({ to, label }) => (
-              <Link
+              <NavLink
                 key={to}
                 to={to}
-                style={{ color: 'var(--color-muted-foreground)' }}
-                className="hover:opacity-80"
+                style={({ isActive }) => navLinkStyle(isActive)}
+                className={({ isActive }) => navLinkClass(isActive)}
               >
                 {label}
-              </Link>
+              </NavLink>
             ))}
           </div>
         )}
