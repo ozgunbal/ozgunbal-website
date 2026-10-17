@@ -44,29 +44,33 @@ export default function Trainings() {
 
       {/* Sliding Border Rectangle Tab Navigation */}
       <div className="mb-8">
-        <nav className="relative inline-flex gap-2 p-1 rounded-lg" style={{ backgroundColor: 'var(--color-muted)' }}>
+        <nav role="tablist" className="relative inline-flex gap-2 p-1 rounded-lg" style={{ backgroundColor: 'var(--color-muted)' }}>
           <div
-            className="absolute top-1 bottom-1 rounded-md border-2 border-blue-500 transition-all duration-300 ease-in-out"
+            className="absolute top-1 bottom-1 rounded-md bg-blue-600 shadow-md transition-all duration-300 ease-in-out"
             style={{
               left: activeTab === "internal" ? "4px" : "calc(50% + 4px)",
               width: "calc(50% - 8px)",
             }}
           />
           <button
+            role="tab"
+            aria-selected={activeTab === "internal"}
             onClick={() => setActiveTab("internal")}
-            className="relative z-10 px-6 py-2 rounded-md font-medium transition-colors"
+            className={`relative z-10 px-6 py-2 rounded-md transition-colors ${activeTab === "internal" ? "font-bold" : "font-medium hover:opacity-80"}`}
             style={{
-              color: activeTab === "internal" ? 'var(--color-foreground)' : 'var(--color-muted-foreground)',
+              color: activeTab === "internal" ? '#ffffff' : 'var(--color-muted-foreground)',
               width: 'calc(50% - 4px)'
             }}
           >
             Internal Training
           </button>
           <button
+            role="tab"
+            aria-selected={activeTab === "external"}
             onClick={() => setActiveTab("external")}
-            className="relative z-10 px-6 py-2 rounded-md font-medium transition-colors"
+            className={`relative z-10 px-6 py-2 rounded-md transition-colors ${activeTab === "external" ? "font-bold" : "font-medium hover:opacity-80"}`}
             style={{
-              color: activeTab === "external" ? 'var(--color-foreground)' : 'var(--color-muted-foreground)',
+              color: activeTab === "external" ? '#ffffff' : 'var(--color-muted-foreground)',
               width: 'calc(50% - 4px)'
             }}
           >
