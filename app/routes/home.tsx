@@ -125,7 +125,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             <img
               src={resolvedTheme === 'dark' ? '/images/dark_ozgun.png' : '/images/light_ozgun.png'}
               alt="Özgün Bal"
-              className="h-64 w-auto"
+              className="h-auto max-h-64 w-auto max-w-full"
             />
           )}
           {!mounted && (
