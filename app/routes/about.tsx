@@ -7,21 +7,6 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-function ImagePlaceholder({ label }: { label: string }) {
-  return (
-    <div
-      className="aspect-square rounded-lg border-2 border-dashed flex items-center justify-center text-center p-4 text-sm"
-      style={{
-        borderColor: 'var(--color-border)',
-        color: 'var(--color-muted-foreground)',
-        backgroundColor: 'var(--color-card)',
-      }}
-    >
-      {label}
-    </div>
-  );
-}
-
 export default function About() {
   return (
     <main className="container mx-auto px-4 py-12">
@@ -36,14 +21,9 @@ export default function About() {
             to client delivery inside heavily regulated environments.
           </p>
           <img
-            src="/images/light_ozgun.png"
-            alt="Özgün Bal"
-            className="w-full md:w-56 rounded-lg block dark:hidden"
-          />
-          <img
-            src="/images/dark_ozgun.png"
-            alt="Özgün Bal"
-            className="w-full md:w-56 rounded-lg hidden dark:block"
+            src="/images/about-coding.jpg"
+            alt="Özgün Bal working on a laptop"
+            className="w-full md:w-72 shrink-0 rounded-lg"
           />
         </div>
 
@@ -56,9 +36,11 @@ export default function About() {
             because I think the architects who'll matter most in the next few years are the ones
             who can reason across the whole stack, not just their original specialty.
           </p>
-          <div className="w-full md:w-56 shrink-0">
-            <ImagePlaceholder label="AI adoption / certification photo" />
-          </div>
+          <img
+            src="/images/about-concert.jpg"
+            alt="Özgün Bal at a metal concert"
+            className="w-full md:w-72 shrink-0 rounded-lg"
+          />
         </div>
 
         <p className="text-lg" style={{ color: 'var(--color-muted-foreground)' }}>
@@ -73,9 +55,11 @@ export default function About() {
             metal concerts, and I recently picked up drumming — trading one kind of rhythm section
             for another.
           </p>
-          <div className="w-full md:w-56 shrink-0">
-            <ImagePlaceholder label="Diving / concerts / drumming photo" />
-          </div>
+          <img
+            src="/images/about-diving.jpg"
+            alt="Özgün Bal scuba diving by a coral reef"
+            className="w-full md:w-72 shrink-0 rounded-lg"
+          />
         </div>
       </div>
     </main>
