@@ -1,0 +1,23 @@
+{
+  "title": "From React Native to Flutter: Pros, Cons and Lessons Learned",
+  "slug": "react-native-to-flutter",
+  "description": "",
+  "date": "2025-12-13",
+  "tags": [],
+  "theme": {
+    "font": "montserrat",
+    "color": "beige-brown"
+  },
+  "revealConfig": {
+    "width": 960,
+    "height": 700,
+    "margin": 0.04,
+    "controls": true,
+    "progress": true,
+    "center": true,
+    "transition": "slide",
+    "backgroundTransition": "fade",
+    "hash": true
+  },
+  "thumbnail": "/presentations/content/react-native-to-flutter/assets/slides-thumbnail.png"
+}

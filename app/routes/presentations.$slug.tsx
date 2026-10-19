@@ -16,6 +16,16 @@ function removeEmptyVideoBlocks(html: string): string {
   );
 }
 
+// Loaded only on the viewer route, not the shared presentations layout:
+// offline-v2.css carries global html/body/h1/a rules from the Slides.com
+// export that would otherwise restyle the gallery page and its header.
+export function links() {
+  return [
+    { rel: "stylesheet", href: "/presentations/lib/reveal.css" },
+    { rel: "stylesheet", href: "/presentations/lib/offline-v2.css" },
+  ];
+}
+
 export async function loader({ params }: Route.LoaderArgs) {
   const { slug } = params;
 
