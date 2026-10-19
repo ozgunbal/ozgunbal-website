@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useRevealRuntime } from "~/lib/revealRuntime";
 
 interface PresentationMetadata {
@@ -46,6 +46,11 @@ export function PresentationViewer({ slug, metadata, html }: PresentationViewerP
   const runtime = useRevealRuntime();
   const [state, setState] = useState<InitState>({ status: "waiting-runtime" });
   const [retryToken, setRetryToken] = useState(0);
+  // React 19 compares dangerouslySetInnerHTML by object identity, so a fresh
+  // { __html } on every render would rewrite the slides on each state change
+  // — after Reveal has initialized, leaving it holding detached <section>s
+  // (e.g. lazily loaded slide backgrounds never appear).
+  const slidesHtml = useMemo(() => ({ __html: html }), [html]);
 
   useEffect(() => {
     if (runtime.status === "loading") {
@@ -182,7 +187,7 @@ export function PresentationViewer({ slug, metadata, html }: PresentationViewerP
       style={{ width: "100%", height: "100vh", position: "relative" }}
     >
       <div className="reveal" ref={revealRef}>
-        <div className="slides" ref={slidesRef} dangerouslySetInnerHTML={{ __html: html }} />
+        <div className="slides" ref={slidesRef} dangerouslySetInnerHTML={slidesHtml} />
       </div>
 
       {showOverlay && (
