@@ -1,0 +1,851 @@
+<style id="deck-github-copilot-cli-deep-dive">
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:400;src:url(/presentations/content/github-copilot-cli-deep-dive/assets/archivo-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:400;src:url(/presentations/content/github-copilot-cli-deep-dive/assets/archivo-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:500;src:url(/presentations/content/github-copilot-cli-deep-dive/assets/archivo-latin-ext-500-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:500;src:url(/presentations/content/github-copilot-cli-deep-dive/assets/archivo-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:600;src:url(/presentations/content/github-copilot-cli-deep-dive/assets/archivo-latin-ext-600-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:600;src:url(/presentations/content/github-copilot-cli-deep-dive/assets/archivo-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:700;src:url(/presentations/content/github-copilot-cli-deep-dive/assets/archivo-latin-ext-700-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:700;src:url(/presentations/content/github-copilot-cli-deep-dive/assets/archivo-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+.reveal-viewport:has(#deck-github-copilot-cli-deep-dive) { background: #fff; }
+
+.reveal-viewport.reveal-viewport .reveal .slides section { line-height: 1.3; }
+.reveal-viewport.reveal-viewport .reveal h1, .reveal-viewport.reveal-viewport .reveal h2, .reveal-viewport.reveal-viewport .reveal h3, .reveal-viewport.reveal-viewport .reveal h4 { line-height: 1.2; font-weight: 600; }
+.reveal-viewport.reveal-viewport .reveal p { margin: 20px 0; line-height: 1.3; }
+.reveal-viewport.reveal-viewport .reveal code { font-family: monospace; text-transform: none; }
+.reveal-viewport.reveal-viewport .reveal section img { margin: 20px 0; }
+
+
+    
+    :root {
+      --inv-primary:       #1C184B;
+      --inv-secondary:     #40256C;
+      --inv-accent:        #40256C;
+      --inv-accent-soft:   #C6B0FA;
+      --inv-accent-bold:   #8449E9;
+      --inv-bg:            #FFFFFF;
+      --inv-text:          #1C184B;
+      --inv-text-muted:    #40256C;
+      --inv-text-on-dark:  #FFFFFF;
+      --inv-text-on-accent:#40256C;
+      --inv-pad:           30px;   
+      --inv-gap:           16px;   
+    }
+
+    
+    .reveal-viewport.reveal-viewport .reveal {
+      font-family: "Archia", "Archivo", "Calibri", "Segoe UI", sans-serif;
+      color: var(--inv-text);
+      font-size: 28px; 
+    }
+    .reveal-viewport.reveal-viewport .reveal h1, .reveal-viewport.reveal-viewport .reveal h2, .reveal-viewport.reveal-viewport .reveal h3, .reveal-viewport.reveal-viewport .reveal h4 {
+      font-family: "Archia", "Archivo", "Calibri", "Segoe UI", sans-serif;
+      text-transform: none;
+      letter-spacing: 0;
+      margin: 0;
+    }
+    .reveal-viewport.reveal-viewport .reveal .slides > section { height: 100%; text-align: left; box-sizing: border-box; }
+    .reveal-viewport.reveal-viewport .reveal section { text-align: left; }
+
+    
+    .reveal-viewport.reveal-viewport .inv-footer {
+      position: absolute;
+      bottom: 10px;
+      left: 36px;
+      z-index: 10;
+      font-family: "Archia", "Archivo", sans-serif;
+      font-weight: 500;
+      font-size: 11px;   
+      color: var(--inv-primary);
+      opacity: 0.65;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .reveal-viewport.reveal-viewport [data-background-color="#40256C"] .inv-footer, .reveal-viewport.reveal-viewport .section-opener .inv-footer, .reveal-viewport.reveal-viewport .thank-you .inv-footer { color: rgba(255,255,255,0.7); opacity: 1; }
+    .reveal-viewport.reveal-viewport [data-background-color="#C6B0FA"].section-opener .inv-footer { color: #1C184B; opacity: 0.65; }
+
+    
+    .reveal-viewport.reveal-viewport .reveal .slide-number {
+      background: var(--inv-primary); color: #fff;
+      font-family: "Archia", "Archivo", sans-serif; font-size: 11px;
+      padding: 4px 10px; border-radius: 4px;
+      right: 16px; bottom: 10px;
+    }
+
+    
+    .reveal-viewport.reveal-viewport .decorative-motif {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: block;
+      pointer-events: none;
+    }
+
+    
+    .reveal-viewport.reveal-viewport .slide-logo {
+      position: absolute;
+      top: 24px;
+      left: 36px;
+      height: 32px;
+      width: auto;
+      display: block;
+      z-index: 10;
+    }
+
+    
+    .reveal-viewport.reveal-viewport .title-slide {
+      background: var(--inv-bg);
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      padding: 72px 36px 44px 36px;
+    }
+    .reveal-viewport.reveal-viewport .title-slide h1 { font-size: 1.3em; font-weight: 600; color: var(--inv-secondary); margin: 0; }
+    .reveal-viewport.reveal-viewport .title-slide .subtitle { font-size: 0.82em; color: var(--inv-primary); margin-top: 8px; font-weight: 400; line-height: 1.4; }
+
+    
+    .reveal-viewport.reveal-viewport .agenda-slide {
+      background: var(--inv-bg);
+      text-align: left;
+      padding: var(--inv-pad) 36px 44px 36px;
+    }
+    .reveal-viewport.reveal-viewport .agenda-slide h2 { font-size: 1.2em; font-weight: 600; color: var(--inv-primary); }
+    .reveal-viewport.reveal-viewport .agenda-slide .subtitle { font-size: 0.8em; color: var(--inv-accent); margin-top: 4px; }
+    .reveal-viewport.reveal-viewport .agenda-slide .agenda-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+      align-items: center; margin-top: 14px;
+    }
+    .reveal-viewport.reveal-viewport .agenda-slide .agenda-list { display: flex; flex-direction: column; gap: 6px; }
+    .reveal-viewport.reveal-viewport .agenda-slide .agenda-item {
+      font-size: 0.75em; color: var(--inv-accent-bold);
+      font-weight: 500; padding: 6px 0;
+      border-bottom: 1px solid var(--inv-accent-soft);
+      display: flex; align-items: baseline; gap: 8px;
+    }
+    .reveal-viewport.reveal-viewport .agenda-slide .agenda-item .num {
+      color: var(--inv-accent); font-weight: 700; font-size: 1em; min-width: 18px;
+    }
+
+    
+    .reveal-viewport.reveal-viewport .section-opener {
+      color: var(--inv-text-on-dark);
+      text-align: left;
+      padding: var(--inv-pad) 36px 44px 36px;
+    }
+    .reveal-viewport.reveal-viewport .section-opener h2 { color: #fff; font-size: 1.2em; font-weight: 600; }
+    .reveal-viewport.reveal-viewport .section-opener .section-content { margin-top: 12px; }
+    .reveal-viewport.reveal-viewport .section-opener .section-icon { width: 32px; height: 32px; margin-right: 10px; }
+    .reveal-viewport.reveal-viewport .section-opener .section-header { display: flex; align-items: center; margin-bottom: 8px; }
+    .reveal-viewport.reveal-viewport .section-opener .section-header h3 { color: var(--inv-accent-soft); font-size: 0.88em; margin: 0; }
+    .reveal-viewport.reveal-viewport .section-opener p { color: rgba(255,255,255,0.85); font-size: 0.72em; line-height: 1.5; }
+    .reveal-viewport.reveal-viewport .section-opener .marker-list { list-style: none; padding: 0; margin-top: 10px; }
+    .reveal-viewport.reveal-viewport .section-opener .marker-list li {
+      color: var(--inv-accent-soft); font-size: 0.72em; padding: 4px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .reveal-viewport.reveal-viewport .section-opener .marker-list li::before { content: '▸ '; color: var(--inv-accent-soft); }
+
+    
+    .reveal-viewport.reveal-viewport [data-background-color="#C6B0FA"].section-opener h2 { color: #1C184B; }
+    .reveal-viewport.reveal-viewport [data-background-color="#C6B0FA"].section-opener .section-header h3 { color: #40256C; }
+    .reveal-viewport.reveal-viewport [data-background-color="#C6B0FA"].section-opener p { color: rgba(28,24,75,0.85); }
+    .reveal-viewport.reveal-viewport [data-background-color="#C6B0FA"].section-opener .marker-list li {
+      color: #40256C; border-bottom-color: rgba(28,24,75,0.2);
+    }
+    .reveal-viewport.reveal-viewport [data-background-color="#C6B0FA"].section-opener .marker-list li::before { color: #40256C; }
+
+    
+    .reveal-viewport.reveal-viewport .content-sidebar {
+      padding: var(--inv-pad) 36px 44px 36px;
+    }
+    .reveal-viewport.reveal-viewport .content-sidebar h2 { font-size: 1.2em; font-weight: 600; color: var(--inv-primary); margin-bottom: 12px; }
+    .reveal-viewport.reveal-viewport .content-sidebar .two-col { display: grid; grid-template-columns: 3fr 2fr; gap: var(--inv-gap); }
+    .reveal-viewport.reveal-viewport .content-sidebar .col-main p { font-size: 0.72em; color: var(--inv-accent-bold); line-height: 1.55; }
+    .reveal-viewport.reveal-viewport .content-sidebar .col-sidebar ul { list-style: none; padding: 0; margin: 0; }
+    .reveal-viewport.reveal-viewport .content-sidebar .col-sidebar li {
+      font-size: 0.7em; padding: 5px 0; font-weight: 500;
+      border-bottom: 1px solid rgba(28, 24, 75, 0.15);
+      color: var(--inv-accent-bold);
+    }
+    .reveal-viewport.reveal-viewport .content-sidebar .col-sidebar li::before { content: '▸ '; color: var(--inv-accent); }
+
+    
+    .reveal-viewport.reveal-viewport .three-column-icons {
+      padding: var(--inv-pad) 36px 44px 36px;
+    }
+    .reveal-viewport.reveal-viewport .three-column-icons h2 { font-size: 1.2em; font-weight: 600; color: var(--inv-primary); }
+    .reveal-viewport.reveal-viewport .three-column-icons .subtitle { font-size: 0.78em; color: var(--inv-accent); margin-top: 2px; }
+    .reveal-viewport.reveal-viewport .three-column-icons .col-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--inv-gap);
+      margin-top: 14px;
+    }
+    .reveal-viewport.reveal-viewport .three-column-icons .col-card { text-align: left; }
+    .reveal-viewport.reveal-viewport .three-column-icons .col-icon { width: 36px; height: 36px; margin-bottom: 8px; }
+    .reveal-viewport.reveal-viewport .three-column-icons h3 { color: var(--inv-accent); font-size: 0.88em; margin-bottom: 6px; }
+    .reveal-viewport.reveal-viewport .three-column-icons .col-card p { color: var(--inv-primary); font-size: 0.68em; line-height: 1.45; margin: 0; }
+
+    
+    .reveal-viewport.reveal-viewport .four-column-icons {
+      padding: var(--inv-pad) 36px 44px 36px;
+    }
+    .reveal-viewport.reveal-viewport .four-column-icons h2 { font-size: 1.2em; font-weight: 600; color: var(--inv-primary); }
+    .reveal-viewport.reveal-viewport .four-column-icons .subtitle { font-size: 0.78em; color: var(--inv-accent); margin-top: 2px; }
+    .reveal-viewport.reveal-viewport .four-column-icons .col-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+      margin-top: 14px;
+    }
+    .reveal-viewport.reveal-viewport .four-column-icons .col-card {
+      text-align: left; background: var(--inv-accent-soft);
+      border-radius: 6px; padding: 14px;
+    }
+    .reveal-viewport.reveal-viewport .four-column-icons .col-icon { width: 32px; height: 32px; margin-bottom: 8px; }
+    .reveal-viewport.reveal-viewport .four-column-icons h3 { color: var(--inv-primary); font-size: 0.85em; margin-bottom: 4px; font-weight: 600; }
+    .reveal-viewport.reveal-viewport .four-column-icons .col-card p { color: var(--inv-text-muted); font-size: 0.65em; line-height: 1.45; margin: 0; }
+
+    
+    .reveal-viewport.reveal-viewport .kpi-cards {
+      padding: var(--inv-pad) 36px 44px 36px;
+    }
+    .reveal-viewport.reveal-viewport .kpi-cards h2 { font-size: 1.2em; font-weight: 600; color: var(--inv-primary); }
+    .reveal-viewport.reveal-viewport .kpi-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--inv-gap);
+      margin-top: 16px;
+    }
+    .reveal-viewport.reveal-viewport .kpi-card {
+      background: var(--inv-accent-soft); border-radius: 8px;
+      padding: 20px 16px; text-align: center;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .reveal-viewport.reveal-viewport .kpi-number { font-weight: 600; font-size: 2.6em; color: var(--inv-accent); line-height: 1; }
+    .reveal-viewport.reveal-viewport .kpi-icon { width: 28px; height: 28px; }
+    .reveal-viewport.reveal-viewport .kpi-label { font-size: 0.72em; font-weight: 500; color: var(--inv-primary); line-height: 1.3; }
+
+    
+    .reveal-viewport.reveal-viewport .tags-grid {
+      padding: var(--inv-pad) 36px 44px 36px;
+    }
+    .reveal-viewport.reveal-viewport .tags-grid h2 { font-size: 1.2em; font-weight: 600; color: var(--inv-primary); }
+    .reveal-viewport.reveal-viewport .tags-grid .subtitle { font-size: 0.78em; color: var(--inv-accent); margin-top: 2px; }
+    .reveal-viewport.reveal-viewport .grid-2x3 {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 10px; margin-top: 14px;
+    }
+    .reveal-viewport.reveal-viewport .tag-item { text-align: left; padding: 6px 0; }
+    .reveal-viewport.reveal-viewport .tag-label { display: block; color: var(--inv-accent); font-weight: 600; font-size: 0.8em; }
+    .reveal-viewport.reveal-viewport .tag-value { display: block; color: var(--inv-primary); font-size: 0.65em; margin-top: 3px; line-height: 1.4; }
+
+    
+    .reveal-viewport.reveal-viewport .content-bullets {
+      padding: var(--inv-pad) 36px 44px 36px;
+    }
+    .reveal-viewport.reveal-viewport .content-bullets h2 { font-size: 1.2em; font-weight: 600; color: var(--inv-primary); margin-bottom: 6px; }
+    .reveal-viewport.reveal-viewport .content-bullets > p { font-size: 0.72em; color: var(--inv-accent-bold); line-height: 1.45; }
+    .reveal-viewport.reveal-viewport .bullet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+    .reveal-viewport.reveal-viewport .bullet-item { padding: 6px 0 6px 10px; border-left: 3px solid var(--inv-accent); }
+    .reveal-viewport.reveal-viewport .bullet-accent { color: var(--inv-accent); font-weight: 600; font-size: 0.75em; }
+    .reveal-viewport.reveal-viewport .bullet-desc { color: var(--inv-primary); font-size: 0.65em; display: block; margin-top: 2px; line-height: 1.3; }
+
+    
+    .reveal-viewport.reveal-viewport .two-column-compare {
+      padding: var(--inv-pad) 36px 44px 36px;
+    }
+    .reveal-viewport.reveal-viewport .two-column-compare h2 { font-size: 1.2em; font-weight: 600; color: var(--inv-primary); }
+    .reveal-viewport.reveal-viewport .two-column-compare .subtitle { font-size: 0.78em; color: var(--inv-accent); margin-top: 2px; }
+    .reveal-viewport.reveal-viewport .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--inv-gap); margin-top: 14px; }
+    .reveal-viewport.reveal-viewport .compare-card { padding: 16px; }
+    .reveal-viewport.reveal-viewport .compare-bar { width: 50px; height: 3px; background: var(--inv-accent-soft); margin-bottom: 10px; border-radius: 2px; }
+    .reveal-viewport.reveal-viewport .compare-card h3 { color: var(--inv-accent); font-size: 0.88em; margin-bottom: 8px; }
+    .reveal-viewport.reveal-viewport .compare-card ul { list-style: none; padding: 0; margin: 0; }
+    .reveal-viewport.reveal-viewport .compare-card li { font-size: 0.68em; color: var(--inv-primary); padding: 3px 0; }
+    .reveal-viewport.reveal-viewport .compare-card .li-accent { color: var(--inv-accent); font-weight: 600; }
+
+    
+    .reveal-viewport.reveal-viewport .split-panel {
+      display: grid !important;
+      grid-template-columns: 58% 42%;
+      padding: 0 !important;
+    }
+    .reveal-viewport.reveal-viewport .panel-text {
+      padding: var(--inv-pad) 24px 44px 36px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .reveal-viewport.reveal-viewport .panel-text h2 { font-size: 1.1em; font-weight: 600; color: var(--inv-primary); margin-bottom: 4px; }
+    .reveal-viewport.reveal-viewport .panel-text .subtitle { font-size: 0.75em; color: var(--inv-accent); margin-bottom: 12px; }
+    .reveal-viewport.reveal-viewport .panel-dark {
+      background: var(--inv-secondary);
+      display: flex; flex-direction: column; justify-content: center;
+      gap: 12px; padding: 20px;
+    }
+    .reveal-viewport.reveal-viewport .panel-dark .code-block {
+      background: #0d1117; border-radius: 6px; padding: 12px;
+      font-family: "Fira Code", "Cascadia Code", "Consolas", monospace;
+      font-size: 0.55em; color: #e6edf3; line-height: 1.55;
+      overflow: hidden;
+    }
+    .reveal-viewport.reveal-viewport .panel-dark .code-block .comment { color: #8b949e; }
+    .reveal-viewport.reveal-viewport .panel-dark .code-block .keyword { color: #ff7b72; }
+    .reveal-viewport.reveal-viewport .panel-dark .code-block .string { color: #a5d6ff; }
+    .reveal-viewport.reveal-viewport .panel-dark .code-block .fn { color: #d2a8ff; }
+    .reveal-viewport.reveal-viewport .case-label { color: var(--inv-accent); font-weight: 600; font-size: 0.8em; }
+    .reveal-viewport.reveal-viewport .case-item { margin-bottom: 10px; }
+    .reveal-viewport.reveal-viewport .case-item h3 { font-size: 0.72em; font-weight: 700; color: var(--inv-accent); margin: 3px 0; }
+    .reveal-viewport.reveal-viewport .case-item p { font-size: 0.65em; color: var(--inv-primary); margin: 0; line-height: 1.4; }
+
+    
+    .reveal-viewport.reveal-viewport .color-grid {
+      padding: var(--inv-pad) 36px 44px 36px;
+    }
+    .reveal-viewport.reveal-viewport .color-grid h2 { font-size: 1.2em; font-weight: 600; color: var(--inv-primary); }
+    .reveal-viewport.reveal-viewport .color-grid .subtitle { font-size: 0.78em; color: var(--inv-accent); margin-top: 2px; }
+    .reveal-viewport.reveal-viewport .block-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10px; margin-top: 14px;
+    }
+    .reveal-viewport.reveal-viewport .block { border-radius: 6px; padding: 14px; display: flex; flex-direction: column; justify-content: center; }
+    .reveal-viewport.reveal-viewport .block h3 { font-size: 0.82em; font-weight: 600; margin-bottom: 4px; }
+    .reveal-viewport.reveal-viewport .block p { font-size: 0.62em; margin: 0; line-height: 1.35; }
+    .reveal-viewport.reveal-viewport .block.soft { background: var(--inv-accent-soft); color: var(--inv-text-on-accent); }
+    .reveal-viewport.reveal-viewport .block.accent { background: var(--inv-accent);      color: var(--inv-text-on-dark); }
+    .reveal-viewport.reveal-viewport .block.primary { background: var(--inv-primary);     color: var(--inv-text-on-dark); }
+
+    
+    .reveal-viewport.reveal-viewport .section-divider {
+      background: var(--inv-bg);
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      padding: 72px 36px 44px 36px;
+      text-align: left;
+    }
+    .reveal-viewport.reveal-viewport .section-divider h2 { color: var(--inv-secondary); font-size: 1.3em; font-weight: 600; }
+    .reveal-viewport.reveal-viewport .section-divider p { color: var(--inv-primary); font-size: 0.82em; margin-top: 6px; }
+
+    
+    .reveal-viewport.reveal-viewport .thank-you {
+      display: flex !important; align-items: center; justify-content: center;
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('/presentations/content/github-copilot-cli-deep-dive/assets/background-15.jpg');
+      background-repeat: unset;
+      background-size: cover;
+      text-align: center;
+    }
+    .reveal-viewport.reveal-viewport .thank-you h1 {
+      color: #fff; font-size: 2em; font-weight: 600;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.3);
+    }
+
+    
+    .reveal-viewport.reveal-viewport .workflow-row {
+      display: flex; align-items: center; gap: 6px;
+      margin-top: 14px; flex-wrap: wrap; justify-content: center;
+    }
+    .reveal-viewport.reveal-viewport .workflow-step {
+      background: var(--inv-accent-soft); color: var(--inv-primary);
+      padding: 7px 14px; border-radius: 5px; font-size: 0.68em; font-weight: 600;
+      text-align: center;
+    }
+    .reveal-viewport.reveal-viewport .workflow-step.active { background: var(--inv-accent); color: #fff; }
+    .reveal-viewport.reveal-viewport .workflow-arrow { color: var(--inv-accent); font-size: 1em; font-weight: 700; }
+
+    
+    .reveal-viewport.reveal-viewport .reveal .progress { background: rgba(64, 37, 108, 0.2); }
+    .reveal-viewport.reveal-viewport .reveal .progress span { background: #40256C; }
+    .reveal-viewport.reveal-viewport .reveal .controls { color: #40256C; }
+  
+.reveal-viewport.reveal-viewport .reveal.has-dark-background .controls { color: #fff; }
+.reveal-viewport.reveal-viewport .reveal.has-light-background .controls { color: #000; }
+</style>
+<section class="title-slide">
+        <img src="/presentations/content/github-copilot-cli-deep-dive/assets/logo-06.png" class="slide-logo" alt="Innovance" >
+        <h1>GitHub Copilot CLI Deep Dive</h1>
+        <p class="subtitle">Plan, Implement, Parallelize, Measure</p>
+        <p class="subtitle">Özgün Bal</p>
+        <svg class="decorative-motif" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="128" height="128" aria-hidden="true">
+          <rect x="0" y="16"  width="16" height="8" fill="#7568F7"></rect>
+          <rect x="16"  y="8" width="8" height="8" fill="#40256C"></rect>
+          <rect x="24" y="16" width="8" height="16" fill="#C6B0FA"></rect>
+        </svg>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        <aside class="notes">Welcome everyone. This session is not a feature tutorial — it's a practical engineering guide to building reliable AI-assisted workflows with Copilot CLI.</aside>
+      </section>
+
+      <section class="agenda-slide">
+        <h2>Agenda</h2>
+        <p class="subtitle">Four phases of engineering with Copilot CLI</p>
+        <div class="agenda-layout">
+          <div></div>
+          <div class="agenda-list">
+            <div class="agenda-item"><span class="num">01</span> Plan — Concepts &amp; mental models</div>
+            <div class="agenda-item"><span class="num">02</span> Implement — Guardrails, automation &amp; integration</div>
+            <div class="agenda-item"><span class="num">03</span> Parallelize — Multi-agent task splitting</div>
+            <div class="agenda-item"><span class="num">04</span> Measure — Token usage &amp; optimization</div>
+            <div class="agenda-item"><span class="num">05</span> Demo</div>
+            <div class="agenda-item"><span class="num">06</span> Q&amp;A</div>
+          </div>
+        </div>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        <aside class="notes">We'll cover four phases — each builds on the previous. We end with a live scenario and Q&A.</aside>
+      </section>
+
+      <section class="section-opener" data-background-color="#40256C">
+        <h2>1. Plan</h2>
+        <div class="section-content">
+          <div class="section-header">
+            <img src="/presentations/content/github-copilot-cli-deep-dive/assets/icon-09.png" class="section-icon" >
+            <h3>Concepts &amp; Mental Models</h3>
+          </div>
+          <p>Understand the key building blocks before writing a single prompt. Know where Skills, Agents, Hooks, and MCP fit in your delivery workflow.</p>
+          <ul class="marker-list">
+            <li>What problem does each abstraction solve?</li>
+            <li>When to compose vs. when to keep it simple</li>
+            <li>Mapping concepts to real engineering tasks</li>
+          </ul>
+        </div>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        <aside class="notes">Let's start with the planning phase. Before we automate anything, we need a shared mental model of what each component does.</aside>
+      </section>
+
+      <section class="four-column-icons">
+        <h2>The Four Building Blocks</h2>
+        <p class="subtitle">Each solves a different problem in the AI-assisted workflow</p>
+        <div class="col-grid">
+          <div class="col-card">
+            <img src="/presentations/content/github-copilot-cli-deep-dive/assets/icon-01.png" class="col-icon" >
+            <h3>Skill</h3>
+            <p>Reusable domain knowledge and instructions. Extend what the agent knows — like plugins for context.</p>
+          </div>
+          <div class="col-card">
+            <img src="/presentations/content/github-copilot-cli-deep-dive/assets/icon-02.png" class="col-icon" >
+            <h3>Agent</h3>
+            <p>Autonomous task executor. Spawns sub-agents for parallel work. Reads, writes, and runs tools.</p>
+          </div>
+          <div class="col-card">
+            <img src="/presentations/content/github-copilot-cli-deep-dive/assets/icon-03.png" class="col-icon" >
+            <h3>Hook</h3>
+            <p>Event-driven guardrails. Trigger scripts before or after tool calls to validate, lint, or transform.</p>
+          </div>
+          <div class="col-card">
+            <img src="/presentations/content/github-copilot-cli-deep-dive/assets/icon-04.png" class="col-icon" >
+            <h3>MCP</h3>
+            <p>Model Context Protocol servers. Connect external tools and data sources as first-class capabilities.</p>
+          </div>
+        </div>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        <aside class="notes">Skill adds knowledge, Agent executes, Hook enforces guardrails, MCP integrates external systems. Each has a clear role.</aside>
+      </section>
+
+      <section class="content-sidebar">
+        <h2>Workflow</h2>
+        <div class="two-col">
+          <div class="col-main">
+            <p>Copilot CLI components plug into each phase.</p>
+            <div class="workflow-row">
+              <div class="workflow-step">Idea</div>
+              <span class="workflow-arrow">→</span>
+              <div class="workflow-step active">Plan</div>
+              <span class="workflow-arrow">→</span>
+              <div class="workflow-step">Change</div>
+              <span class="workflow-arrow">→</span>
+              <div class="workflow-step">Validate</div>
+              <span class="workflow-arrow">→</span>
+              <div class="workflow-step">Commit</div>
+            </div>
+          </div>
+          <div class="col-sidebar">
+            <ul>
+              <li>Idea → Skills provide domain context</li>
+              <li>Plan → /plan breaks work into tasks</li>
+              <li>Change → Agents edit code &amp; files</li>
+              <li>Validate → Hooks run lint &amp; tests</li>
+              <li>Commit →  w/ MCP or manually</li>
+            </ul>
+          </div>
+        </div>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        <aside class="notes">This is the core mental model. Each component maps to a phase. Skills feed context, agents execute, hooks validate, MCP integrates.</aside>
+      </section>
+
+      <section class="section-divider">
+        <h2>Implement</h2>
+        <p>Guardrails, automation, and integration patterns</p>
+        <svg class="decorative-motif" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="128" height="128" aria-hidden="true">
+          <rect x="0" y="16"  width="16" height="8" fill="#7568F7"></rect>
+          <rect x="16"  y="8" width="8" height="8" fill="#40256C"></rect>
+          <rect x="24" y="16" width="8" height="16" fill="#C6B0FA"></rect>
+        </svg>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+      </section>
+
+      <section class="section-opener" data-background-color="#40256C">
+        <h2>2. Implement</h2>
+        <div class="section-content">
+          <div class="section-header">
+            <img src="/presentations/content/github-copilot-cli-deep-dive/assets/icon-06.png" class="section-icon" >
+            <h3>Guardrail-First Development</h3>
+          </div>
+          <p>Build safety nets before you automate. Hooks give you pre-tool and post-edit control points. Skills encode team standards. MCP connects your toolchain.</p>
+          <ul class="marker-list">
+            <li>Three concrete automation patterns</li>
+            <li>Pre-tool-call hooks for safety</li>
+            <li>Post-edit hooks for quality gates</li>
+            <li>MCP for external tool integration</li>
+          </ul>
+        </div>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        <aside class="notes">Now we implement. The key principle: set up guardrails before you automate. We'll see three real patterns.</aside>
+      </section>
+
+      <section class="split-panel">
+        <div class="panel-text">
+          <h2>Example 1: Schema → Migration</h2>
+          <p class="subtitle">postToolUse hook generates migration SQL</p>
+          <div class="case-item">
+            <span class="case-label">▸ Trigger</span>
+            <h3>Agent modifies a database model file</h3>
+            <p>When the agent edits a model file, a <code>postToolUse</code> hook fires — the script checks the file path against <code>**/models/*.ts</code> and generates migration SQL.</p>
+          </div>
+          <div class="case-item">
+            <span class="case-label">▸ Action</span>
+            <h3>Hook generates migration SQL</h3>
+            <p>The hook runs a diff against the current schema and produces an <code>ALTER TABLE</code> migration file — no manual SQL writing needed.</p>
+          </div>
+          <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        </div>
+        <div class="panel-dark">
+          <div class="code-block">
+            <span class="comment">// .github/hooks/schema.json</span><br>
+            { <span class="keyword">"version":</span> <span class="string">1</span>, <span class="keyword">"hooks":</span> {<br>
+            &nbsp;&nbsp;<span class="keyword">"postToolUse":</span> [{<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"type":</span> <span class="string">"command"</span>,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"bash":</span> <span class="string">"./scripts/gen-migration.sh"</span><br>
+            &nbsp;&nbsp;}]<br>
+            }}<br>
+            <br>
+            <span class="comment">// Output:</span><br>
+            <span class="string">ALTER TABLE</span> users<br>
+            &nbsp;&nbsp;<span class="keyword">ADD COLUMN</span> role VARCHAR(20)<br>
+            &nbsp;&nbsp;<span class="keyword">DEFAULT</span> <span class="string">'member'</span>;
+          </div>
+        </div>
+        <aside class="notes">Pattern 1: The agent edits a model, the hook generates migration SQL. Developer reviews the migration, not the prompt.</aside>
+      </section>
+
+      <section class="split-panel">
+        <div class="panel-text">
+          <h2>Example 2: Edit → Lint &amp; Type Check</h2>
+          <p class="subtitle">postToolUse hook validates touched files</p>
+          <div class="case-item">
+            <span class="case-label">▸ Trigger</span>
+            <h3>Any TypeScript file is modified</h3>
+            <p>A <code>postToolUse</code> hook parses the JSON payload, reads the file path via <code>jq</code>, and runs ESLint and <code>tsc --noEmit</code> — fast, targeted feedback.</p>
+          </div>
+          <div class="case-item">
+            <span class="case-label">▸ Outcome</span>
+            <h3>Immediate quality gate</h3>
+            <p>Type errors and lint violations surface within seconds. The agent can self-correct before proceeding.</p>
+          </div>
+          <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        </div>
+        <div class="panel-dark">
+          <div class="code-block">
+            <span class="comment">// .github/hooks/lint.json</span><br>
+            { <span class="keyword">"version":</span> <span class="string">1</span>, <span class="keyword">"hooks":</span> {<br>
+            &nbsp;&nbsp;<span class="keyword">"postToolUse":</span> [{<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"type":</span> <span class="string">"command"</span>,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"bash":</span> <span class="string">"./scripts/lint-check.sh"</span><br>
+            &nbsp;&nbsp;}]<br>
+            }}<br>
+            <br>
+            <span class="comment">// scripts/lint-check.sh</span><br>
+            <span class="fn">FILE</span>=<span class="string">$(cat | jq -r '.toolArgs.path')</span><br>
+            [[ <span class="string">"$FILE"</span> == *.ts ]] || exit 0<br>
+            <span class="fn">eslint</span> <span class="string">"$FILE"</span> &amp;&amp; <span class="fn">tsc</span> --noEmit<br>
+            <br>
+            <span class="comment">// ✓ 0 errors, 0 warnings</span>
+          </div>
+        </div>
+        <aside class="notes">Pattern 2: Every edit triggers lint and typecheck. This catches issues immediately — no waiting for CI.</aside>
+      </section>
+
+      <section class="split-panel">
+        <div class="panel-text">
+          <h2>Example 3: SQL Command Guardrail</h2>
+          <p class="subtitle">preToolUse hook blocks destructive operations</p>
+          <div class="case-item">
+            <span class="case-label">▸ Trigger</span>
+            <h3>Agent attempts a SQL command via bash</h3>
+            <p>Before any bash tool call runs, the <code>preToolUse</code> hook receives the command via JSON stdin and inspects it for dangerous SQL patterns.</p>
+          </div>
+          <div class="case-item">
+            <span class="case-label">▸ Outcome</span>
+            <h3>DELETE / DROP blocked, logged, and flagged</h3>
+            <p>The hook outputs <code>{"permissionDecision":"deny"}</code> to stdout, blocking execution. The agent is told why and asked to revise.</p>
+          </div>
+          <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        </div>
+        <div class="panel-dark">
+          <div class="code-block">
+            <span class="comment">// .github/hooks/sql-guard.json</span><br>
+            { <span class="keyword">"version":</span> <span class="string">1</span>, <span class="keyword">"hooks":</span> {<br>
+            &nbsp;&nbsp;<span class="keyword">"preToolUse":</span> [{<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"type":</span> <span class="string">"command"</span>,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"bash":</span> <span class="string">"./scripts/sql-guard.sh"</span><br>
+            &nbsp;&nbsp;}]<br>
+            }}<br>
+            <br>
+            <span class="comment">// scripts/sql-guard.sh</span><br>
+            <span class="fn">CMD</span>=<span class="string">$(cat | jq -r '.toolArgs.command')</span><br>
+            <span class="keyword">if</span> echo <span class="string">"$CMD"</span> | grep -qiE<br>
+            &nbsp;&nbsp;<span class="string">'DELETE|DROP|TRUNCATE'</span>; <span class="keyword">then</span><br>
+            &nbsp;&nbsp;echo <span class="string">'{"permissionDecision":"deny"}'</span><br>
+            <span class="keyword">fi</span>
+          </div>
+        </div>
+        <aside class="notes">Pattern 3: A safety net for destructive SQL. The hook blocks DELETE/DROP before they run. This is governance at the tool layer.</aside>
+      </section>
+
+      <section class="section-divider">
+        <h2>Parallelize</h2>
+        <p>Splitting work across multiple agents</p>
+        <svg class="decorative-motif" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="128" height="128" aria-hidden="true">
+          <rect x="0" y="16"  width="16" height="8" fill="#7568F7"></rect>
+          <rect x="16"  y="8" width="8" height="8" fill="#40256C"></rect>
+          <rect x="24" y="16" width="8" height="16" fill="#C6B0FA"></rect>
+        </svg>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+      </section>
+
+      <section class="section-opener" data-background-color="#C6B0FA">
+        <h2>3. Parallelize</h2>
+        <div class="section-content">
+          <div class="section-header">
+            <img src="/presentations/content/github-copilot-cli-deep-dive/assets/icon-12.png" class="section-icon" >
+            <h3>Multi-Agent Execution</h3>
+          </div>
+          <p>Not every task should be serial. Learn when to split work into independent sub-agents and when sequential processing is safer.</p>
+          <ul class="marker-list">
+            <li>Task decomposition strategies</li>
+            <li>Agent fleet coordination</li>
+            <li>Parallel vs. serial trade-offs</li>
+            <li>Merging outcomes and conflict resolution</li>
+          </ul>
+        </div>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        <aside class="notes">Section 3: Parallelization. When you have independent work, you can split it across agents. But when should you?</aside>
+      </section>
+
+      <section class="two-column-compare">
+        <h2>When to Go Parallel vs. Serial</h2>
+        <p class="subtitle">Choose based on task independence and risk profile</p>
+        <div class="compare-grid">
+          <div class="compare-card">
+            <div class="compare-bar"></div>
+            <h3>Parallel Execution</h3>
+            <ul>
+              <li><span class="li-accent">Independent scopes</span> — no shared file edits</li>
+              <li><span class="li-accent">Exploration tasks</span> — research multiple modules</li>
+              <li><span class="li-accent">Test generation</span> — one agent per test suite</li>
+              <li><span class="li-accent">Code review</span> — multiple reviewers on separate PRs</li>
+              <li><span class="li-accent">Speed gain</span> — 3–5× faster on large scopes</li>
+            </ul>
+          </div>
+          <div class="compare-card">
+            <div class="compare-bar"></div>
+            <h3>Serial Execution</h3>
+            <ul>
+              <li><span class="li-accent">Dependent steps</span> — output feeds next input</li>
+              <li><span class="li-accent">Shared state</span> — same file or database</li>
+              <li><span class="li-accent">Strict ordering</span> — schema before migration</li>
+              <li><span class="li-accent">Risk-sensitive</span> — production changes need gates</li>
+              <li><span class="li-accent">Accuracy priority</span> — correctness over speed</li>
+            </ul>
+          </div>
+        </div>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        <aside class="notes">Left: go parallel when tasks are independent. Right: go serial when there's shared state or ordering matters.</aside>
+      </section>
+
+      <section class="three-column-icons">
+        <h2>Agent Fleet Pattern</h2>
+        <p class="subtitle">Decompose → Dispatch → Merge</p>
+        <div class="col-grid">
+          <div class="col-card">
+            <img src="/presentations/content/github-copilot-cli-deep-dive/assets/icon-07.png" class="col-icon" >
+            <h3>1. Decompose</h3>
+            <p>Break the task into independent sub-problems. Each must have a clear scope and no overlapping file edits.</p>
+          </div>
+          <div class="col-card">
+            <img src="/presentations/content/github-copilot-cli-deep-dive/assets/icon-08.png" class="col-icon" >
+            <h3>2. Dispatch</h3>
+            <p>Launch sub-agents in background mode. Each runs with its own context window and tool access.</p>
+          </div>
+          <div class="col-card">
+            <img src="/presentations/content/github-copilot-cli-deep-dive/assets/icon-10.png" class="col-icon" >
+            <h3>3. Merge</h3>
+            <p>Collect results, resolve conflicts, and compose the final deliverable. Validate with hooks before commit.</p>
+          </div>
+        </div>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        <aside class="notes">The fleet pattern: decompose into independent parts, dispatch background agents, merge results. Simple but powerful.</aside>
+      </section>
+
+      <section class="section-divider">
+        <h2>Measure</h2>
+        <p>Token usage, observability, and cost optimization</p>
+        <svg class="decorative-motif" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="128" height="128" aria-hidden="true">
+          <rect x="0" y="16"  width="16" height="8" fill="#7568F7"></rect>
+          <rect x="16"  y="8" width="8" height="8" fill="#40256C"></rect>
+          <rect x="24" y="16" width="8" height="16" fill="#C6B0FA"></rect>
+        </svg>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+      </section>
+
+      <section class="section-opener" data-background-color="#40256C">
+        <h2>4. Measure</h2>
+        <div class="section-content">
+          <div class="section-header">
+            <img src="/presentations/content/github-copilot-cli-deep-dive/assets/icon-11.png" class="section-icon" >
+            <h3>Observability &amp; Optimization</h3>
+          </div>
+          <p>You can't improve what you don't measure. Inspect token usage, compare strategies, and define optimization heuristics for your team.</p>
+          <ul class="marker-list">
+            <li>Token consumption and context size tracking</li>
+            <li>Latency and success rate metrics</li>
+            <li>Model/task matching strategies</li>
+            <li>Cost-performance trade-off awareness</li>
+          </ul>
+        </div>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        <aside class="notes">Section 4: Measurement. We need data to make informed decisions about how we use AI tools. Let's look at the key metrics.</aside>
+      </section>
+
+      <section class="content-bullets">
+        <h2>Optimization Playbook</h2>
+        <p>Tactical patterns to reduce cost and improve accuracy across your AI-assisted workflows.</p>
+        <div class="bullet-grid">
+          <div class="bullet-item">
+            <span class="bullet-accent">Prompt Shaping</span>
+            <span class="bullet-desc">Write precise instructions. Provide examples. Reduce ambiguity before execution.</span>
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-accent">Context Pruning</span>
+            <span class="bullet-desc">Limit file reads to relevant modules. Use glob patterns to narrow scope.</span>
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-accent">Model / Task Matching</span>
+            <span class="bullet-desc">Use fast models for exploration. Reserve premium models for complex reasoning.</span>
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-accent">Session Reuse</span>
+            <span class="bullet-desc">Resume sessions to avoid rebuilding context. Use /resume and /chronicle.</span>
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-accent">Batch Operations</span>
+            <span class="bullet-desc">Group related edits. Parallelize independent reads. Chain bash commands.</span>
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-accent">Measure &amp; Iterate</span>
+            <span class="bullet-desc">Track /usage per task. Compare strategies. Build team-level benchmarks.</span>
+          </div>
+        </div>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        <aside class="notes">Six tactics: shape prompts, prune context, match models to tasks, reuse sessions, batch operations, and always measure.</aside>
+      </section>
+
+      <section class="tags-grid">
+        <h2>Commands &amp; Features Reference</h2>
+        <p class="subtitle">Key Copilot CLI commands to master</p>
+        <div class="grid-2x3">
+          <div class="tag-item">
+            <span class="tag-label">/plan &amp; /autopilot</span>
+            <span class="tag-value">Break work into structured tasks and execute them with autonomous control.</span>
+          </div>
+          <div class="tag-item">
+            <span class="tag-label">/agent &amp; /tasks</span>
+            <span class="tag-value">Launch background agents and track their progress. Monitor fleet status.</span>
+          </div>
+          <div class="tag-item">
+            <span class="tag-label">/skills &amp; /find-skills</span>
+            <span class="tag-value">Discover and attach domain skills. Extend agent capabilities on demand.</span>
+          </div>
+          <div class="tag-item">
+            <span class="tag-label">/mcp</span>
+            <span class="tag-value">Connect Model Context Protocol servers. Integrate databases, APIs, and tools.</span>
+          </div>
+          <div class="tag-item">
+            <span class="tag-label">/model &amp; /usage</span>
+            <span class="tag-value">Switch models mid-session. Inspect token consumption and cost breakdown.</span>
+          </div>
+          <div class="tag-item">
+            <span class="tag-label">/review &amp; /chronicle</span>
+            <span class="tag-value">Review code changes before commit. Browse session history and replay.</span>
+          </div>
+        </div>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        <aside class="notes">Quick reference of the commands we've used today. These are your daily drivers for working with Copilot CLI.</aside>
+      </section>
+
+      <section class="content-bullets">
+        <h2>Rollout Checklist</h2>
+        <p>Steps to adopt Copilot CLI workflows in your team, starting tomorrow.</p>
+        <div class="bullet-grid">
+          <div class="bullet-item">
+            <span class="bullet-accent">1. Set up hooks</span>
+            <span class="bullet-desc">Start with one post-edit hook for lint/typecheck on your primary language.</span>
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-accent">2. Create a team skill</span>
+            <span class="bullet-desc">Document your coding standards, architecture patterns, and review criteria as a skill.</span>
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-accent">3. Define guardrail policies</span>
+            <span class="bullet-desc">Agree on what agents can and cannot do. Encode boundaries in pre-tool hooks.</span>
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-accent">4. Measure baseline</span>
+            <span class="bullet-desc">Track token usage and task completion rates for one sprint before optimizing.</span>
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-accent">5. Iterate and share</span>
+            <span class="bullet-desc">Review what worked, share patterns across teams, and refine your playbook.</span>
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-accent">6. Scale with confidence</span>
+            <span class="bullet-desc">Add MCP integrations and parallel agents once guardrails are proven.</span>
+          </div>
+        </div>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        <aside class="notes">Six steps to get started. Begin with hooks and a skill. Measure before you optimize. Scale once your guardrails are solid.</aside>
+      </section>
+
+      <section class="section-divider">
+        <h2>Demo Time</h2>
+        <svg class="decorative-motif" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="128" height="128" aria-hidden="true">
+          <rect x="0" y="16"  width="16" height="8" fill="#7568F7"></rect>
+          <rect x="16"  y="8" width="8" height="8" fill="#40256C"></rect>
+          <rect x="24" y="16" width="8" height="16" fill="#C6B0FA"></rect>
+        </svg>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        <aside class="notes">Live demo time.</aside>
+      </section>
+
+      <section class="section-divider">
+        <h2>Questions &amp; Answers</h2>
+        <p>Let's discuss your use cases and challenges</p>
+        <svg class="decorative-motif" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="128" height="128" aria-hidden="true">
+          <rect x="0" y="16"  width="16" height="8" fill="#7568F7"></rect>
+          <rect x="16"  y="8" width="8" height="8" fill="#40256C"></rect>
+          <rect x="24" y="16" width="8" height="16" fill="#C6B0FA"></rect>
+        </svg>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        <aside class="notes">Open the floor for questions. Encourage people to share their specific use cases and challenges.</aside>
+      </section>
+
+      <section class="thank-you">
+        <h1>Thank You!</h1>
+        <footer class="inv-footer">© Innovance 2026. All Rights Reserved.</footer>
+        <aside class="notes">Thank everyone for attending. Share the repo link and any follow-up resources.</aside>
+      </section>

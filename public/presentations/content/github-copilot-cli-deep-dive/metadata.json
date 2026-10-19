@@ -1,0 +1,24 @@
+{
+  "title": "GitHub Copilot CLI Deep Dive",
+  "slug": "github-copilot-cli-deep-dive",
+  "description": "",
+  "date": "2026-05-14",
+  "tags": [],
+  "theme": {
+    "font": "custom",
+    "color": "custom"
+  },
+  "revealConfig": {
+    "width": 960,
+    "height": 540,
+    "margin": 0,
+    "controls": true,
+    "progress": true,
+    "center": true,
+    "transition": "none",
+    "backgroundTransition": "none",
+    "slideNumber": true,
+    "hash": true
+  },
+  "thumbnail": "/presentations/content/github-copilot-cli-deep-dive/assets/slides-thumbnail.png"
+}
