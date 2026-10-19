@@ -35,6 +35,9 @@ type InitState =
   | { status: "ready" }
   | { status: "error"; message: string };
 
+// Reveal.js's default scrollActivationWidth.
+const SCROLL_VIEW_MAX_WIDTH = 435;
+
 function delay(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -99,7 +102,16 @@ export function PresentationViewer({ slug, metadata, html }: PresentationViewerP
         // the themed element.
         instance = new window.Reveal(revealRef.current, {
           ...metadata.revealConfig,
-          embedded: false,
+          // Below SCROLL_VIEW_MAX_WIDTH Reveal.js switches to its scroll
+          // view, which scrolls the viewport element. Non-embedded, that is
+          // <body>, but our wrapper is a fixed-height overflow:hidden box, so
+          // nothing could scroll. Embedded mode makes the wrapper itself the
+          // viewport. It's limited to narrow screens because embedded decks
+          // only take keyboard input after being clicked.
+          embedded: window.innerWidth < SCROLL_VIEW_MAX_WIDTH,
+          scrollActivationWidth: SCROLL_VIEW_MAX_WIDTH,
+          // Keep the slide progress bar visible so it's clear the deck scrolls.
+          scrollProgress: true,
           // The bundled public/presentations/lib/reveal-plugins.js is a
           // concatenation of the Zoom/Notes/Markdown/Highlight plugin
           // bundles that got mis-assembled: every one of window.RevealZoom
@@ -184,7 +196,7 @@ export function PresentationViewer({ slug, metadata, html }: PresentationViewerP
     <div
       ref={viewportRef}
       className={`reveal-viewport theme-font-${metadata.theme.font} theme-color-${metadata.theme.color}`}
-      style={{ width: "100%", height: "100vh", position: "relative" }}
+      style={{ width: "100%", height: "100dvh", position: "relative" }}
     >
       <div className="reveal" ref={revealRef}>
         <div className="slides" ref={slidesRef} dangerouslySetInnerHTML={slidesHtml} />
