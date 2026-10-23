@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import type { Route } from "./+types/talks";
 
 export function meta({}: Route.MetaArgs) {
@@ -7,24 +8,37 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-const talks = [
+type Talk = {
+  title: string;
+  subtitle?: string;
+  date: string;
+  thumbnail?: string;
+  youtubeId?: string;
+  spotifyId?: string;
+  slidesSlug?: string;
+};
+
+const talks: Talk[] = [
   {
     title: "From React Native to Flutter: Pros, Cons and Lessons Learned",
     subtitle: "Devfest İzmir 2025",
     date: "December 13, 2025",
     thumbnail: "/images/talk-react-native-to-flutter.jpeg",
+    slidesSlug: "react-native-to-flutter",
   },
   {
     title: "Monorepos in Action",
     subtitle: "Geekday 2025",
     date: "February 28, 2025",
     thumbnail: "/images/talk-monorepo-in-action.jpg",
+    slidesSlug: "monorepos-in-action",
   },
   {
     title: "CI/CD for Frontend Developers",
     subtitle: "Devfest İzmir 2024",
     date: "December 7, 2024",
     youtubeId: "A8oilYx_uBc",
+    slidesSlug: "web-ci-cd-fc0ade",
   },
   {
     title: "Kodun Ardındaki Sırlar: Innovance'te Frontend Geliştirme",
@@ -37,6 +51,7 @@ const talks = [
     subtitle: "Codefiction Meetup İstanbul",
     date: "January 6, 2018",
     youtubeId: "40YcabXaRTc",
+    slidesSlug: "codefiction-javascript-promises",
   },
 ];
 
@@ -107,6 +122,29 @@ export default function Talks() {
               <p className="text-sm" style={{ color: 'var(--color-muted-foreground)' }}>
                 {talk.date}
               </p>
+              {talk.slidesSlug && (
+                <Link
+                  to={`/presentations/${talk.slidesSlug}`}
+                  className="inline-flex items-center gap-2 mt-4 px-3 py-1.5 rounded-md border text-sm font-medium transition-colors hover:opacity-80"
+                  style={{ borderColor: 'var(--color-border)', color: 'var(--color-foreground)' }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-4 h-4"
+                    aria-hidden="true"
+                  >
+                    <rect x="2" y="3" width="20" height="14" rx="2" />
+                    <path d="M8 21h8M12 17v4" />
+                  </svg>
+                  Slides
+                </Link>
+              )}
             </div>
           </div>
         ))}
