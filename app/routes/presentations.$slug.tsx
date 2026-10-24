@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { useLoaderData } from "react-router";
 import type { Route } from "./+types/presentations.$slug";
+import { buildMeta } from "~/lib/seo";
 import { PresentationViewer } from "~/components/PresentationViewer";
 import { useEffect } from "react";
 
@@ -45,15 +46,19 @@ export async function loader({ params }: Route.LoaderArgs) {
   return { metadata, slug, html };
 }
 
-export function meta({ data }: Route.MetaArgs) {
+export function meta({ data, matches }: Route.MetaArgs) {
   if (!data) {
     return [{ title: "Presentation Not Found" }];
   }
 
-  return [
-    { title: `${data.metadata.title} - Özgün Bal` },
-    { name: "description", content: data.metadata.description || data.metadata.title },
-  ];
+  return buildMeta({
+    title: `${data.metadata.title} - Özgün Bal`,
+    description: data.metadata.description || `${data.metadata.title}, a presentation by Özgün Bal`,
+    path: `/presentations/${data.slug}`,
+    image: data.metadata.thumbnail,
+    type: "article",
+    matches,
+  });
 }
 
 export default function PresentationPage({ loaderData }: Route.ComponentProps) {

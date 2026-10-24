@@ -1,11 +1,14 @@
 import { Link } from "react-router";
 import type { Route } from "./+types/talks";
+import { buildMeta } from "~/lib/seo";
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Talks - Özgün Bal" },
-    { name: "description", content: "Public talks and speaking engagements" },
-  ];
+export function meta({ matches }: Route.MetaArgs) {
+  return buildMeta({
+    title: "Talks - Özgün Bal",
+    description: "Public talks and speaking engagements",
+    path: "/talks",
+    matches,
+  });
 }
 
 type Talk = {

@@ -1,10 +1,14 @@
 import type { Route } from "./+types/about";
+import { buildMeta } from "~/lib/seo";
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "About - Özgün Bal" },
-    { name: "description", content: "Learn more about Özgün Bal" },
-  ];
+export function meta({ matches }: Route.MetaArgs) {
+  return buildMeta({
+    title: "About - Özgün Bal",
+    description: "Learn more about Özgün Bal",
+    path: "/about",
+    type: "profile",
+    matches,
+  });
 }
 
 export default function About() {
