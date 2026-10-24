@@ -3,6 +3,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { Link } from "react-router";
 import type { Route } from "./+types/home";
+import { buildMeta } from "~/lib/seo";
 import { ThemeToggle } from "~/components/ThemeToggle";
 import { useTheme } from "~/hooks/useTheme";
 
@@ -55,11 +56,15 @@ export async function loader() {
   }
 }
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Özgün Bal - Software Engineer & Tech Educator" },
-    { name: "description", content: "Senior Software Engineer specializing in React Native, Flutter, and Monorepos. Tech educator and public speaker." },
-  ];
+export function meta({ matches }: Route.MetaArgs) {
+  return buildMeta({
+    title: "Özgün Bal - Software Engineer & Tech Educator",
+    description:
+      "Senior Software Engineer specializing in React Native, Flutter, and Monorepos. Tech educator and public speaker.",
+    path: "/",
+    type: "profile",
+    matches,
+  });
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {

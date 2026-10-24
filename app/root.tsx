@@ -11,7 +11,12 @@ import {
 import type { Route } from "./+types/root";
 import { Header } from "./components/Header";
 import { ThemeProvider } from "./hooks/useTheme";
+import { getOrigin } from "./lib/seo.server";
 import "./app.css";
+
+export function loader({ request }: Route.LoaderArgs) {
+  return { origin: getOrigin(request) };
+}
 
 export const links: Route.LinksFunction = () => [
   { rel: "icon", href: "/favicon.ico", sizes: "48x48" },

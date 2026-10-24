@@ -1,11 +1,14 @@
 import { useState } from "react";
 import type { Route } from "./+types/trainings";
+import { buildMeta } from "~/lib/seo";
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Trainings - Özgün Bal" },
-    { name: "description", content: "Training programs and workshops" },
-  ];
+export function meta({ matches }: Route.MetaArgs) {
+  return buildMeta({
+    title: "Trainings - Özgün Bal",
+    description: "Training programs and workshops",
+    path: "/trainings",
+    matches,
+  });
 }
 
 type TabType = "internal" | "external";

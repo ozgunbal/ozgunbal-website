@@ -1,4 +1,5 @@
 import type { Route } from "./+types/blog";
+import { buildMeta } from "~/lib/seo";
 import { useLoaderData } from "react-router";
 
 interface BlogPost {
@@ -44,11 +45,13 @@ export async function loader() {
   }
 }
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Blog - Özgün Bal" },
-    { name: "description", content: "Articles and blog posts from Medium" },
-  ];
+export function meta({ matches }: Route.MetaArgs) {
+  return buildMeta({
+    title: "Blog - Özgün Bal",
+    description: "Articles and blog posts from Medium",
+    path: "/blog",
+    matches,
+  });
 }
 
 export default function Blog() {

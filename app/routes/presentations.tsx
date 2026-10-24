@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { useLoaderData } from "react-router";
 import type { Route } from "./+types/presentations";
+import { buildMeta } from "~/lib/seo";
 import { PresentationCard } from "~/components/PresentationCard";
 
 interface PresentationMetadata {
@@ -51,11 +52,13 @@ export async function loader() {
   return { presentations: visiblePresentations };
 }
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Presentations - Özgün Bal" },
-    { name: "description", content: "Presentations and slide decks" },
-  ];
+export function meta({ matches }: Route.MetaArgs) {
+  return buildMeta({
+    title: "Presentations - Özgün Bal",
+    description: "Presentations and slide decks",
+    path: "/presentations",
+    matches,
+  });
 }
 
 export default function Presentations({ loaderData }: Route.ComponentProps) {
