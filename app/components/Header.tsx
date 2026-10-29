@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { to: "/talks", label: "Talks" },
   { to: "/trainings", label: "Trainings" },
   { to: "/presentations", label: "Presentations" },
+  { to: "/fun-stuff", label: "Fun Stuff" },
   { to: "/blog", label: "Blog" },
 ];
 
