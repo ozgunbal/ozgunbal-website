@@ -5,7 +5,7 @@ export async function loader({ request }: { request: Request }) {
   const presentations = await listVisiblePresentations();
 
   const urls: { loc: string; lastmod?: string }[] = [
-    ...["/", "/about", "/talks", "/trainings", "/presentations", "/blog"].map((loc) => ({ loc })),
+    ...["/", "/about", "/talks", "/trainings", "/presentations", "/fun-stuff", "/blog"].map((loc) => ({ loc })),
     ...presentations.map((p) => ({ loc: `/presentations/${p.slug}`, lastmod: p.date })),
   ];
 

@@ -9,6 +9,7 @@ export default [
     route("presentations", "routes/presentations.tsx"),
     route("presentations/:slug", "routes/presentations.$slug.tsx"),
   ]),
+  route("fun-stuff", "routes/fun-stuff.tsx"),
   route("blog", "routes/blog.tsx"),
   route("robots.txt", "routes/robots.txt.ts"),
   route("sitemap.xml", "routes/sitemap.xml.ts"),
