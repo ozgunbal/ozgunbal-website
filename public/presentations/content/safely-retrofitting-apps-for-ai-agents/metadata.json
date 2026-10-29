@@ -1,0 +1,24 @@
+{
+  "title": "Safely Retrofitting Apps for AI Agents",
+  "slug": "safely-retrofitting-apps-for-ai-agents",
+  "description": "Adding an on-device AI agent to an app, and keeping it from doing the wrong thing",
+  "date": "2026-10-29",
+  "tags": ["AI Agents", "WebGPU", "WebLLM", "Security"],
+  "theme": {
+    "font": "custom",
+    "color": "custom"
+  },
+  "revealConfig": {
+    "width": 1280,
+    "height": 720,
+    "margin": 0.07,
+    "controls": true,
+    "progress": true,
+    "center": false,
+    "transition": "fade",
+    "backgroundTransition": "fade",
+    "slideNumber": true,
+    "hash": true
+  },
+  "thumbnail": "/presentations/content/safely-retrofitting-apps-for-ai-agents/assets/slides-thumbnail.png"
+}
