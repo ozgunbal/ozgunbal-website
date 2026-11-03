@@ -74,7 +74,8 @@ export default function App() {
 
   // Hide header on home page and individual presentation pages (e.g., /presentations/flutter-101)
   // but show it on the presentations gallery (/presentations)
-  const isPresentationPage = location.pathname.startsWith('/presentations/');
+  // Require a slug after the slash so "/presentations/" (trailing slash) still shows the header.
+  const isPresentationPage = /^\/presentations\/[^/]+/.test(location.pathname);
   const isHomePage = location.pathname === '/';
 
   return (
