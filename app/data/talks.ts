@@ -13,6 +13,7 @@ export const talks: Talk[] = [
     title: "Safely Retrofitting Apps for AI Agents",
     subtitle: "Devfest Baku 2026",
     date: "October 31, 2026",
+    thumbnail: "/images/talk-safely-retrofitting-apps-for-ai-agents.jpeg",
     slidesSlug: "safely-retrofitting-apps-for-ai-agents",
   },
   {
