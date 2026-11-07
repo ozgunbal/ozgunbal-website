@@ -6,10 +6,11 @@ import type { Route } from "./+types/home";
 import { buildMeta } from "~/lib/seo";
 import { ThemeToggle } from "~/components/ThemeToggle";
 import { useTheme } from "~/hooks/useTheme";
+import { talks } from "~/data/talks";
 
 // Stats data
 const STATS = {
-  talks: 5,
+  talks: talks.length,
   trainingHours: 52,
 };
 
