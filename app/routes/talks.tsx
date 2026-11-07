@@ -23,6 +23,12 @@ type Talk = {
 
 const talks: Talk[] = [
   {
+    title: "Safely Retrofitting Apps for AI Agents",
+    subtitle: "Devfest Baku 2026",
+    date: "October 31, 2026",
+    slidesSlug: "safely-retrofitting-apps-for-ai-agents",
+  },
+  {
     title: "From React Native to Flutter: Pros, Cons and Lessons Learned",
     subtitle: "Devfest İzmir 2025",
     date: "December 13, 2025",
